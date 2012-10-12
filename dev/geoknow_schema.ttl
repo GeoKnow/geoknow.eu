@@ -1,0 +1,849 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://purl.org/research-fp#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+
+<webode://droz.dia.fi.upm.es/Project+Ontology>
+    a owl:Ontology .
+
+:previous
+    a owl:ObjectProperty ;
+    rdfs:comment "The previous element in the natural  order."@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:label "previous"@en ;
+    rdfs:range owl:Thing.
+:next
+    a owl:ObjectProperty ;
+    rdfs:comment "The next element in the natural order."@en; 
+    rdfs:domain owl:Thing ;
+    rdfs:label "next"@en;
+    rdfs:range owl:Thing.
+
+:Partner a rdfs:Class;
+ rdfs:label "partner"@en.
+ rdfs:label "Partner"@de;
+ rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:label
+    ], [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:comment
+    ], [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty foaf:homepage
+    ].
+
+:leadPartner rdfs:subPropertyOf :partner;
+    a owl:ObjectProperty ;
+#    rdfs:comment "The lead consortium partner, one beneficiary who has extra responsibility (but not necessarily extra rights) and will carry the costs of preparing the proposal.Relative end date."@en;
+    rdfs:label "lead partner"@en;
+
+:partner 
+    a owl:ObjectProperty ;
+    rdfs:domain [owl:unionOf  (:WorkPackage :Deliverable)];
+    rdfs:label "partner"@en;
+    rdfs:range :Partner .
+
+:workpackage
+    a owl:ObjectProperty ;
+    rdfs:comment "The workpackage, a milestone or deliverable belongs to."@en;
+    rdfs:domain [owl:unionOf (:Milestone :Deliverable) ];
+    rdfs:label "workpackage"@en;
+    rdfs:range :Workpackge .
+
+#### Properties ####
+
+### Milestone
+
+:dueInMonth
+    a owl:DatatypeProperty ;
+    rdfs:comment "The number of the month relative to the project start in which the milestone has to be finished."@en;
+    rdfs:domain :Milestone ;
+    rdfs:label "due in month"@en;
+    rdfs:range xsd:integer .
+
+:Milestone
+    a owl:Class ;
+    rdfs:label "Milestone"@en;
+    rdfs:comment """A Milestone is a control point at which progress can be assessed.
+Milestones point at events, when objectives or intermediate goals are to be reached. A milestone is normally connected with the submission of deliverables.
+A milestone, by definition, has duration of zero and no effort. There is no work associated with a milestone. Usually a milestone is used as a project checkpoint to validate how the project is progressing and revalidate work."""@en;
+
+  rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:label
+    ], [
+  rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :dueInMonth
+    ], [
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :workpackage
+    ], [
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:comment
+    ], [
+
+#  rdfs:subClassOf [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :month
+#    ], [
+#
+#    rdfs:subClassOf [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :month
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:integer ;
+#        owl:onProperty :month
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Documentation+Ontology#Deliverable> ;
+#        owl:onProperty :hasAssociated
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom :WorkPackage ;
+#        owl:onProperty :isAssociatedWith
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom :Task ;
+#        owl:onProperty :isRelatedTo
+    ] .
+
+
+#### WorkPackage ####
+
+:startMonth
+    a owl:DatatypeProperty ;
+    rdfs:comment "Relative start date. The month in which the workpackage starts."@en;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "start month"@en;
+    rdfs:range xsd:nonNegativeInteger .
+
+:endMonth
+    a owl:DatatypeProperty ;
+    rdfs:comment "Relative end date. The month in which the workpackage ends."@en;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "end month"@en;
+    rdfs:range xsd:nonNegativeInteger .
+
+:workpackageNumber
+    a owl:DatatypeProperty ;
+    rdfs:comment "Workpackage number: WP1 .. WPn."@en;
+    rdfs:domain :WorkPackage ;
+    rdfs:range xsd:nonNegativeInteger .
+
+:WorkPackage
+    a owl:Class ;
+    rdfs:comment "A Workpackage (WP) is a major subdivision of a project which leads to the completion of one of the goals, objectives or major deliverables within the project. Different workpackages can proceed in parallel within a project."@en;
+ 
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:label
+      ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :startMonth
+      ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :endMonth
+      ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :next
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :previous
+   ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :workpackageNumber
+#
+#    ], [
+#        a owl:Restriction ;
+#        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :wiki
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:anyURI ;
+#        owl:onProperty :wiki
+#       ], [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :personMonths
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:float ;
+#        owl:onProperty :personMonths
+#    ], [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :objectives1
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:anyURI ;
+#        owl:onProperty :objectives1
+#    ], [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :number1
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:string ;
+#        owl:onProperty :number1
+#    ], [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :name1
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:string ;
+#        owl:onProperty :name1
+#    ], [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :measurableResults
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:anyURI ;
+#        owl:onProperty :measurableResults
+#    ], [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :mailingList
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:string ;
+#        owl:onProperty :mailingList
+#    ], [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :endMonth
+#       ], [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty rdfs:seeAlso
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:anyURI ;
+#        owl:onProperty rdfs:seeAlso
+#    ], [
+#        a owl:Restriction ;
+#        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty dcterms:abstract
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom xsd:string ;
+#        owl:onProperty dcterms:abstract
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom :Milestone ;
+#        owl:onProperty :has
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Documentation+Ontology#Deliverable> ;
+#        owl:onProperty :hasAssociated3
+#    ], [
+#        a owl:Restriction ;
+#        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :hasContractorLeading
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> ;
+#        owl:onProperty :hasContractorLeading
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> ;
+#        owl:onProperty :hasInvolvedPartner1
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom :workpackage_workload ;
+#        owl:onProperty :hasParticipantWithWorkload
+#    ], [
+#        a owl:Restriction ;
+#        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :hasPersonLeader
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Person+Ontology#Person> ;
+#        owl:onProperty :hasPersonLeader
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Person+Ontology#Person> ;
+#        owl:onProperty :hasPersonParticipant
+#    ], [
+#        a owl:Restriction ;
+#        owl:allValuesFrom :Task ;
+#        owl:onProperty :isMadeUpOf
+    ].
+
+### Deliverable
+
+:deliveryDate
+    a owl:DatatypeProperty ;
+    rdfs:label "delivery date"@en;
+    rdfs:comment "The date when the delivery needs to be finished."@en;
+    rdfs:domain :Delivery ;
+    rdfs:range xsd:date .
+
+:deliverableNature
+  a owl:ObjectProperty ;
+    rdfs:label "delivable nature"@en;
+    rdfs:domain :Delivery ;
+    rdfs:range :DeliverableNature .
+
+:DeliverableNature a owl:Class ;
+    rdfs:label "deliverable nature"@en.
+
+:Report rdfs:subClassOf :DeliverableNature;
+    rdfs:label "report"@en.
+
+:Other rdfs:subClassOf :DeliverableNature;
+    rdfs:label "other"@en.
+
+:disseminationLevel
+  a owl:ObjectProperty ;
+    rdfs:label "dissemination level"@en;
+    rdfs:domain :Delivery ;
+    rdfs:range :DissaminationLevel .
+
+:DisseminationLevel a owl:Class ;
+    rdfs:label "dissemination level"@en.
+
+:PU rdfs:subClassOf :DisseminationLevel;
+    rdfs:label "PU";
+    rdfs:comment "Public"@en.
+
+:RE rdfs:subClassOf :DisseminationLevel;
+    rdfs:label "RE";
+    rdfs:comment "Restricted to a group specified by the consortium (including the Commission Services)"@en.
+
+:PP rdfs:subClassOf :DisseminationLevel;
+    rdfs:label "PP";
+    rdfs:comment "Restricted to other programme participants (including Commission Services)"@en.
+
+:CO rdfs:subClassOf :DisseminationLevel;
+    rdfs:label "CO";
+    rdfs:comment "Confidential, only for members of the consortium (including the Commission Services)"@en.
+
+:Deliverable
+    a owl:Class ;
+#    rdfs:comment "..."@en;
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:label
+      ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:seeAlso
+       ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :deliverableNature
+       ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :deliveryDate
+       ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :disseminationLevel
+       ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :leadPartner
+       ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :workpackage
+     ].
+
+### Task
+
+:duration
+    a owl:DatatypeProperty ;
+    rdfs:comment "The number of months that the task lasts"@en;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+### Project
+
+:Project
+    a owl:Class ;
+    rdfs:label "Project"@en;
+    rdfs:comment """A Project is a complete programme of work to achieve defined goals and objectives within constraints of resources, time and other conditions. 
+Project means all the work as referred in Annex I to the contract."""@en;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:label
+      ], [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dcterms:abstract
+      ], [
+
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :startDate
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:date ;
+        owl:onProperty :startDate
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty foaf:homepage
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :objectives
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:anyURI ;
+        owl:onProperty :objectives
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :istProjectnumber
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:string ;
+        owl:onProperty :istProjectnumber
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :fullname
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:string ;
+        owl:onProperty :fullname
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :endDate
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:date ;
+        owl:onProperty :endDate
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dbp:abbreviation
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:string ;
+        owl:onProperty dbp:abbreviation
+    ] .
+
+:endDate
+    a owl:DatatypeProperty ;
+    rdfs:comment "The end date of the project."@en;
+    rdfs:domain :Project ;
+    rdfs:label "End Date"@en;
+    rdfs:range xsd:date .
+
+:endingDate
+    a owl:DatatypeProperty ;
+    rdfs:domain :ProjectParticipationPeriod ;
+    rdfs:label "Ending Date"@en;
+    rdfs:range xsd:date .
+
+:fullname
+    a owl:DatatypeProperty ;
+    rdfs:comment "Project's full name."@en;
+    rdfs:domain :Project ;
+    rdfs:label "Full name"@en;
+    rdfs:range xsd:string .
+
+:istProjectnumber
+    a owl:DatatypeProperty ;
+    rdfs:comment "The code which identifies the project."@en;
+    rdfs:domain :Project ;
+    rdfs:label "IST Project number"@en;
+    rdfs:range xsd:string .
+
+:mailingList
+    a owl:DatatypeProperty ;
+    rdfs:comment "The mailing list of the workpackage."@en;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "Mailing List"@en;
+    rdfs:range xsd:string .
+
+:measurableResults
+    a owl:DatatypeProperty ;
+    rdfs:comment "A brief description of the expected results."@en;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "Measurable Results"@en;
+    rdfs:range xsd:anyURI .
+
+:month
+    a owl:DatatypeProperty ;
+    rdfs:comment "Project month in which the milestone is acomplished."@en;
+    rdfs:domain :Milestone ;
+    rdfs:range xsd:integer .
+
+:number
+    a owl:DatatypeProperty ;
+    rdfs:comment "Task's number"@en;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+
+:objectives
+    a owl:DatatypeProperty ;
+    rdfs:comment "Project's objectives."@en;
+    rdfs:domain :Project ;
+    rdfs:range xsd:anyURI .
+
+:objectives1
+    a owl:DatatypeProperty ;
+    rdfs:comment "Workpackage's objectives."@en;
+    rdfs:domain :WorkPackage ;
+    rdfs:range xsd:anyURI .
+
+:personMonths
+    a owl:DatatypeProperty ;
+    rdfs:comment "The total number of person-months allocated to a workpackage."@en;
+    rdfs:domain :WorkPackage ;
+    rdfs:range xsd:float .
+
+:personMonths
+    a owl:DatatypeProperty ;
+    rdfs:comment "number of person-months per a participant in a workpackage."@en;
+    rdfs:domain :workpackage_workload ;
+    rdfs:range xsd:float .
+
+:ProjectParticipationPeriod
+    a owl:Class ;
+    rdfs:comment "It represents the period in which an organization participates in a project."@en;
+    rdfs:label "Project Participation Period"@en;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :startingDate
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:date ;
+        owl:onProperty :startingDate
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :endingDate
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:date ;
+        owl:onProperty :endingDate
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :isParticipationPeriodOn
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom :Project ;
+        owl:onProperty :isParticipationPeriodOn
+    ] .
+
+:projectURL
+    a owl:DatatypeProperty ;
+    rdfs:comment "Project's web site."@en;
+    rdfs:domain :Project ;
+    rdfs:label "Project URL"@en;
+    rdfs:range xsd:anyURI .
+
+:startDate
+    a owl:DatatypeProperty ;
+    rdfs:comment "The start date of the project."@en;
+    rdfs:domain :Project ;
+    rdfs:label "Start Date"@en;
+    rdfs:range xsd:date .
+
+:Start_month
+    a owl:DatatypeProperty ;
+    rdfs:comment "Task's start month"@en;
+    rdfs:domain :Task ;
+    rdfs:label "Start month"@en;
+    rdfs:range xsd:string .
+
+:Start_month_1
+    a owl:DatatypeProperty ;
+    rdfs:comment "Relative start date for the work in a specific workpackage."@en;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "Start month"@en;
+    rdfs:range xsd:string .
+
+:startingDate
+    a owl:DatatypeProperty ;
+    rdfs:domain :ProjectParticipationPeriod ;
+    rdfs:label "Starting Date"@en;
+    rdfs:range xsd:date .
+
+:summary
+    a owl:DatatypeProperty ;
+    rdfs:comment "Project's summary: objectives, description of work, milestones and expected results."@en;
+    rdfs:domain :Project ;
+    rdfs:range xsd:anyURI .
+
+:Task
+    a owl:Class ;
+    rdfs:comment "Workpackages can be further divided into Tasks. Different tasks can proceed in parallel, within a workpackage, and cover one or more reporting periods of the project. A Task should end on a definite milestone and lead to at least one deliverable."@en;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :Start_month
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:string ;
+        owl:onProperty :Start_month
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :number
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:string ;
+        owl:onProperty :number
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :name
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:string ;
+        owl:onProperty :name
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :duration
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:string ;
+        owl:onProperty :duration
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :belongsTo
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom :WorkPackage ;
+        owl:onProperty :belongsTo
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom :Milestone ;
+        owl:onProperty :hasAssociated2
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> ;
+        owl:onProperty :hasInvolvedPartner
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :hasParticipantLeader
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> ;
+        owl:onProperty :hasParticipantLeader
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :hasResponsiblePerson
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Person+Ontology#Person> ;
+        owl:onProperty :hasResponsiblePerson
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Person+Ontology#Person> ;
+        owl:onProperty :teamIsFormedBy
+    ] .
+
+:wiki
+    a owl:DatatypeProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:range xsd:anyURI .
+
+:belongsTo
+    a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:label "belongs to"@en;
+    rdfs:range :WorkPackage .
+
+:has
+    a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:range :Milestone .
+
+:hasAssociated
+    a owl:ObjectProperty ;
+    rdfs:domain :Milestone ;
+    rdfs:label "has associated"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Documentation+Ontology#Deliverable> .
+
+:hasAssociated1
+    a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:label "has associated"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Documentation+Ontology#Documentation> .
+
+:hasAssociated2
+    a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:label "has associated"@en;
+    rdfs:range :Milestone .
+
+:hasAssociated3
+    a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "has associated"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Documentation+Ontology#Deliverable> .
+
+:hasAssociated_meeting
+    a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:label "has associated meeting"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Event+Ontology#Event> .
+
+:hasContractorLeading
+    a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "has contractor leading"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+
+:hasInvolvedPartner
+    a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:label "has involved partner"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+
+:hasInvolvedPartner1
+    a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "has involved partner"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+
+:hasParticipantLeader
+    a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:label "has participant leader"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+
+:hasParticipantWithWorkload
+    a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "has participant with workload"@en;
+    rdfs:range :workpackage_workload .
+
+:hasPersonLeader
+    a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "has person leader"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
+
+:hasPersonParticipant
+    a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "has person participant"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
+
+:hasResponsiblePerson
+    a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:label "has responsible person"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
+
+:isAssociatedWith
+    a owl:ObjectProperty ;
+    rdfs:domain :Milestone ;
+    rdfs:label "is associated with"@en;
+    rdfs:range :WorkPackage .
+
+:isDevelopedBy
+    a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:label "is developed by"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+
+:isMadeUpOf
+    a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:label "is made up of"@en;
+    rdfs:range :Task .
+
+:isParticipationPeriodOn
+    a owl:ObjectProperty ;
+    rdfs:domain :ProjectParticipationPeriod ;
+    rdfs:label "is participation period on"@en;
+    rdfs:range :Project .
+
+:isRelatedTo
+    a owl:ObjectProperty ;
+    rdfs:domain :Milestone ;
+    rdfs:label "is related to"@en;
+    rdfs:range :Task .
+
+:isWorkloadOf
+    a owl:ObjectProperty ;
+    rdfs:domain :workpackage_workload ;
+    rdfs:label "is workload of"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+
+:isWorkloadOnWorkPackage
+    a owl:ObjectProperty ;
+    rdfs:domain :workpackage_workload ;
+    rdfs:label "is workload on workpackage"@en;
+    rdfs:range :WorkPackage .
+
+:teamIsFormedBy
+    a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:label "team is formed by"@en;
+    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
+
+:workpackage_workload
+    a owl:Class ;
+    rdfs:comment "This term indicates the workload (that is, the number of person-months) of an organization that participates in a workpackage."@en;
+    rdfs:label "workpackage workload"@en;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :personMonths
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:float ;
+        owl:onProperty :personMonths
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :isWorkloadOf
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> ;
+        owl:onProperty :isWorkloadOf
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :isWorkloadOnWorkPackage
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom :WorkPackage ;
+        owl:onProperty :isWorkloadOnWorkPackage
+    ] .
+
