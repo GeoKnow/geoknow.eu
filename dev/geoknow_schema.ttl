@@ -4,9 +4,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://purl.org/research-fp#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dbpedia: <http://dbpedia.org/resource> .
 @prefix dbp: <http://dbpedia.org/property/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
 
-<webode://droz.dia.fi.upm.es/Project+Ontology>
+:GeoKnowOntology
     a owl:Ontology .
 
 :previous
@@ -15,6 +17,7 @@
     rdfs:domain owl:Thing ;
     rdfs:label "previous"@en ;
     rdfs:range owl:Thing.
+
 :next
     a owl:ObjectProperty ;
     rdfs:comment "The next element in the natural order."@en; 
@@ -22,7 +25,7 @@
     rdfs:label "next"@en;
     rdfs:range owl:Thing.
 
-:Partner a rdfs:Class;
+:Partner a owl:Class;
  rdfs:label "partner"@en.
  rdfs:label "Partner"@de;
  rdfs:subClassOf [
@@ -48,7 +51,7 @@
     a owl:ObjectProperty ;
     rdfs:domain [owl:unionOf  (:WorkPackage :Deliverable)];
     rdfs:label "partner"@en;
-    rdfs:range :Partner .
+    rdfs:range :Organization .
 
 :workpackage
     a owl:ObjectProperty ;
@@ -147,6 +150,87 @@ A milestone, by definition, has duration of zero and no effort. There is no work
     rdfs:domain :WorkPackage ;
     rdfs:range xsd:nonNegativeInteger .
 
+:wp1
+	a :Workpackage;
+	rdfs:label "Requirements, Design, Benchmarking, Component Integration"@en;
+	:startMonth "1"^^xsd:nonNegativeInteger;
+	:endMonth "36"^^xsd:nonNegativeInteger;
+	:next :wp2;
+	:personMonths "96"^^xsd:float;
+	:leadPartner :Ontos;
+	:workpackageNumber "1"^^xsd:nonNegativeInteger.
+
+:wp2
+	a :Workpackage;
+	rdfs:label "Semantics based geospatial information management"@en;
+	:startMonth "1"^^xsd:nonNegativeInteger;
+	:endMonth "35"^^xsd:nonNegativeInteger;
+	:previous :wp1;
+	:next :wp3;
+	:personMonths "65"^^xsd:float;
+	:leadPartner :OpenLink;
+	:workpackageNumber "2"^^xsd:nonNegativeInteger.
+:wp3
+	a :Workpackage;
+	rdfs:label "Spatial knowledge aggregation, fusing and interlinking"@en;
+	:startMonth "2"^^xsd:nonNegativeInteger;
+	:endMonth "34"^^xsd:nonNegativeInteger;
+	:previous :wp2;
+	:next :wp4;
+	:personMonths "63"^^xsd:float;
+	:leadPartner :Athena;
+	:workpackageNumber "3"^^xsd:nonNegativeInteger.
+:wp4
+	a :Workpackage;
+	rdfs:label "Spatial-semantic browsing, visualization and authoring interfaces"@en;
+	:startMonth "2"^^xsd:nonNegativeInteger;
+	:endMonth "34"^^xsd:nonNegativeInteger;
+	:previous :wp3;
+	:next :wp5;
+	:personMonths "71"^^xsd:float;
+	:leadPartner :InfAI;
+	:workpackageNumber "4"^^xsd:nonNegativeInteger.
+:wp5
+	a :Workpackage;
+	rdfs:label "GeoKnow for Marine Sciences"@en;
+	:startMonth "3"^^xsd:nonNegativeInteger;
+	:endMonth "36"^^xsd:nonNegativeInteger;
+	:previous :wp4;
+	:next :wp6;
+	:personMonths "69"^^xsd:float;
+	:leadPartner :FIN;
+	:workpackageNumber "5"^^xsd:nonNegativeInteger.
+:wp6
+	a :Workpackage;
+	rdfs:label "GeoKnow for Customer Relationship ManagementGeoKnow for Marine Sciences"@en;
+	:startMonth "3"^^xsd:nonNegativeInteger;
+	:endMonth "36"^^xsd:nonNegativeInteger;
+	:previous :wp5;
+	:next :wp7;
+	:personMonths "74"^^xsd:float;
+	:leadPartner :Unister;
+	:workpackageNumber "6"^^xsd:nonNegativeInteger.
+:wp7
+	a :Workpackage;
+	rdfs:label "Dissemination, community building, exploitation and & standards"@en;
+	:startMonth "1"^^xsd:nonNegativeInteger;
+	:endMonth "36"^^xsd:nonNegativeInteger;
+	:previous :wp6;
+	:next :wp8;
+	:personMonths "26"^^xsd:float;
+	:leadPartner :Ontos;
+	:workpackageNumber "7"^^xsd:nonNegativeInteger.
+:wp8
+	a :Workpackage;
+	rdfs:label "Project Management"@en;
+	:startMonth "1"^^xsd:nonNegativeInteger;
+	:endMonth "36"^^xsd:nonNegativeInteger;
+	:previous :wp7;
+	:next :wp9;
+	:personMonths "23"^^xsd:float;
+	:leadPartner :InfAI;
+	:workpackageNumber "8"^^xsd:nonNegativeInteger.
+
 :WorkPackage
     a owl:Class ;
     rdfs:comment "A Workpackage (WP) is a major subdivision of a project which leads to the completion of one of the goals, objectives or major deliverables within the project. Different workpackages can proceed in parallel within a project."@en;
@@ -175,6 +259,18 @@ A milestone, by definition, has duration of zero and no effort. There is no work
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty :workpackageNumber
+   ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :activity
+   ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :personMonths
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:float ;
+        owl:onProperty :personMonths
 #
 #    ], [
 #        a owl:Restriction ;
@@ -293,6 +389,33 @@ A milestone, by definition, has duration of zero and no effort. There is no work
 #        owl:allValuesFrom :Task ;
 #        owl:onProperty :isMadeUpOf
     ].
+
+:activity a rdf:Property;
+	rdfs:label "Type of Activity"@en;
+	rdfs:domain :Workpackage;
+	rdfs:range :Activity.
+
+:Activity
+	a owl:Class;
+	rdfs:label "Type of Activity"@en;
+	rdfs:subClassOf
+	[
+        	a owl:Restriction ;
+	        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+	        owl:onProperty rdfs:label
+	].
+
+:RTD	a :Activity;
+	rdfs:label "research and technological development"@en;
+
+:DEM	a :Activity;
+	rdfs:label "demonstrational activities"@en;
+
+:MGT	a :Activity;
+	rdfs:label "consortium management activities"@en;
+
+:OTHER	a :Activity;
+	rdfs:label "other specific activities"@en;
 
 ### Deliverable
 
@@ -453,6 +576,22 @@ Project means all the work as referred in Annex I to the contract."""@en;
         owl:allValuesFrom xsd:string ;
         owl:onProperty dbp:abbreviation
     ] .
+
+:GeoKnow
+	a :Project;
+	rdfs:label "GeoKnow";
+	:fullname "GeoKnow - Making the Web an Exploratory for Geospatial Knowledge";
+	dbp:abstract "The advent of the Data Web demonstrates how Web technologies can be employed to integrate dispersed, heterogeneous information. Most information – be it the extent of habitats of aquatic species, data warehouses of E-Commerce systems or offerings of the bakery shop next door – has a directly or indirectly associated spatial dimension. Integrating and efficiently using information with such a spatial dimension on the Web poses very particular challenges. 
+First, we have to combine and reason about spatial and semantic features that use different vocabularies and representation techniques. Second, the wealth of pre-existing overlapping and complementary information sources in the spatial domain demands information management able to deal with billions of facts in a scalable manner. Third, only by dramatically lowering the entrance barriers extra value can be generated through the involvement of thousands of non-expert end users in authoring, curation and assessment. Within GeoKnow, we will tackle these challenges and spur the transition from islands of isolated Geographic Information Systems (GIS) to a Web of interlinked Geographic Knowledge Systems (GKS).
+We will validate our approach in two complementary application scenarios: (1) spatial-semantic collaboration in biological scientific communities involving citizen scientists and (2) spatial-semantic travel E-Commerce data management.
+GeoKnow will substantially contribute to the evolution of the Web from a medium for information exchange to a medium for (spatial) knowledge integration, e.g. the number of spatial LOD sources will increase from 31to >1,000. GeoKnow will help to realize network effects by increasing quality and coherence of the spatial Data Web, e.g. the data-linkage ratio will increase from 5% to 20%. For enterprises, the GeoKnow Generator will provide a cost-efficient way to integrate a variety of heterogeneous information sources within an Enterprise Data Intranet."@en;
+
+	:startDate "1900-01-01"^^xsd:date;
+	foaf:homepage <http://purl.org/research-fp/homepage> # TODO: replace with the real value later
+	:objectives <http://purl.org/research-fp/homepage/objectives> # TODO: replace with the real value later
+	:istProjectnumber "1234567890";
+	:endDate "2100-12-31"^^xsd:date;
+	dbp:abbreviation "GeoKnow".
 
 :endDate
     a owl:DatatypeProperty ;
@@ -846,4 +985,66 @@ Project means all the work as referred in Annex I to the contract."""@en;
         owl:allValuesFrom :WorkPackage ;
         owl:onProperty :isWorkloadOnWorkPackage
     ] .
+
+:Organization 
+    a owl:Class ;
+    rdfs:subClassOf foaf:Organization;
+    rdfs:comment "An organization that participates in a research project."@en;
+    rdfs:label "Participant"@en;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty : rdfs:label
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :dbp:abbreviation
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dbo:country
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty foaf:homepage
+    ] .
+
+########################### Data
+
+:InfAI
+	a :Organization;
+	rdfs:label "University of Leipzig, Institute of Applied Computer Science."@en;
+	dbp:abbreviation "InAI";
+	foaf:homepage <http://infai.org>;
+	dbo:country dbpedia:Germany.
+:ATH
+	a :Organization;
+	rdfs:label "Athena Research and Innovation Center."@en;
+	dbp:abbreviation "ATH";
+	foaf:homepage <http://www.athena-innovation.gr>;
+	dbo:country dbpedia:Greece.
+:OpenLink
+	a :Organization;
+	rdfs:label "OpenLink Software Ltd."@en;
+	dbp:abbreviation "OpenLink";
+	foaf:homepage <http://www.openlinksw.com>;
+	dbo:country dbpedia:United_Kingdom.
+:Ontos
+	a :Organization;
+	rdfs:label "Ontos AG"@en;
+	dbp:abbreviation "Ontos";
+	foaf:homepage <http://www.ontos.com>;
+	dbo:country dbpedia:Switzerland.
+:Unister
+	a :Organization;
+	rdfs:label "Unister AG"@en;
+	dbp:abbreviation "Unister";
+	foaf:homepage <http://www.unister.de>;
+	dbo:country dbpedia:Germany.
+:FIN
+	a :Organization;
+	rdfs:label "FishBase Information and Research Group, Inc."@en;
+	dbp:abbreviation "FIN";
+	foaf:homepage <http://www.fin.ph>;
+	dbo:country dbpedia:Phillipines.
 
