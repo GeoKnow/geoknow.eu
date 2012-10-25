@@ -156,69 +156,76 @@ A milestone, by definition, has duration of zero and no effort. There is no work
 	:startMonth "1"^^xsd:nonNegativeInteger;
 	:endMonth "36"^^xsd:nonNegativeInteger;
 	:next :wp2;
-	:personMonths "96"^^xsd:float;
+	:personMonths "109"^^xsd:float;
 	:leadPartner :Ontos;
+	:activity :RTD;
 	:workpackageNumber "1"^^xsd:nonNegativeInteger.
 
 :wp2
 	a :Workpackage;
-	rdfs:label "Semantics based geospatial information management"@en;
+	rdfs:label "Semantics based geospatial data management"@en;
 	:startMonth "1"^^xsd:nonNegativeInteger;
 	:endMonth "35"^^xsd:nonNegativeInteger;
 	:previous :wp1;
 	:next :wp3;
-	:personMonths "65"^^xsd:float;
+	:personMonths "59"^^xsd:float;
 	:leadPartner :OpenLink;
+	:activity :RTD;
 	:workpackageNumber "2"^^xsd:nonNegativeInteger.
 :wp3
 	a :Workpackage;
-	rdfs:label "Spatial knowledge aggregation, fusing and interlinking"@en;
+	rdfs:label "Spatial knowledge aggregation, fusing & quality assessment"@en;
 	:startMonth "2"^^xsd:nonNegativeInteger;
 	:endMonth "34"^^xsd:nonNegativeInteger;
 	:previous :wp2;
 	:next :wp4;
-	:personMonths "63"^^xsd:float;
+	:personMonths "73"^^xsd:float;
 	:leadPartner :Athena;
+	:activity :RTD;
 	:workpackageNumber "3"^^xsd:nonNegativeInteger.
 :wp4
 	a :Workpackage;
-	rdfs:label "Spatial-semantic browsing, visualization and authoring interfaces"@en;
+	rdfs:label "Spatial-semantic exploration, visualization, analysis & authoring"@en;
 	:startMonth "2"^^xsd:nonNegativeInteger;
 	:endMonth "34"^^xsd:nonNegativeInteger;
 	:previous :wp3;
 	:next :wp5;
-	:personMonths "71"^^xsd:float;
+	:personMonths "67"^^xsd:float;
 	:leadPartner :InfAI;
+	:activity :RTD;
 	:workpackageNumber "4"^^xsd:nonNegativeInteger.
 :wp5
 	a :Workpackage;
-	rdfs:label "GeoKnow for Marine Sciences"@en;
+	rdfs:label "Spatial Linked Data in the Supply Chain"@en;
 	:startMonth "3"^^xsd:nonNegativeInteger;
 	:endMonth "36"^^xsd:nonNegativeInteger;
 	:previous :wp4;
 	:next :wp6;
-	:personMonths "69"^^xsd:float;
-	:leadPartner :FIN;
+	:personMonths "59"^^xsd:float;
+	:leadPartner :BROX
+	:activity :RTD;
 	:workpackageNumber "5"^^xsd:nonNegativeInteger.
 :wp6
 	a :Workpackage;
-	rdfs:label "GeoKnow for Customer Relationship ManagementGeoKnow for Marine Sciences"@en;
+	rdfs:label "GeoKnow for E-Commerce"@en;
 	:startMonth "3"^^xsd:nonNegativeInteger;
 	:endMonth "36"^^xsd:nonNegativeInteger;
 	:previous :wp5;
 	:next :wp7;
-	:personMonths "74"^^xsd:float;
+	:personMonths "76"^^xsd:float;
 	:leadPartner :Unister;
+	:activity :RTD;
 	:workpackageNumber "6"^^xsd:nonNegativeInteger.
 :wp7
 	a :Workpackage;
-	rdfs:label "Dissemination, community building, exploitation and & standards"@en;
+	rdfs:label "Dissemination, community building, exploitation & standards"@en;
 	:startMonth "1"^^xsd:nonNegativeInteger;
 	:endMonth "36"^^xsd:nonNegativeInteger;
 	:previous :wp6;
 	:next :wp8;
-	:personMonths "26"^^xsd:float;
+	:personMonths "29"^^xsd:float;
 	:leadPartner :Ontos;
+	:activity :RTD;
 	:workpackageNumber "7"^^xsd:nonNegativeInteger.
 :wp8
 	a :Workpackage;
@@ -229,6 +236,7 @@ A milestone, by definition, has duration of zero and no effort. There is no work
 	:next :wp9;
 	:personMonths "23"^^xsd:float;
 	:leadPartner :InfAI;
+	:activity :MGT;
 	:workpackageNumber "8"^^xsd:nonNegativeInteger.
 
 :WorkPackage
@@ -466,6 +474,12 @@ A milestone, by definition, has duration of zero and no effort. There is no work
     rdfs:label "CO";
     rdfs:comment "Confidential, only for members of the consortium (including the Commission Services)"@en.
 
+:deliverableNumber a rdf:Property;
+	rdfs:label "deliverable number"@en;
+	rdfs:comment "a hierarchical identifier like 'D1.1.1' or 'D3.1.2'."@en;
+	rdfs:domain	:Deliverable;
+	rdfs:range	xsd:String.
+
 :Deliverable
     a owl:Class ;
 #    rdfs:comment "..."@en;
@@ -473,7 +487,11 @@ A milestone, by definition, has duration of zero and no effort. There is no work
         a owl:Restriction ;
         owl:minCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty rdfs:label
-      ], [
+     ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :deliverableNumber
+     ], [
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty rdfs:seeAlso
@@ -489,10 +507,10 @@ A milestone, by definition, has duration of zero and no effort. There is no work
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty :disseminationLevel
-       ], [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty :leadPartner
+#       ], [
+#        a owl:Restriction ;
+#        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+#        owl:onProperty :leadPartner
        ], [
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
