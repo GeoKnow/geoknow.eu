@@ -1,0 +1,70 @@
+Del. No,Deliverable name,WP no.,Nature,Diss. level,Delivery  date
+D1.1.1,Initial common requirements specification ,1,R,CO,4
+D1.2.1,Revised common requirements specification and GeoKnow architecture & system design ,1,R,PU,18
+D1.3.1,Design and Setup  of Benchmarking System ,1,R,CO,6
+D1.3.2,Continuous Report on Performance Evaluation ,1,R,PU,12
+D1.3.3,Continuous Report on Performance Evaluation ,1,R,PU,24
+D1.3.4,Continuous Report on Performance Evaluation ,1,R,PU,36
+D1.4.1,Initial prototype of the GeoKnow Generator ,1,P,CO,12
+D1.4.2,Intermediate release of the GeoKnow Generator ,1,P,PU,24
+D1.4.3,Final release of the GeoKnow Generator ,1,P,PU,36
+D2.1.1,Market and research overview ,2,R,PU,5
+D2.2.1,Integration of external geospatial databases ,2,P,PU,6
+D2.3.1,Prototype of built-in geospatial capabilities ,2,P,PU,12
+D2.4.1,Geospatial clustering ,2,P,PU,24
+D2.5.1,Distributed Geospatial Querying,2,P,PU,30
+D2.6.1,Prototype of built-in complex geo problem solving,2,P,PU,20
+D2.7.1, Geodata.gov.gr geospatial data as linked data ,2,P,PU,18
+D3.1.1,Development of first prototype for spatially interlinking data sets ,3,P,PU,9
+D3.1.2,System to integrate large scale data sets based on implicit spatial relations ,3,P,PU,21
+D3.1.3,Evaluation of spatial interlinking,3,R,PU,30
+D3.2.1,Fusing of geographic features ,3,R,PU,11
+D3.2.2,Fusing of geospatial metadata ,3,R,PU,23
+D3.2.3,Fusing of geospatial relations ,3,R,PU,31
+D3.3.1,Prototype for spatial knowledge aggregation ,3,P,PU,17
+D3.3.2,Context sensitive spatial knowledge aggregation ,3,P,PU,28
+D3.4.1,Metrics for linked geospatial information ,3,R,PU,18
+D3.4.2,Comparison with other data sets ,3,R,PU,34
+D3.5.1,Initial report on spatial data quality assessment,3,R,PU,20
+D3.5.2,Final report on spatial data quality assessment,3,R,PU,32
+D4.1.1,Initial release spatial-semantic exploration component ,4,P,PU,12
+D4.1.2,Final release spatial-semantic exploration component ,4,P,PU,26
+D4.2.1,Spatial authoring widget set ,4,P,PU,20
+D4.2.2, Spatial curation interface,4,P,PU,30
+D4.3.1,Concept for public-private Co-Evolution,4,P,PU,20
+D4.3.2,Public-private Co-Evolution,4,P,PU,30
+D4.4.1,Subscription and notification service,4,P,PU,20
+D4.4.2,Open-social API for GeoKnow Generator,4,P,PU,34
+D5.1.1,RDF representation of RFID information,5,R,PU,9
+D5.2.1,Initial prototype of Supply Chain Geo Data Management infrastructure,5,P,PU,15
+D5.2.2,Second prototype of Supply Chain Geo Data Management infrastructure,5,P,PU,28
+D5.3.1,Release of the supply chain dashboard,5,R,PU,30
+D5.4.1,GeoKnow Generator release for Data Web background knowledge provisioning,5,R,PU,24
+D6.1.1,Report on customer data selection and retrieval ,6,R,PU,6
+D6.1.2,Report on customer data preparation and transformation for linked data usage,6,R,PU,12
+D6.2.1,Integration component model for the E-Commerce use case,6,R,PU,12
+D6.3.1,Design and specification of the Motive based Search Infrastructure,6,R,PU,18
+D6.3.2,First Prototype of the Motive based Search Infrastructure,6,P,CO,24
+D6.3.3,Final Prototype of the Motive based Search Infrastructure,6,P,CO,33
+D6.3.4,Refinement of Motive based Search demonstrator and UI interfaces,6,R,PU,36
+D6.4.1,Definition of component and usability test cases based on the requirements analysis,6,R,PU,24
+D6.4.2,Evaluation of the prototype based on the test results,6,R,PU,36
+D7.1.1,Project Fact Sheet and Press Release,7,R,PU,1
+D7.1.2,Project Website ,7,R,PU,3
+D7.1.3,First dissemination report,7,R,PU,12
+D7.1.4,Second dissemination report,7,R,PU,24
+D7.1.5,GeoKnow Show Case,7,R,PU,32
+D7.1.6,Third dissemination report,7,R,PU,36
+D7.1.7,Final report,7,R,PU,36
+D7.2.1,Exploitation plan,7,R,PU,12
+D7.2.2,First exploitation report ,7,R,PU,20
+D7.2.3,Second exploitation report ,7,R,PU,28
+D7.3.1,First standardization report ,7,R,PU,8
+D7.3.2,Second standardization report ,7,R,PU,32
+D8.2.1,Intermediate project report ,8,R,PU,6
+D8.2.2,Intermediate project report ,8,R,PU,18
+D8.2.3,Intermediate project report ,8,R,PU,30
+D8.3.1,Yearly cost statement including yearly project report ,8,R,PU,12
+D8.3.2,Yearly cost statement including yearly project report ,8,R,PU,24
+D8.3.3,Yearly cost statement including yearly project report ,8,R,PU,36
+D8.4.1,Online Collaboration Platform ,8,R,PU,1
