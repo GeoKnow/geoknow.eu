@@ -5,7 +5,6 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
 import au.com.bytecode.opencsv.CSVReader;
 
 public class Deliverables2Rdf
@@ -57,13 +56,14 @@ public class Deliverables2Rdf
 					if(!first) {out.println();}
 					first=false;
 					out.println(uri+" a :Deliverable;");
-					printlnProperty(out,"rdfs:label ",label,false);
-					printlnProperty(out,":workpackageNumber ",workpackageNumber,false);
-					printlnProperty(out,":taskNumber ",taskNumber,false);
-					printlnProperty(out,":deliverableNature ",nature,false);
-					printlnProperty(out,":deliverableNumber ",deliverableNumber,false);
-					printlnProperty(out,":disseminationLevel ",disseminationLevel,false);
-					printlnProperty(out,":deliveryDate ",deliveryDate,true);
+					printlnProperty(out,"rdfs:label",label,false);
+					printlnProperty(out,":deliverableIdentifier","\""+row[0].trim()+"\"",false);
+//					printlnProperty(out,":workpackageNumber",workpackageNumber,false);
+					printlnProperty(out,":task",":Task"+workpackageNumber+"-"+taskNumber,false);
+					printlnProperty(out,":deliverableNature",nature,false);
+					printlnProperty(out,":deliverableNumber",deliverableNumber,false);
+					printlnProperty(out,":disseminationLevel",disseminationLevel,false);
+					printlnProperty(out,":deliveryDate",deliveryDate,true);
 				} 
 				catch(Throwable t) {System.err.println("Error with line :"+Arrays.toString(row)+": "+t);continue;}
 			}			
