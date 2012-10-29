@@ -7,6 +7,7 @@
 @prefix dbpedia: <http://dbpedia.org/resource> .
 @prefix dbp: <http://dbpedia.org/property/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 :GeoKnowOntology
     a owl:Ontology .
@@ -26,7 +27,7 @@
     rdfs:range owl:Thing.
 
 :Partner a owl:Class;
- rdfs:label "partner"@en.
+ rdfs:label "partner"@en;
  rdfs:label "Partner"@de;
  rdfs:subClassOf [
         a owl:Restriction ;
@@ -45,18 +46,18 @@
 :leadPartner rdfs:subPropertyOf :partner;
     a owl:ObjectProperty ;
 #    rdfs:comment "The lead consortium partner, one beneficiary who has extra responsibility (but not necessarily extra rights) and will carry the costs of preparing the proposal.Relative end date."@en;
-    rdfs:label "lead partner"@en;
+    rdfs:label "lead partner"@en.
 
 :partner 
     a owl:ObjectProperty ;
-    rdfs:domain [owl:unionOf  (:WorkPackage :Deliverable)];
+    rdfs:domain [owl:unionOf  (:WorkPackage :Deliverable :Task)];
     rdfs:label "partner"@en;
     rdfs:range :Organization .
 
 :workpackage
     a owl:ObjectProperty ;
     rdfs:comment "The workpackage, a milestone or deliverable belongs to."@en;
-    rdfs:domain [owl:unionOf (:Milestone :Deliverable) ];
+    rdfs:domain [owl:unionOf (:Milestone :Task :Deliverable) ]; # todo: remove deliverable from here because it belongs to a task?
     rdfs:label "workpackage"@en;
     rdfs:range :Workpackge .
 
@@ -83,22 +84,18 @@ A milestone, by definition, has duration of zero and no effort. There is no work
         owl:minCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty rdfs:label
     ], [
-  rdfs:subClassOf [
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty :dueInMonth
     ], [
-     rdfs:subClassOf [
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty :workpackage
     ], [
-     rdfs:subClassOf [
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty rdfs:comment
-    ], [
-
+	].
 #  rdfs:subClassOf [
 #        a owl:Restriction ;
 #        owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -125,7 +122,6 @@ A milestone, by definition, has duration of zero and no effort. There is no work
 #        a owl:Restriction ;
 #        owl:allValuesFrom :Task ;
 #        owl:onProperty :isRelatedTo
-    ] .
 
 
 #### WorkPackage ####
@@ -149,95 +145,6 @@ A milestone, by definition, has duration of zero and no effort. There is no work
     rdfs:comment "Workpackage number: WP1 .. WPn."@en;
     rdfs:domain :WorkPackage ;
     rdfs:range xsd:nonNegativeInteger .
-
-:wp1
-	a :Workpackage;
-	rdfs:label "Requirements, Design, Benchmarking, Component Integration"@en;
-	:startMonth "1"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:next :wp2;
-	:personMonths "109"^^xsd:float;
-	:leadPartner :Ontos;
-	:activity :RTD;
-	:workpackageNumber "1"^^xsd:nonNegativeInteger.
-
-:wp2
-	a :Workpackage;
-	rdfs:label "Semantics based geospatial data management"@en;
-	:startMonth "1"^^xsd:nonNegativeInteger;
-	:endMonth "35"^^xsd:nonNegativeInteger;
-	:previous :wp1;
-	:next :wp3;
-	:personMonths "59"^^xsd:float;
-	:leadPartner :OpenLink;
-	:activity :RTD;
-	:workpackageNumber "2"^^xsd:nonNegativeInteger.
-:wp3
-	a :Workpackage;
-	rdfs:label "Spatial knowledge aggregation, fusing & quality assessment"@en;
-	:startMonth "2"^^xsd:nonNegativeInteger;
-	:endMonth "34"^^xsd:nonNegativeInteger;
-	:previous :wp2;
-	:next :wp4;
-	:personMonths "73"^^xsd:float;
-	:leadPartner :Athena;
-	:activity :RTD;
-	:workpackageNumber "3"^^xsd:nonNegativeInteger.
-:wp4
-	a :Workpackage;
-	rdfs:label "Spatial-semantic exploration, visualization, analysis & authoring"@en;
-	:startMonth "2"^^xsd:nonNegativeInteger;
-	:endMonth "34"^^xsd:nonNegativeInteger;
-	:previous :wp3;
-	:next :wp5;
-	:personMonths "67"^^xsd:float;
-	:leadPartner :InfAI;
-	:activity :RTD;
-	:workpackageNumber "4"^^xsd:nonNegativeInteger.
-:wp5
-	a :Workpackage;
-	rdfs:label "Spatial Linked Data in the Supply Chain"@en;
-	:startMonth "3"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:previous :wp4;
-	:next :wp6;
-	:personMonths "59"^^xsd:float;
-	:leadPartner :BROX
-	:activity :RTD;
-	:workpackageNumber "5"^^xsd:nonNegativeInteger.
-:wp6
-	a :Workpackage;
-	rdfs:label "GeoKnow for E-Commerce"@en;
-	:startMonth "3"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:previous :wp5;
-	:next :wp7;
-	:personMonths "76"^^xsd:float;
-	:leadPartner :Unister;
-	:activity :RTD;
-	:workpackageNumber "6"^^xsd:nonNegativeInteger.
-:wp7
-	a :Workpackage;
-	rdfs:label "Dissemination, community building, exploitation & standards"@en;
-	:startMonth "1"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:previous :wp6;
-	:next :wp8;
-	:personMonths "29"^^xsd:float;
-	:leadPartner :Ontos;
-	:activity :RTD;
-	:workpackageNumber "7"^^xsd:nonNegativeInteger.
-:wp8
-	a :Workpackage;
-	rdfs:label "Project Management"@en;
-	:startMonth "1"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:previous :wp7;
-	:next :wp9;
-	:personMonths "23"^^xsd:float;
-	:leadPartner :InfAI;
-	:activity :MGT;
-	:workpackageNumber "8"^^xsd:nonNegativeInteger.
 
 :WorkPackage
     a owl:Class ;
@@ -414,16 +321,16 @@ A milestone, by definition, has duration of zero and no effort. There is no work
 	].
 
 :RTD	a :Activity;
-	rdfs:label "research and technological development"@en;
+	rdfs:label "research and technological development"@en.
 
 :DEM	a :Activity;
-	rdfs:label "demonstrational activities"@en;
+	rdfs:label "demonstrational activities"@en.
 
 :MGT	a :Activity;
-	rdfs:label "consortium management activities"@en;
+	rdfs:label "consortium management activities"@en.
 
 :OTHER	a :Activity;
-	rdfs:label "other specific activities"@en;
+	rdfs:label "other specific activities"@en.
 
 ### Deliverable
 
@@ -544,6 +451,28 @@ A milestone, by definition, has duration of zero and no effort. There is no work
     rdfs:domain :Task ;
     rdfs:range xsd:string .
 
+
+:Task a owl:Class ;
+    rdfs:label "Task"@en;
+#    rdfs:comment "A Task is ..."@en;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:label
+      ], [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dcterms:abstract
+      ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :startDate
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom xsd:date ;
+        owl:onProperty :startDate
+    ].
+
 ### Project
 
 :Project
@@ -621,15 +550,15 @@ Project means all the work as referred in Annex I to the contract."""@en;
 	a :Project;
 	rdfs:label "GeoKnow";
 	:fullname "GeoKnow - Making the Web an Exploratory for Geospatial Knowledge";
-	dbp:abstract "The advent of the Data Web demonstrates how Web technologies can be employed to integrate dispersed, heterogeneous information. Most information – be it the extent of habitats of aquatic species, data warehouses of E-Commerce systems or offerings of the bakery shop next door – has a directly or indirectly associated spatial dimension. Integrating and efficiently using information with such a spatial dimension on the Web poses very particular challenges. 
+	dbp:abstract """The advent of the Data Web demonstrates how Web technologies can be employed to integrate dispersed, heterogeneous information. Most information – be it the extent of habitats of aquatic species, data warehouses of E-Commerce systems or offerings of the bakery shop next door – has a directly or indirectly associated spatial dimension. Integrating and efficiently using information with such a spatial dimension on the Web poses very particular challenges. 
 First, we have to combine and reason about spatial and semantic features that use different vocabularies and representation techniques. Second, the wealth of pre-existing overlapping and complementary information sources in the spatial domain demands information management able to deal with billions of facts in a scalable manner. Third, only by dramatically lowering the entrance barriers extra value can be generated through the involvement of thousands of non-expert end users in authoring, curation and assessment. Within GeoKnow, we will tackle these challenges and spur the transition from islands of isolated Geographic Information Systems (GIS) to a Web of interlinked Geographic Knowledge Systems (GKS).
 We will validate our approach in two complementary application scenarios: (1) spatial-semantic collaboration in biological scientific communities involving citizen scientists and (2) spatial-semantic travel E-Commerce data management.
-GeoKnow will substantially contribute to the evolution of the Web from a medium for information exchange to a medium for (spatial) knowledge integration, e.g. the number of spatial LOD sources will increase from 31to >1,000. GeoKnow will help to realize network effects by increasing quality and coherence of the spatial Data Web, e.g. the data-linkage ratio will increase from 5% to 20%. For enterprises, the GeoKnow Generator will provide a cost-efficient way to integrate a variety of heterogeneous information sources within an Enterprise Data Intranet."@en;
+GeoKnow will substantially contribute to the evolution of the Web from a medium for information exchange to a medium for (spatial) knowledge integration, e.g. the number of spatial LOD sources will increase from 31to >1,000. GeoKnow will help to realize network effects by increasing quality and coherence of the spatial Data Web, e.g. the data-linkage ratio will increase from 5% to 20%. For enterprises, the GeoKnow Generator will provide a cost-efficient way to integrate a variety of heterogeneous information sources within an Enterprise Data Intranet."""@en;
 	:grantAgreementNumber "318159"^^xsd:nonNegativeInteger;
 	:startDate "1900-01-01"^^xsd:date;
-	foaf:homepage <http://purl.org/research-fp/homepage> # TODO: replace with the real value later
-	:objectives <http://purl.org/research-fp/homepage/objectives> # TODO: replace with the real value later
-	:istProjectnumber "1234567890";
+	foaf:homepage <http://purl.org/research-fp/homepage>; # TODO: replace with the real value later
+	:objectives <http://purl.org/research-fp/homepage/objectives>; # TODO: replace with the real value later
+	:istProjectnumber "1234567890"^^xsd:nonNegativeInteger;
 	:endDate "2100-12-31"^^xsd:date;
 	dbp:abbreviation "GeoKnow".
 
@@ -1039,11 +968,11 @@ GeoKnow will substantially contribute to the evolution of the Web from a medium 
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty : rdfs:label
+        owl:onProperty rdfs:label
     ], [
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty :dbp:abbreviation
+        owl:onProperty dbp:abbreviation
     ], [
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -1092,626 +1021,3 @@ GeoKnow will substantially contribute to the evolution of the Web from a medium 
 	dbp:abbreviation "FIN";
 	foaf:homepage <http://www.fin.ph>;
 	dbo:country dbpedia:Phillipines.
-
-###### Deliverables
-
-:D-1-1-1 a :Deliverable;
-	rdfs:label "Initial common requirements specification"@en;
-	:deliverableIdentifier "D1.1.1";
-	:task :Task1-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "4"^^xsd:nonNegativeInteger.
-
-:D-1-2-1 a :Deliverable;
-	rdfs:label "Revised common requirements specification and GeoKnow architecture & system design"@en;
-	:deliverableIdentifier "D1.2.1";
-	:task :Task1-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
-
-:D-1-3-1 a :Deliverable;
-	rdfs:label "Design and Setup  of Benchmarking System"@en;
-	:deliverableIdentifier "D1.3.1";
-	:task :Task1-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "6"^^xsd:nonNegativeInteger.
-
-:D-1-3-2 a :Deliverable;
-	rdfs:label "Continuous Report on Performance Evaluation"@en;
-	:deliverableIdentifier "D1.3.2";
-	:task :Task1-3;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
-
-:D-1-3-3 a :Deliverable;
-	rdfs:label "Continuous Report on Performance Evaluation"@en;
-	:deliverableIdentifier "D1.3.3";
-	:task :Task1-3;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
-
-:D-1-3-4 a :Deliverable;
-	rdfs:label "Continuous Report on Performance Evaluation"@en;
-	:deliverableIdentifier "D1.3.4";
-	:task :Task1-3;
-	:deliverableNature :Report;
-	:deliverableNumber "4"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
-
-:D-1-4-1 a :Deliverable;
-	rdfs:label "Initial prototype of the GeoKnow Generator"@en;
-	:deliverableIdentifier "D1.4.1";
-	:task :Task1-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
-
-:D-1-4-2 a :Deliverable;
-	rdfs:label "Intermediate release of the GeoKnow Generator"@en;
-	:deliverableIdentifier "D1.4.2";
-	:task :Task1-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
-
-:D-1-4-3 a :Deliverable;
-	rdfs:label "Final release of the GeoKnow Generator"@en;
-	:deliverableIdentifier "D1.4.3";
-	:task :Task1-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
-
-:D-2-1-1 a :Deliverable;
-	rdfs:label "Market and research overview"@en;
-	:deliverableIdentifier "D2.1.1";
-	:task :Task2-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "5"^^xsd:nonNegativeInteger.
-
-:D-2-2-1 a :Deliverable;
-	rdfs:label "Integration of external geospatial databases"@en;
-	:deliverableIdentifier "D2.2.1";
-	:task :Task2-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "6"^^xsd:nonNegativeInteger.
-
-:D-2-3-1 a :Deliverable;
-	rdfs:label "Prototype of built-in geospatial capabilities"@en;
-	:deliverableIdentifier "D2.3.1";
-	:task :Task2-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
-
-:D-2-4-1 a :Deliverable;
-	rdfs:label "Geospatial clustering"@en;
-	:deliverableIdentifier "D2.4.1";
-	:task :Task2-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
-
-:D-2-5-1 a :Deliverable;
-	rdfs:label "Distributed Geospatial Querying"@en;
-	:deliverableIdentifier "D2.5.1";
-	:task :Task2-5;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
-
-:D-2-6-1 a :Deliverable;
-	rdfs:label "Prototype of built-in complex geo problem solving"@en;
-	:deliverableIdentifier "D2.6.1";
-	:task :Task2-6;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
-
-:D-2-7-1 a :Deliverable;
-	rdfs:label "Geodata.gov.gr geospatial data as linked data"@en;
-	:deliverableIdentifier "D2.7.1";
-	:task :Task2-7;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
-
-:D-3-1-1 a :Deliverable;
-	rdfs:label "Development of first prototype for spatially interlinking data sets"@en;
-	:deliverableIdentifier "D3.1.1";
-	:task :Task3-1;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "9"^^xsd:nonNegativeInteger.
-
-:D-3-1-2 a :Deliverable;
-	rdfs:label "System to integrate large scale data sets based on implicit spatial relations"@en;
-	:deliverableIdentifier "D3.1.2";
-	:task :Task3-1;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "21"^^xsd:nonNegativeInteger.
-
-:D-3-1-3 a :Deliverable;
-	rdfs:label "Evaluation of spatial interlinking"@en;
-	:deliverableIdentifier "D3.1.3";
-	:task :Task3-1;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
-
-:D-3-2-1 a :Deliverable;
-	rdfs:label "Fusing of geographic features"@en;
-	:deliverableIdentifier "D3.2.1";
-	:task :Task3-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "11"^^xsd:nonNegativeInteger.
-
-:D-3-2-2 a :Deliverable;
-	rdfs:label "Fusing of geospatial metadata"@en;
-	:deliverableIdentifier "D3.2.2";
-	:task :Task3-2;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "23"^^xsd:nonNegativeInteger.
-
-:D-3-2-3 a :Deliverable;
-	rdfs:label "Fusing of geospatial relations"@en;
-	:deliverableIdentifier "D3.2.3";
-	:task :Task3-2;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "31"^^xsd:nonNegativeInteger.
-
-:D-3-3-1 a :Deliverable;
-	rdfs:label "Prototype for spatial knowledge aggregation"@en;
-	:deliverableIdentifier "D3.3.1";
-	:task :Task3-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "17"^^xsd:nonNegativeInteger.
-
-:D-3-3-2 a :Deliverable;
-	rdfs:label "Context sensitive spatial knowledge aggregation"@en;
-	:deliverableIdentifier "D3.3.2";
-	:task :Task3-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "28"^^xsd:nonNegativeInteger.
-
-:D-3-4-1 a :Deliverable;
-	rdfs:label "Metrics for linked geospatial information"@en;
-	:deliverableIdentifier "D3.4.1";
-	:task :Task3-4;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
-
-:D-3-4-2 a :Deliverable;
-	rdfs:label "Comparison with other data sets"@en;
-	:deliverableIdentifier "D3.4.2";
-	:task :Task3-4;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "34"^^xsd:nonNegativeInteger.
-
-:D-3-5-1 a :Deliverable;
-	rdfs:label "Initial report on spatial data quality assessment"@en;
-	:deliverableIdentifier "D3.5.1";
-	:task :Task3-5;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
-
-:D-3-5-2 a :Deliverable;
-	rdfs:label "Final report on spatial data quality assessment"@en;
-	:deliverableIdentifier "D3.5.2";
-	:task :Task3-5;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "32"^^xsd:nonNegativeInteger.
-
-:D-4-1-1 a :Deliverable;
-	rdfs:label "Initial release spatial-semantic exploration component"@en;
-	:deliverableIdentifier "D4.1.1";
-	:task :Task4-1;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
-
-:D-4-1-2 a :Deliverable;
-	rdfs:label "Final release spatial-semantic exploration component"@en;
-	:deliverableIdentifier "D4.1.2";
-	:task :Task4-1;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "26"^^xsd:nonNegativeInteger.
-
-:D-4-2-1 a :Deliverable;
-	rdfs:label "Spatial authoring widget set"@en;
-	:deliverableIdentifier "D4.2.1";
-	:task :Task4-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
-
-:D-4-2-2 a :Deliverable;
-	rdfs:label "Spatial curation interface"@en;
-	:deliverableIdentifier "D4.2.2";
-	:task :Task4-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
-
-:D-4-3-1 a :Deliverable;
-	rdfs:label "Concept for public-private Co-Evolution"@en;
-	:deliverableIdentifier "D4.3.1";
-	:task :Task4-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
-
-:D-4-3-2 a :Deliverable;
-	rdfs:label "Public-private Co-Evolution"@en;
-	:deliverableIdentifier "D4.3.2";
-	:task :Task4-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
-
-:D-4-4-1 a :Deliverable;
-	rdfs:label "Subscription and notification service"@en;
-	:deliverableIdentifier "D4.4.1";
-	:task :Task4-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
-
-:D-4-4-2 a :Deliverable;
-	rdfs:label "Open-social API for GeoKnow Generator"@en;
-	:deliverableIdentifier "D4.4.2";
-	:task :Task4-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "34"^^xsd:nonNegativeInteger.
-
-:D-5-1-1 a :Deliverable;
-	rdfs:label "RDF representation of RFID information"@en;
-	:deliverableIdentifier "D5.1.1";
-	:task :Task5-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "9"^^xsd:nonNegativeInteger.
-
-:D-5-2-1 a :Deliverable;
-	rdfs:label "Initial prototype of Supply Chain Geo Data Management infrastructure"@en;
-	:deliverableIdentifier "D5.2.1";
-	:task :Task5-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "15"^^xsd:nonNegativeInteger.
-
-:D-5-2-2 a :Deliverable;
-	rdfs:label "Second prototype of Supply Chain Geo Data Management infrastructure"@en;
-	:deliverableIdentifier "D5.2.2";
-	:task :Task5-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "28"^^xsd:nonNegativeInteger.
-
-:D-5-3-1 a :Deliverable;
-	rdfs:label "Release of the supply chain dashboard"@en;
-	:deliverableIdentifier "D5.3.1";
-	:task :Task5-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
-
-:D-5-4-1 a :Deliverable;
-	rdfs:label "GeoKnow Generator release for Data Web background knowledge provisioning"@en;
-	:deliverableIdentifier "D5.4.1";
-	:task :Task5-4;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
-
-:D-6-1-1 a :Deliverable;
-	rdfs:label "Report on customer data selection and retrieval"@en;
-	:deliverableIdentifier "D6.1.1";
-	:task :Task6-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "6"^^xsd:nonNegativeInteger.
-
-:D-6-1-2 a :Deliverable;
-	rdfs:label "Report on customer data preparation and transformation for linked data usage"@en;
-	:deliverableIdentifier "D6.1.2";
-	:task :Task6-1;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
-
-:D-6-2-1 a :Deliverable;
-	rdfs:label "Integration component model for the E-Commerce use case"@en;
-	:deliverableIdentifier "D6.2.1";
-	:task :Task6-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
-
-:D-6-3-1 a :Deliverable;
-	rdfs:label "Design and specification of the Motive based Search Infrastructure"@en;
-	:deliverableIdentifier "D6.3.1";
-	:task :Task6-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
-
-:D-6-3-2 a :Deliverable;
-	rdfs:label "First Prototype of the Motive based Search Infrastructure"@en;
-	:deliverableIdentifier "D6.3.2";
-	:task :Task6-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
-
-:D-6-3-3 a :Deliverable;
-	rdfs:label "Final Prototype of the Motive based Search Infrastructure"@en;
-	:deliverableIdentifier "D6.3.3";
-	:task :Task6-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "33"^^xsd:nonNegativeInteger.
-
-:D-6-3-4 a :Deliverable;
-	rdfs:label "Refinement of Motive based Search demonstrator and UI interfaces"@en;
-	:deliverableIdentifier "D6.3.4";
-	:task :Task6-3;
-	:deliverableNature :Report;
-	:deliverableNumber "4"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
-
-:D-6-4-1 a :Deliverable;
-	rdfs:label "Definition of component and usability test cases based on the requirements analysis"@en;
-	:deliverableIdentifier "D6.4.1";
-	:task :Task6-4;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
-
-:D-6-4-2 a :Deliverable;
-	rdfs:label "Evaluation of the prototype based on the test results"@en;
-	:deliverableIdentifier "D6.4.2";
-	:task :Task6-4;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
-
-:D-7-1-1 a :Deliverable;
-	rdfs:label "Project Fact Sheet and Press Release"@en;
-	:deliverableIdentifier "D7.1.1";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "1"^^xsd:nonNegativeInteger.
-
-:D-7-1-2 a :Deliverable;
-	rdfs:label "Project Website"@en;
-	:deliverableIdentifier "D7.1.2";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "3"^^xsd:nonNegativeInteger.
-
-:D-7-1-3 a :Deliverable;
-	rdfs:label "First dissemination report"@en;
-	:deliverableIdentifier "D7.1.3";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
-
-:D-7-1-4 a :Deliverable;
-	rdfs:label "Second dissemination report"@en;
-	:deliverableIdentifier "D7.1.4";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "4"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
-
-:D-7-1-5 a :Deliverable;
-	rdfs:label "GeoKnow Show Case"@en;
-	:deliverableIdentifier "D7.1.5";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "5"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "32"^^xsd:nonNegativeInteger.
-
-:D-7-1-6 a :Deliverable;
-	rdfs:label "Third dissemination report"@en;
-	:deliverableIdentifier "D7.1.6";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "6"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
-
-:D-7-1-7 a :Deliverable;
-	rdfs:label "Final report"@en;
-	:deliverableIdentifier "D7.1.7";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "7"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
-
-:D-7-2-1 a :Deliverable;
-	rdfs:label "Exploitation plan"@en;
-	:deliverableIdentifier "D7.2.1";
-	:task :Task7-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
-
-:D-7-2-2 a :Deliverable;
-	rdfs:label "First exploitation report"@en;
-	:deliverableIdentifier "D7.2.2";
-	:task :Task7-2;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
-
-:D-7-2-3 a :Deliverable;
-	rdfs:label "Second exploitation report"@en;
-	:deliverableIdentifier "D7.2.3";
-	:task :Task7-2;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "28"^^xsd:nonNegativeInteger.
-
-:D-7-3-1 a :Deliverable;
-	rdfs:label "First standardization report"@en;
-	:deliverableIdentifier "D7.3.1";
-	:task :Task7-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "8"^^xsd:nonNegativeInteger.
-
-:D-7-3-2 a :Deliverable;
-	rdfs:label "Second standardization report"@en;
-	:deliverableIdentifier "D7.3.2";
-	:task :Task7-3;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "32"^^xsd:nonNegativeInteger.
-
-:D-8-2-1 a :Deliverable;
-	rdfs:label "Intermediate project report"@en;
-	:deliverableIdentifier "D8.2.1";
-	:task :Task8-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "6"^^xsd:nonNegativeInteger.
-
-:D-8-2-2 a :Deliverable;
-	rdfs:label "Intermediate project report"@en;
-	:deliverableIdentifier "D8.2.2";
-	:task :Task8-2;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
-
-:D-8-2-3 a :Deliverable;
-	rdfs:label "Intermediate project report"@en;
-	:deliverableIdentifier "D8.2.3";
-	:task :Task8-2;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
-
-:D-8-3-1 a :Deliverable;
-	rdfs:label "Yearly cost statement including yearly project report"@en;
-	:deliverableIdentifier "D8.3.1";
-	:task :Task8-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
-
-:D-8-3-2 a :Deliverable;
-	rdfs:label "Yearly cost statement including yearly project report"@en;
-	:deliverableIdentifier "D8.3.2";
-	:task :Task8-3;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
-
-:D-8-3-3 a :Deliverable;
-	rdfs:label "Yearly cost statement including yearly project report"@en;
-	:deliverableIdentifier "D8.3.3";
-	:task :Task8-3;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
-
-:D-8-4-1 a :Deliverable;
-	rdfs:label "Online Collaboration Platform"@en;
-	:deliverableIdentifier "D8.4.1";
-	:task :Task8-4;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "1"^^xsd:nonNegativeInteger.
