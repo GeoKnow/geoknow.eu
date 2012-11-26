@@ -1,0 +1,41 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org lastchange template
+ *
+ * renders the last modification section of a resource
+ */
+
+// output only of we have a time
+if ( (isset($this->timeIso8601)) && ($this->timeIso8601 != '') ) {
+
+    // author link only, if there is an author uri
+    if ( (isset($this->userUri)) && ($this->userUri != '') ) {
+        $authorlink = $this->link(array(
+            'uri' => $this->userUri,
+            'prefix' => 'by '
+        ));
+    } else {
+        $authorlink = '';
+    }
+?>
+<p>
+Last modification:
+<span
+    property="<?php echo $this->curie('http://rdfs.org/sioc/ns#last_activity_date');?>"
+    content="<?php echo $this->timeIso8601;?>"
+    title="<?php echo $this->timeIso8601;?>"
+    >
+<?php echo $this->timeago(array('time' => $this->timeIso8601)); ?>
+</span>
+    <?php echo $authorlink ?>
+</p>
+<?php
+}
+

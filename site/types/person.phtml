@@ -1,0 +1,84 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org (foaf:)Person template
+ *
+ * this template renders a person
+ */
+
+$subgroups = $this->query(array(
+    'where'    => '?resourceUri aiiso:part_of groups:AKSW. ',
+    'template' => 'liplain',
+    'prefix'   => '<li><strong class="headline">sub groups</strong>',
+    'suffix'   => '</li>'
+));
+$grouproster = $this->query(array(
+    'where'    => '?group foaf:member <'.$this->resourceUri.'>. ?group foaf:member ?resourceUri.'.
+        ' OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> ?familyName }',
+    'orderby'  => 'ASC(?familyName)',
+    'template' => 'liplain',
+    'prefix'   => '<li><strong class="headline">group roster</strong>',
+    'suffix'   => '</li>'
+));
+//$worksWith = $this->query(array(
+    //'where'    => '<'.$this->resourceUri.'> foaf:currentProject ?project . ?resourceUri foaf:currentProject ?project .',
+    //'template' => 'liplain',
+    //'prefix'   => '<li><strong class="headline">works with</strong>',
+    //'suffix'   => '</li>'
+//));
+$currentProjects = $this->query(array(
+    'where'    => '{'. PHP_EOL
+        . '{' . PHP_EOL
+        . '?resourceUri doap:maintainer ?maintainer . ' . PHP_EOL
+        . 'OPTIONAL { ?maintainer ?relation ?resourceUri } ' . PHP_EOL
+        . 'FILTER (?maintainer = <'.$this->resourceUri.'>) ' . PHP_EOL
+        . 'FILTER (!bound(?relation) || ?relation != foaf:pastProject) ' . PHP_EOL
+        . '} UNION {' . PHP_EOL
+        . '<'.$this->resourceUri.'> foaf:currentProject ?resourceUri .' . PHP_EOL
+        . '}' . PHP_EOL
+        . '} ',
+    'template' => 'li',
+    'prefix'   => '<h1>Current Projects</h1>',
+));
+$pastProjects = $this->query(array(
+    'where'    => '<'.$this->resourceUri.'> foaf:pastProject ?resourceUri.',
+    'template' => 'li',
+    'prefix'   => '<h1>Past Projects</h1>',
+));
+// prepare button row
+$query = '
+PREFIX aksw: <http://aksw.org/schema/>
+SELECT DISTINCT ?resourceUri ?label ?propertyUri
+WHERE {
+    { <'.$this->resourceUri.'> ?propertyUri ?resourceUri . }
+        UNION
+    { ?resourceUri ?propertyUri <'.$this->resourceUri.'> . }
+    ?propertyUri aksw:buttonLabel ?label
+}';
+$buttons = $this->querylist($query, 'local/items/buttons.phtml');
+?>
+
+<nav class="nav-sidelinks">
+<ul>
+<?php echo $grouproster; ?>
+</ul>
+</nav>
+
+<header class="intro foaf_Person">
+    <h1 class="hideme"><?php echo $this->title ?></h1>
+    <?php echo $this->renderx(array('template'=>'local/items/vcardperson.phtml')) ?>
+    <?php echo $buttons ?>
+</header> <!-- /.intro -->
+
+<?php echo $this->literal(array('tag' => 'div', 'class' => 'content')) ?>
+<?php echo $currentProjects, $pastProjects; ?>
+<?php echo $this->renderx(array(
+    'template' => 'local/items/publications.phtml'
+));
+

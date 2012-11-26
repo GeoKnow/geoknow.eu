@@ -1,0 +1,82 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org group template
+ *
+ * arranges the content for the group class
+ */
+
+// prepare hookline and abstract (both optional)
+// yes, hookline also for groups please :-)
+$hookline = $this->literal(array(
+    'property' => 'aksw:hookline',
+    'class' => 'hookline',
+    'prefix' => '<span class="hideme">:</span> '
+));
+$abstract = $this->literal(array(
+    'property' => 'dcterms:abstract',
+    'tag' => 'p',
+    'class' => 'abstract'
+));
+$subgroups = $this->query(array(
+    'where' => '?resourceUri aiiso:part_of groups:AKSW. ',
+    'template' => 'liplain'
+));
+?>
+
+<header class="intro">
+    <h1><?php echo $this->title . $hookline ?></h1>
+    <?php echo $abstract ?>
+</header> <!-- /.intro -->
+
+<nav class="nav-sidelinks">
+<ul>
+<li><strong class="headline">sub groups</strong>
+<?php echo $subgroups; ?>
+</li>
+</ul>
+</nav>
+
+<?php
+echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
+?>
+<div class="subcolumns">
+<?php
+    // research areas
+    echo $this->query(array(
+        'where' => '<'.$this->resourceUri.'> aksw:researchAreas ?resourceUri.',
+        'template' => 'liplain',
+        'prefix' => '<div class="c60l"><div class="subcl"><h1>Research Areas</h1>',
+        'suffix' => '</div></div>'
+    ));
+    // members
+    echo $this->query(array(
+        'where' => '<'.$this->resourceUri.'> foaf:member ?resourceUri.'.
+            ' OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> ?familyName }',
+        'orderby' => 'ASC(?familyName)',
+        'template' => 'liplain',
+        'prefix' => '<div class="c40r"><div class="subcr"><h1>Members</h1>',
+        'suffix' => '</div></div>'
+    ));
+?>
+</div>
+
+<?php
+    // projects
+    echo $this->query(array(
+        'where' => '<'.$this->resourceUri.'> foaf:member ?person . '.
+            ' { ?person foaf:currentProject ?resourceUri . } UNION'.
+            ' { ?resourceUri doap:maintainer ?person . }',
+        'template' => 'li',
+        'prefix' => '<h1>Projects</h1>'
+    ));
+?>
+<?php echo $this->renderx(array(
+    'template' => 'local/items/publications.phtml'
+));

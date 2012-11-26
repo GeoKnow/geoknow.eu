@@ -1,0 +1,23 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2012, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * OntoWiki login module template
+ */
+
+?>
+<form method="post" action="<?php echo $this->actionUrl ?>" class="simple-input input-justify-left" name="webidlogin">
+        <input type="hidden" name="logintype" value="webidlogin" />
+        <input type="hidden" name="redirect-uri" value="<?php echo $this->redirectUri ?>" />
+        <div class="actionbuttons">
+            <a id="webidlogin" class="minibutton submit"><?php echo $this->_('Login') ?></a>
+            <?php if ($this->showRegisterButton) : ?>
+                <a class="minibutton" href="<?php echo $this->webIdRegisterActionUrl; ?>"><?php echo $this->_('Register') ?></a>
+            <?php endif; ?>
+        </div>
+</form>

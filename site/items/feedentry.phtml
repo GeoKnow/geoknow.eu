@@ -1,0 +1,106 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org feedentry template
+ *
+ * used by the feeds module over the template option
+ */
+
+// this is the used heading level tag
+$tag = 'h2';
+
+foreach ($this->entries as $entry) {
+
+    // prepare the heading (link) and more link
+    if ( (isset($entry['link'])) && (isset($entry['title'])) ) {
+        // link and title exists: full header and more link
+        $heading = $this->link(array(
+            'direct' => "yes",
+            'uri'    => $entry['link'],
+            'text'   => $entry['title'],
+            'prefix' => '',
+            'suffix' => '',
+        ));
+        $more = $this->link(array(
+            'direct' => "yes",
+            'uri'    => $entry['link'],
+            'text'   => 'Read more <span class="hideme">about &quot;'.strip_tags($entry['title']).'&quot;</span>',
+            'prefix' => ' ' // "&hellip; "
+        ));
+    } elseif (isset($entry['title'])) {
+        // only title exist: unlinked header, no more link
+        $heading = $entry['title'];
+        $more    = '';
+    } elseif (isset($entry['link'])) {
+        // only link exist: no header but more link
+        $heading = '';
+        $more    = $this->link(array(
+            'direct' => "yes",
+            'uri'    => $entry['link'],
+            'text'   => 'Read more <span class="hideme">about &quot;'.strip_tags($entry['title']).'&quot;</span>',
+            'prefix' => ' ' // "&hellip; "
+        ));
+    } else {
+        // either link nor title: no header and no more link
+        $heading = '';
+        $more    = '';
+    }
+
+    // prepare author link: search for author as a resource
+    if (isset($entry['authors'][0]['name'])) {
+        $author = $this->link(array(
+            'literal' => $entry['authors'][0]['name'],
+            'prefix'  => 'by '
+            //'property' => 'skos:hiddenLabel'
+        ));
+    } else {
+        $author = '';
+    }
+
+    // prepare timeago link with the Zend_Date object
+    if (isset($entry['dateModified'])) {
+        $timeago = $this->timeago(array(
+            'time' => $entry['dateModified']->toString(Zend_Date::ISO_8601)
+        ));
+    } else {
+        $timeago = '';
+    }
+
+    // prepare the text
+    if ( (isset($entry['description'])) && ($entry['description'] != $entry['title']) ) {
+        $text = strip_tags($entry['description']);
+        $text = str_replace('[...]', '', $text);
+        $text = substr($text, 0, 500); // max 500 chars
+        // check for interpunctation, ignore cases like dr., prof.
+        $endOfSentence = max(strrpos($text, '.'), strrpos($text, '!'), strrpos($text, '?'));
+        if ($endOfSentence !== false && $endOfSentence > 0) {
+            $text = substr($text, 0, $endOfSentence + 1);
+        }
+        $text .= $more;
+        $text  = '<p>' . $text .'</p>';
+    } else {
+        $text = '';
+    }
+?>
+<!-- feed entry start -->
+<?php echo "<$tag>" .
+                $heading .
+                ' <span class="meta"><span class="hideme">(</span>' .
+                $timeago . ' ' . $author .
+                '<span class="hideme">)</span></span>' .
+           "</$tag>";
+?>
+<p class="meta hideme">
+    <?php echo $timeago ?>
+    <?php echo $author ?>
+</p>
+<?php echo $text ?>
+<!-- feed entry end -->
+<?php
+}
