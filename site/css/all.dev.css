@@ -452,12 +452,12 @@
     z-index: 100;
     float: left;
     clear: left;
-    margin-top: -21.923em;
+    margin-top: 2em;
     margin-bottom: 5.385em;
     width: 66.737%;
   }
 
-  #sidecontent, #associations, #userinfo {
+  #sidecontent, #userinfo {
     margin-left: 66.737%;
     padding-left: 2.308em;
     width: auto;

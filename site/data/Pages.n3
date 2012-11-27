@@ -1,0 +1,69 @@
+@prefix : <http://geoknow.eu/> .
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
+@prefix content: <http://purl.org/rss/1.0/modules/content/>.
+@prefix data: <http://geoknow.eu/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix lod2: <http://lod2.eu/schema/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix people: <http://aksw.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc: <http://rdfs.org/sioc/ns#>.
+@prefix sioct: <http://rdfs.org/sioc/types#>.
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix v:  <http://www.w3.org/2006/vcard/ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+# navigation resources and external pages
+<http://geoknow.eu/Navigation/Main> a site:Navigation;
+    rdf:_1 :About;
+    rdfs:label "Main Navigation".
+
+<http://geoknow.eu/Navigation/Top> a site:Navigation;
+    rdf:_1 :Contact;
+    rdf:_2 :Imprint;
+    rdfs:label "Top Navigation".
+
+# page resources
+:NotFound a foaf:Document;
+    site:content """
+#Resource not found
+
+Either the resource you are trying to reach is not available anymore on this server, or you have tried to access a 'dead' link.
+"""^^sysont:Markdown;
+    rdfs:label "404".
+
+:Contact a foaf:Document;
+    site:content """
+...
+"""^^sysont:Markdown;
+    rdfs:label "Contact".
+
+:Imprint a foaf:Document;
+    site:content """
+...
+"""^^sysont:Markdown;
+    rdfs:label "Imprint".
+
+:About a foaf:Document;
+    site:content """
+Making the Web an Exploratory for Geospatial Knowledge
+
+GeoKnow addresses a bold challenge in the area of intelligent information management: the exploitation of the Web as a platform for geospatial knowledge integration as well as for exploration of geographic information.
+
+* Partners: 
+* Duration: 2012–2015
+* Funding Programme: FP7-ICT-2011–8 (Collaborative Project - STReP)
+"""^^sysont:Markdown;
+    rdfs:label "GeoKnow";
+    site:menuLabel "About".
+
