@@ -3,10 +3,10 @@ ZENDVERSION=1.11.5
 default:
 	@echo "Typical targets your could want to reach:"
 	@echo ""
-	@echo "-->   make deploy ............... Install OntoWiki <-- in doubt, use this"
+	@echo "-->   make deploy ............... Install GeoKnow Site <-- in doubt, use this"
 	@echo "                                  (use this for server installations)"
 	@echo ""
-	@echo "      make install .............. Install OntoWiki for developer"
+	@echo "      make install .............. Install GeoKnow Site for developer"
 	@echo "                                  (you will need github access and ssh for this)"
 	@echo ""
 	@echo "      make help ................. Show more (developer related) make targets"
@@ -77,24 +77,41 @@ help-test:
 	@echo "  test-integration-mysql-cc .... Same as above plus code coverage report"
 	@echo "  test-extensions .............. Run tests for extensions"
 
-custom:
+custom: custom-clean custom-submodules custom-link
+
+custom-develop: custom-clean custom-submodules-develop custom-link
+
+custom-clean:
 	rm -rf extensions/feeds
-	@echo 'Cloning extensions/feeds'
-	git clone git://github.com/AKSW/feeds.ontowiki.git extensions/feeds
 	rm -rf extensions/ipc
-	@echo 'Cloning extensions/ipc'
-	git clone git://github.com/AKSW/ipc.ontowiki.git extensions/ipc -b ontowiki
 	rm -rf extensions/site
-	@echo 'Cloning extensions/site.'
-	git clone git://github.com/AKSW/site.ontowiki.git extensions/site
 	rm -f extensions/site/sites/local
+
+custom-submodules:
+	git submodule init
+	git config submodule.extensions/feeds.url "git://github.com/AKSW/feeds.ontowiki.git"
+	git config submodule.extensions/ipc.url "git://github.com/AKSW/ipc.ontowiki.git"
+	git config submodule.extensions/site.url "git://github.com/AKSW/site.ontowiki.git"
+	git submodule update
+
+custom-submodules-develop:
+	git submodule init
+	git config submodule.extensions/feeds.url "git@github.com:AKSW/feeds.ontowiki.git"
+	git config submodule.extensions/ipc.url "git@github.com:AKSW/ipc.ontowiki.git"
+	git config submodule.extensions/site.url "git@github.com:AKSW/site.ontowiki.git"
+	git submodule update
+
+custom-link:
 	cd extensions/site/sites/ && ln -s ../../../site local
 
 # top level target
 
-deploy: directories clean zend submodules
+deploy: directories clean zend submodules custom
 
-install: directories libraries
+install: directories libraries custom-develop
+
+symlink:
+	ln -s site/ extensions/site/sites/local
 
 vagrant: directories clean submodules-developer
 	rm -rf libraries/Zend # vagrant has own zend
@@ -122,18 +139,12 @@ submodules: # read-only
 	git submodule init
 	git config submodule.libraries/Erfurt.url "git://github.com/AKSW/Erfurt.git"
 	git config submodule.libraries/RDFauthor.url "git://github.com/AKSW/RDFauthor.git"
-	git config submodule.extensions/feeds.url "git://github.com/AKSW/feeds.ontowiki.git"
-	git config submodule.extensions/ipc.url "git://github.com/AKSW/ipc.ontowiki.git"
-	git config submodule.extensions/site.url "git://github.com/AKSW/site.ontowiki.git"
 	git submodule update
 
 submodules-developer: # read-write
 	git submodule init
 	git config submodule.libraries/Erfurt.url "git@github.com:AKSW/Erfurt.git"
 	git config submodule.libraries/RDFauthor.url "git@github.com:AKSW/RDFauthor.git"
-	git config submodule.extensions/feeds.url "git@github.com:AKSW/feeds.ontowiki.git"
-	git config submodule.extensions/ipc.url "git@github.com:AKSW/ipc.ontowiki.git"
-	git config submodule.extensions/site.url "git@github.com:AKSW/site.ontowiki.git"
 	git submodule update
 
 # developer targets
