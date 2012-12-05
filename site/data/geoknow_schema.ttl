@@ -307,7 +307,7 @@ A milestone, by definition, has duration of zero and no effort. There is no work
 
 :activity a rdf:Property;
 	rdfs:label "Type of Activity"@en;
-	rdfs:domain :Workpackage;
+	rdfs:domain WorkPackage;
 	rdfs:range :Activity.
 
 :Activity
