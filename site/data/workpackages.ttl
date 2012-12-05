@@ -9,7 +9,7 @@
 @prefix dbo: <http://dbpedia.org/ontology/> .
 
 :wp1
-	a :Workpackage;
+	a :WorkPackage;
 	rdfs:label "Requirements, Design, Benchmarking, Component Integration"@en;
 	:startMonth "1"^^xsd:nonNegativeInteger;
 	:endMonth "36"^^xsd:nonNegativeInteger;
@@ -20,7 +20,7 @@
 	:workpackageNumber "1"^^xsd:nonNegativeInteger.
 
 :wp2
-	a :Workpackage;
+	a :WorkPackage;
 	rdfs:label "Semantics based geospatial data management"@en;
 	:startMonth "1"^^xsd:nonNegativeInteger;
 	:endMonth "35"^^xsd:nonNegativeInteger;
@@ -31,7 +31,7 @@
 	:activity :RTD;
 	:workpackageNumber "2"^^xsd:nonNegativeInteger.
 :wp3
-	a :Workpackage;
+	a :WorkPackage;
 	rdfs:label "Spatial knowledge aggregation, fusing & quality assessment"@en;
 	:startMonth "2"^^xsd:nonNegativeInteger;
 	:endMonth "34"^^xsd:nonNegativeInteger;
@@ -42,7 +42,7 @@
 	:activity :RTD;
 	:workpackageNumber "3"^^xsd:nonNegativeInteger.
 :wp4
-	a :Workpackage;
+	a :WorkPackage;
 	rdfs:label "Spatial-semantic exploration, visualization, analysis & authoring"@en;
 	:startMonth "2"^^xsd:nonNegativeInteger;
 	:endMonth "34"^^xsd:nonNegativeInteger;
@@ -53,7 +53,7 @@
 	:activity :RTD;
 	:workpackageNumber "4"^^xsd:nonNegativeInteger.
 :wp5
-	a :Workpackage;
+	a :WorkPackage;
 	rdfs:label "Spatial Linked Data in the Supply Chain"@en;
 	:startMonth "3"^^xsd:nonNegativeInteger;
 	:endMonth "36"^^xsd:nonNegativeInteger;
@@ -64,7 +64,7 @@
 	:activity :RTD;
 	:workpackageNumber "5"^^xsd:nonNegativeInteger.
 :wp6
-	a :Workpackage;
+	a :WorkPackage;
 	rdfs:label "GeoKnow for E-Commerce"@en;
 	:startMonth "3"^^xsd:nonNegativeInteger;
 	:endMonth "36"^^xsd:nonNegativeInteger;
@@ -75,7 +75,7 @@
 	:activity :RTD;
 	:workpackageNumber "6"^^xsd:nonNegativeInteger.
 :wp7
-	a :Workpackage;
+	a :WorkPackage;
 	rdfs:label "Dissemination, community building, exploitation & standards"@en;
 	:startMonth "1"^^xsd:nonNegativeInteger;
 	:endMonth "36"^^xsd:nonNegativeInteger;
@@ -86,7 +86,7 @@
 	:activity :RTD;
 	:workpackageNumber "7"^^xsd:nonNegativeInteger.
 :wp8
-	a :Workpackage;
+	a :WorkPackage;
 	rdfs:label "Project Management"@en;
 	:startMonth "1"^^xsd:nonNegativeInteger;
 	:endMonth "36"^^xsd:nonNegativeInteger;
