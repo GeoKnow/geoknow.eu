@@ -2,97 +2,98 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <http://purl.org/research-fp#> .
+@prefix fp: <http://purl.org/research-fp#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dbpedia: <http://dbpedia.org/resource> .
 @prefix dbp: <http://dbpedia.org/property/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix gk: <http://geoknow.eu/resource/> .
 
-:wp1
-	a :WorkPackage;
+gk:wp1
+	a fp:WorkPackage;
 	rdfs:label "Requirements, Design, Benchmarking, Component Integration"@en;
-	:startMonth "1"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:next :wp2;
-	:personMonths "109"^^xsd:float;
-	:leadPartner :Ontos;
-	:activity :RTD;
-	:workpackageNumber "1"^^xsd:nonNegativeInteger.
+	fp:startMonth "1"^^xsd:nonNegativeInteger;
+	fp:endMonth "36"^^xsd:nonNegativeInteger;
+	fp:next gk:wp2;
+	fp:personMonths "109"^^xsd:float;
+	fp:leadPartner gk:Ontos;
+	fp:activity fp:RTD;
+	fp:workpackageNumber "1"^^xsd:nonNegativeInteger.
 
-:wp2
-	a :WorkPackage;
+gk:wp2
+	a fp:WorkPackage;
 	rdfs:label "Semantics based geospatial data management"@en;
-	:startMonth "1"^^xsd:nonNegativeInteger;
-	:endMonth "35"^^xsd:nonNegativeInteger;
-	:previous :wp1;
-	:next :wp3;
-	:personMonths "59"^^xsd:float;
-	:leadPartner :OpenLink;
-	:activity :RTD;
-	:workpackageNumber "2"^^xsd:nonNegativeInteger.
-:wp3
-	a :WorkPackage;
+	fp:startMonth "1"^^xsd:nonNegativeInteger;
+	fp:endMonth "35"^^xsd:nonNegativeInteger;
+	fp:previous gk:wp1;
+	fp:next gk:wp3;
+	fp:personMonths "59"^^xsd:float;
+	fp:leadPartner gk:OpenLink;
+	fp:activity fp:RTD;
+	fp:workpackageNumber "2"^^xsd:nonNegativeInteger.
+gk:wp3
+	a fp:WorkPackage;
 	rdfs:label "Spatial knowledge aggregation, fusing & quality assessment"@en;
-	:startMonth "2"^^xsd:nonNegativeInteger;
-	:endMonth "34"^^xsd:nonNegativeInteger;
-	:previous :wp2;
-	:next :wp4;
-	:personMonths "73"^^xsd:float;
-	:leadPartner :Athena;
-	:activity :RTD;
-	:workpackageNumber "3"^^xsd:nonNegativeInteger.
-:wp4
-	a :WorkPackage;
+	fp:startMonth "2"^^xsd:nonNegativeInteger;
+	fp:endMonth "34"^^xsd:nonNegativeInteger;
+	fp:previous gk:wp2;
+	fp:next gk:wp4;
+	fp:personMonths "73"^^xsd:float;
+	fp:leadPartner gk:Athena;
+	fp:activity fp:RTD;
+	fp:workpackageNumber "3"^^xsd:nonNegativeInteger.
+gk:wp4
+	a fp:WorkPackage;
 	rdfs:label "Spatial-semantic exploration, visualization, analysis & authoring"@en;
-	:startMonth "2"^^xsd:nonNegativeInteger;
-	:endMonth "34"^^xsd:nonNegativeInteger;
-	:previous :wp3;
-	:next :wp5;
-	:personMonths "67"^^xsd:float;
-	:leadPartner :InfAI;
-	:activity :RTD;
-	:workpackageNumber "4"^^xsd:nonNegativeInteger.
-:wp5
-	a :WorkPackage;
+	fp:startMonth "2"^^xsd:nonNegativeInteger;
+	fp:endMonth "34"^^xsd:nonNegativeInteger;
+	fp:previous gk:wp3;
+	fp:next gk:wp5;
+	fp:personMonths "67"^^xsd:float;
+	fp:leadPartner gk:InfAI;
+	fp:activity fp:RTD;
+	fp:workpackageNumber "4"^^xsd:nonNegativeInteger.
+gk:wp5
+	a fp:WorkPackage;
 	rdfs:label "Spatial Linked Data in the Supply Chain"@en;
-	:startMonth "3"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:previous :wp4;
-	:next :wp6;
-	:personMonths "59"^^xsd:float;
-	:leadPartner :BROX;
-	:activity :RTD;
-	:workpackageNumber "5"^^xsd:nonNegativeInteger.
-:wp6
-	a :WorkPackage;
+	fp:startMonth "3"^^xsd:nonNegativeInteger;
+	fp:endMonth "36"^^xsd:nonNegativeInteger;
+	fp:previous gk:wp4;
+	fp:next gk:wp6;
+	fp:personMonths "59"^^xsd:float;
+	fp:leadPartner gk:BROX;
+	fp:activity fp:RTD;
+	fp:workpackageNumber "5"^^xsd:nonNegativeInteger.
+gk:wp6
+	a fp:WorkPackage;
 	rdfs:label "GeoKnow for E-Commerce"@en;
-	:startMonth "3"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:previous :wp5;
-	:next :wp7;
-	:personMonths "76"^^xsd:float;
-	:leadPartner :Unister;
-	:activity :RTD;
-	:workpackageNumber "6"^^xsd:nonNegativeInteger.
-:wp7
-	a :WorkPackage;
+	fp:startMonth "3"^^xsd:nonNegativeInteger;
+	fp:endMonth "36"^^xsd:nonNegativeInteger;
+	fp:previous gk:wp5;
+	fp:next gk:wp7;
+	fp:personMonths "76"^^xsd:float;
+	fp:leadPartner gk:Unister;
+	fp:activity fp:RTD;
+	fp:workpackageNumber "6"^^xsd:nonNegativeInteger.
+gk:wp7
+	a fp:WorkPackage;
 	rdfs:label "Dissemination, community building, exploitation & standards"@en;
-	:startMonth "1"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:previous :wp6;
-	:next :wp8;
-	:personMonths "29"^^xsd:float;
-	:leadPartner :Ontos;
-	:activity :RTD;
-	:workpackageNumber "7"^^xsd:nonNegativeInteger.
-:wp8
-	a :WorkPackage;
+	fp:startMonth "1"^^xsd:nonNegativeInteger;
+	fp:endMonth "36"^^xsd:nonNegativeInteger;
+	fp:previous gk:wp6;
+	fp:next gk:wp8;
+	fp:personMonths "29"^^xsd:float;
+	fp:leadPartner gk:Ontos;
+	fp:activity fp:RTD;
+	fp:workpackageNumber "7"^^xsd:nonNegativeInteger.
+gk:wp8
+	a fp:WorkPackage;
 	rdfs:label "Project Management"@en;
-	:startMonth "1"^^xsd:nonNegativeInteger;
-	:endMonth "36"^^xsd:nonNegativeInteger;
-	:previous :wp7;
-	:next :wp9;
-	:personMonths "23"^^xsd:float;
-	:leadPartner :InfAI;
-	:activity :MGT;
-	:workpackageNumber "8"^^xsd:nonNegativeInteger.
+	fp:startMonth "1"^^xsd:nonNegativeInteger;
+	fp:endMonth "36"^^xsd:nonNegativeInteger;
+	fp:previous gk:wp7;
+	fp:next gk:wp9;
+	fp:personMonths "23"^^xsd:float;
+	fp:leadPartner gk:InfAI;
+	fp:activity fp:MGT;
+	fp:workpackageNumber "8"^^xsd:nonNegativeInteger.
