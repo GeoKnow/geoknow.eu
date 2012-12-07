@@ -7,6 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 import au.com.bytecode.opencsv.CSVReader;
 
+/**
+ * Converts the deliverables from a csv tables to RDF Turtle adhering to the research project ontology
+ * http://purl.org/research-fp#. Prefixes not included. Columns are expected to be [Del. No, Deliverable name, WP no., Nature, Diss. level, Delivery  date].
+ * Needs Java 7 (else you have to trivially rewrite the program by removing the try-with-resource). Output goes to standard out and standard err.
+ */
 public class Deliverables2Rdf
 {
 	static Map<String,String> deliverableMap = null;
@@ -45,7 +50,7 @@ public class Deliverables2Rdf
 					int workpackageNumber	= Integer.parseInt(deliverableIdentifier[0]);
 					int taskNumber			= Integer.parseInt(deliverableIdentifier[1]);
 					int deliverableNumber	= Integer.parseInt(deliverableIdentifier[2]);
-					String uri = ":D-"+workpackageNumber+'-'+taskNumber+'-'+deliverableNumber;
+					String uri = "gk:D-"+workpackageNumber+'-'+taskNumber+'-'+deliverableNumber;
 
 					String label = "\""+row[1].trim()+"\"@en";												
 					String nature = deliverableMap.get(row[3].trim());					
@@ -55,15 +60,15 @@ public class Deliverables2Rdf
 					
 					if(!first) {out.println();}
 					first=false;
-					out.println(uri+" a :Deliverable;");
+					out.println(uri+" a fp:Deliverable;");
 					printlnProperty(out,"rdfs:label",label,false);
-					printlnProperty(out,":deliverableIdentifier","\""+row[0].trim()+"\"",false);
+					printlnProperty(out,"fp:deliverableIdentifier","\""+row[0].trim()+"\"",false);
 //					printlnProperty(out,":workpackageNumber",workpackageNumber,false);
-					printlnProperty(out,":task",":Task"+workpackageNumber+"-"+taskNumber,false);
-					printlnProperty(out,":deliverableNature",nature,false);
-					printlnProperty(out,":deliverableNumber",deliverableNumber,false);
-					printlnProperty(out,":disseminationLevel",disseminationLevel,false);
-					printlnProperty(out,":deliveryDate",deliveryDate,true);
+					printlnProperty(out,"fp:task",":Task"+workpackageNumber+"-"+taskNumber,false);
+					printlnProperty(out,"fp:deliverableNature",nature,false);
+					printlnProperty(out,"fp:deliverableNumber",deliverableNumber,false);
+					printlnProperty(out,"fp:disseminationLevel",disseminationLevel,false);
+					printlnProperty(out,"fp:deliveryDate",deliveryDate,true);
 				} 
 				catch(Throwable t) {System.err.println("Error with line :"+Arrays.toString(row)+": "+t);continue;}
 			}			

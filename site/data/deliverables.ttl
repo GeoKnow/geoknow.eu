@@ -2,631 +2,630 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <http://purl.org/research-fp#> .
+@prefix fp: <http://purl.org/research-fp#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dbpedia: <http://dbpedia.org/resource> .
 @prefix dbp: <http://dbpedia.org/property/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix gk: <http://geoknow.eu/resource/>.
 
-:D-1-1-1 a :Deliverable;
+gk:D-1-1-1 a fp:Deliverable;
 	rdfs:label "Initial common requirements specification"@en;
-	:deliverableIdentifier "D1.1.1";
-	:task :Task1-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "4"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D1.1.1";
+	fp:task :Task1-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :CO;
+	fp:deliveryDate "4"^^xsd:nonNegativeInteger.
 
-:D-1-2-1 a :Deliverable;
+gk:D-1-2-1 a fp:Deliverable;
 	rdfs:label "Revised common requirements specification and GeoKnow architecture & system design"@en;
-	:deliverableIdentifier "D1.2.1";
-	:task :Task1-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D1.2.1";
+	fp:task :Task1-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "18"^^xsd:nonNegativeInteger.
 
-:D-1-3-1 a :Deliverable;
+gk:D-1-3-1 a fp:Deliverable;
 	rdfs:label "Design and Setup  of Benchmarking System"@en;
-	:deliverableIdentifier "D1.3.1";
-	:task :Task1-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "6"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D1.3.1";
+	fp:task :Task1-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :CO;
+	fp:deliveryDate "6"^^xsd:nonNegativeInteger.
 
-:D-1-3-2 a :Deliverable;
+gk:D-1-3-2 a fp:Deliverable;
 	rdfs:label "Continuous Report on Performance Evaluation"@en;
-	:deliverableIdentifier "D1.3.2";
-	:task :Task1-3;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D1.3.2";
+	fp:task :Task1-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "12"^^xsd:nonNegativeInteger.
 
-:D-1-3-3 a :Deliverable;
+gk:D-1-3-3 a fp:Deliverable;
 	rdfs:label "Continuous Report on Performance Evaluation"@en;
-	:deliverableIdentifier "D1.3.3";
-	:task :Task1-3;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D1.3.3";
+	fp:task :Task1-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "3"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "24"^^xsd:nonNegativeInteger.
 
-:D-1-3-4 a :Deliverable;
+gk:D-1-3-4 a fp:Deliverable;
 	rdfs:label "Continuous Report on Performance Evaluation"@en;
-	:deliverableIdentifier "D1.3.4";
-	:task :Task1-3;
-	:deliverableNature :Report;
-	:deliverableNumber "4"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D1.3.4";
+	fp:task :Task1-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "4"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "36"^^xsd:nonNegativeInteger.
 
-:D-1-4-1 a :Deliverable;
+gk:D-1-4-1 a fp:Deliverable;
 	rdfs:label "Initial prototype of the GeoKnow Generator"@en;
-	:deliverableIdentifier "D1.4.1";
-	:task :Task1-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D1.4.1";
+	fp:task :Task1-4;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :CO;
+	fp:deliveryDate "12"^^xsd:nonNegativeInteger.
 
-:D-1-4-2 a :Deliverable;
+gk:D-1-4-2 a fp:Deliverable;
 	rdfs:label "Intermediate release of the GeoKnow Generator"@en;
-	:deliverableIdentifier "D1.4.2";
-	:task :Task1-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D1.4.2";
+	fp:task :Task1-4;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "24"^^xsd:nonNegativeInteger.
 
-:D-1-4-3 a :Deliverable;
+gk:D-1-4-3 a fp:Deliverable;
 	rdfs:label "Final release of the GeoKnow Generator"@en;
-	:deliverableIdentifier "D1.4.3";
-	:task :Task1-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D1.4.3";
+	fp:task :Task1-4;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "3"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "36"^^xsd:nonNegativeInteger.
 
-:D-2-1-1 a :Deliverable;
+gk:D-2-1-1 a fp:Deliverable;
 	rdfs:label "Market and research overview"@en;
-	:deliverableIdentifier "D2.1.1";
-	:task :Task2-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "5"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D2.1.1";
+	fp:task :Task2-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "5"^^xsd:nonNegativeInteger.
 
-:D-2-2-1 a :Deliverable;
+gk:D-2-2-1 a fp:Deliverable;
 	rdfs:label "Integration of external geospatial databases"@en;
-	:deliverableIdentifier "D2.2.1";
-	:task :Task2-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "6"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D2.2.1";
+	fp:task :Task2-2;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "6"^^xsd:nonNegativeInteger.
 
-:D-2-3-1 a :Deliverable;
+gk:D-2-3-1 a fp:Deliverable;
 	rdfs:label "Prototype of built-in geospatial capabilities"@en;
-	:deliverableIdentifier "D2.3.1";
-	:task :Task2-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D2.3.1";
+	fp:task :Task2-3;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "12"^^xsd:nonNegativeInteger.
 
-:D-2-4-1 a :Deliverable;
+gk:D-2-4-1 a fp:Deliverable;
 	rdfs:label "Geospatial clustering"@en;
-	:deliverableIdentifier "D2.4.1";
-	:task :Task2-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D2.4.1";
+	fp:task :Task2-4;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "24"^^xsd:nonNegativeInteger.
 
-:D-2-5-1 a :Deliverable;
+gk:D-2-5-1 a fp:Deliverable;
 	rdfs:label "Distributed Geospatial Querying"@en;
-	:deliverableIdentifier "D2.5.1";
-	:task :Task2-5;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D2.5.1";
+	fp:task :Task2-5;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "30"^^xsd:nonNegativeInteger.
 
-:D-2-6-1 a :Deliverable;
+gk:D-2-6-1 a fp:Deliverable;
 	rdfs:label "Prototype of built-in complex geo problem solving"@en;
-	:deliverableIdentifier "D2.6.1";
-	:task :Task2-6;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D2.6.1";
+	fp:task :Task2-6;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "20"^^xsd:nonNegativeInteger.
 
-:D-2-7-1 a :Deliverable;
+gk:D-2-7-1 a fp:Deliverable;
 	rdfs:label "Geodata.gov.gr geospatial data as linked data"@en;
-	:deliverableIdentifier "D2.7.1";
-	:task :Task2-7;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D2.7.1";
+	fp:task :Task2-7;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "18"^^xsd:nonNegativeInteger.
 
-:D-3-1-1 a :Deliverable;
+gk:D-3-1-1 a fp:Deliverable;
 	rdfs:label "Development of first prototype for spatially interlinking data sets"@en;
-	:deliverableIdentifier "D3.1.1";
-	:task :Task3-1;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "9"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.1.1";
+	fp:task :Task3-1;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "9"^^xsd:nonNegativeInteger.
 
-:D-3-1-2 a :Deliverable;
+gk:D-3-1-2 a fp:Deliverable;
 	rdfs:label "System to integrate large scale data sets based on implicit spatial relations"@en;
-	:deliverableIdentifier "D3.1.2";
-	:task :Task3-1;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "21"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.1.2";
+	fp:task :Task3-1;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "21"^^xsd:nonNegativeInteger.
 
-:D-3-1-3 a :Deliverable;
+gk:D-3-1-3 a fp:Deliverable;
 	rdfs:label "Evaluation of spatial interlinking"@en;
-	:deliverableIdentifier "D3.1.3";
-	:task :Task3-1;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.1.3";
+	fp:task :Task3-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "3"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "30"^^xsd:nonNegativeInteger.
 
-:D-3-2-1 a :Deliverable;
+gk:D-3-2-1 a fp:Deliverable;
 	rdfs:label "Fusing of geographic features"@en;
-	:deliverableIdentifier "D3.2.1";
-	:task :Task3-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "11"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.2.1";
+	fp:task :Task3-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "11"^^xsd:nonNegativeInteger.
 
-:D-3-2-2 a :Deliverable;
+gk:D-3-2-2 a fp:Deliverable;
 	rdfs:label "Fusing of geospatial metadata"@en;
-	:deliverableIdentifier "D3.2.2";
-	:task :Task3-2;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "23"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.2.2";
+	fp:task :Task3-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "23"^^xsd:nonNegativeInteger.
 
-:D-3-2-3 a :Deliverable;
+gk:D-3-2-3 a fp:Deliverable;
 	rdfs:label "Fusing of geospatial relations"@en;
-	:deliverableIdentifier "D3.2.3";
-	:task :Task3-2;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "31"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.2.3";
+	fp:task :Task3-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "3"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "31"^^xsd:nonNegativeInteger.
 
-:D-3-3-1 a :Deliverable;
+gk:D-3-3-1 a fp:Deliverable;
 	rdfs:label "Prototype for spatial knowledge aggregation"@en;
-	:deliverableIdentifier "D3.3.1";
-	:task :Task3-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "17"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.3.1";
+	fp:task :Task3-3;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "17"^^xsd:nonNegativeInteger.
 
-:D-3-3-2 a :Deliverable;
+gk:D-3-3-2 a fp:Deliverable;
 	rdfs:label "Context sensitive spatial knowledge aggregation"@en;
-	:deliverableIdentifier "D3.3.2";
-	:task :Task3-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "28"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.3.2";
+	fp:task :Task3-3;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "28"^^xsd:nonNegativeInteger.
 
-:D-3-4-1 a :Deliverable;
+gk:D-3-4-1 a fp:Deliverable;
 	rdfs:label "Metrics for linked geospatial information"@en;
-	:deliverableIdentifier "D3.4.1";
-	:task :Task3-4;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.4.1";
+	fp:task :Task3-4;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "18"^^xsd:nonNegativeInteger.
 
-:D-3-4-2 a :Deliverable;
+gk:D-3-4-2 a fp:Deliverable;
 	rdfs:label "Comparison with other data sets"@en;
-	:deliverableIdentifier "D3.4.2";
-	:task :Task3-4;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "34"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.4.2";
+	fp:task :Task3-4;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "34"^^xsd:nonNegativeInteger.
 
-:D-3-5-1 a :Deliverable;
+gk:D-3-5-1 a fp:Deliverable;
 	rdfs:label "Initial report on spatial data quality assessment"@en;
-	:deliverableIdentifier "D3.5.1";
-	:task :Task3-5;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.5.1";
+	fp:task :Task3-5;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "20"^^xsd:nonNegativeInteger.
 
-:D-3-5-2 a :Deliverable;
+gk:D-3-5-2 a fp:Deliverable;
 	rdfs:label "Final report on spatial data quality assessment"@en;
-	:deliverableIdentifier "D3.5.2";
-	:task :Task3-5;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "32"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D3.5.2";
+	fp:task :Task3-5;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "32"^^xsd:nonNegativeInteger.
 
-:D-4-1-1 a :Deliverable;
+gk:D-4-1-1 a fp:Deliverable;
 	rdfs:label "Initial release spatial-semantic exploration component"@en;
-	:deliverableIdentifier "D4.1.1";
-	:task :Task4-1;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D4.1.1";
+	fp:task :Task4-1;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "12"^^xsd:nonNegativeInteger.
 
-:D-4-1-2 a :Deliverable;
+gk:D-4-1-2 a fp:Deliverable;
 	rdfs:label "Final release spatial-semantic exploration component"@en;
-	:deliverableIdentifier "D4.1.2";
-	:task :Task4-1;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "26"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D4.1.2";
+	fp:task :Task4-1;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "26"^^xsd:nonNegativeInteger.
 
-:D-4-2-1 a :Deliverable;
+gk:D-4-2-1 a fp:Deliverable;
 	rdfs:label "Spatial authoring widget set"@en;
-	:deliverableIdentifier "D4.2.1";
-	:task :Task4-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D4.2.1";
+	fp:task :Task4-2;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "20"^^xsd:nonNegativeInteger.
 
-:D-4-2-2 a :Deliverable;
+gk:D-4-2-2 a fp:Deliverable;
 	rdfs:label "Spatial curation interface"@en;
-	:deliverableIdentifier "D4.2.2";
-	:task :Task4-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D4.2.2";
+	fp:task :Task4-2;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "30"^^xsd:nonNegativeInteger.
 
-:D-4-3-1 a :Deliverable;
+gk:D-4-3-1 a fp:Deliverable;
 	rdfs:label "Concept for public-private Co-Evolution"@en;
-	:deliverableIdentifier "D4.3.1";
-	:task :Task4-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D4.3.1";
+	fp:task :Task4-3;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "20"^^xsd:nonNegativeInteger.
 
-:D-4-3-2 a :Deliverable;
+gk:D-4-3-2 a fp:Deliverable;
 	rdfs:label "Public-private Co-Evolution"@en;
-	:deliverableIdentifier "D4.3.2";
-	:task :Task4-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D4.3.2";
+	fp:task :Task4-3;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "30"^^xsd:nonNegativeInteger.
 
-:D-4-4-1 a :Deliverable;
+gk:D-4-4-1 a fp:Deliverable;
 	rdfs:label "Subscription and notification service"@en;
-	:deliverableIdentifier "D4.4.1";
-	:task :Task4-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D4.4.1";
+	fp:task :Task4-4;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "20"^^xsd:nonNegativeInteger.
 
-:D-4-4-2 a :Deliverable;
+gk:D-4-4-2 a fp:Deliverable;
 	rdfs:label "Open-social API for GeoKnow Generator"@en;
-	:deliverableIdentifier "D4.4.2";
-	:task :Task4-4;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "34"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D4.4.2";
+	fp:task :Task4-4;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "34"^^xsd:nonNegativeInteger.
 
-:D-5-1-1 a :Deliverable;
+gk:D-5-1-1 a fp:Deliverable;
 	rdfs:label "RDF representation of RFID information"@en;
-	:deliverableIdentifier "D5.1.1";
-	:task :Task5-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "9"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D5.1.1";
+	fp:task :Task5-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "9"^^xsd:nonNegativeInteger.
 
-:D-5-2-1 a :Deliverable;
+gk:D-5-2-1 a fp:Deliverable;
 	rdfs:label "Initial prototype of Supply Chain Geo Data Management infrastructure"@en;
-	:deliverableIdentifier "D5.2.1";
-	:task :Task5-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "15"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D5.2.1";
+	fp:task :Task5-2;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "15"^^xsd:nonNegativeInteger.
 
-:D-5-2-2 a :Deliverable;
+gk:D-5-2-2 a fp:Deliverable;
 	rdfs:label "Second prototype of Supply Chain Geo Data Management infrastructure"@en;
-	:deliverableIdentifier "D5.2.2";
-	:task :Task5-2;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "28"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D5.2.2";
+	fp:task :Task5-2;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "28"^^xsd:nonNegativeInteger.
 
-:D-5-3-1 a :Deliverable;
+gk:D-5-3-1 a fp:Deliverable;
 	rdfs:label "Release of the supply chain dashboard"@en;
-	:deliverableIdentifier "D5.3.1";
-	:task :Task5-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D5.3.1";
+	fp:task :Task5-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "30"^^xsd:nonNegativeInteger.
 
-:D-5-4-1 a :Deliverable;
+gk:D-5-4-1 a fp:Deliverable;
 	rdfs:label "GeoKnow Generator release for Data Web background knowledge provisioning"@en;
-	:deliverableIdentifier "D5.4.1";
-	:task :Task5-4;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D5.4.1";
+	fp:task :Task5-4;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "24"^^xsd:nonNegativeInteger.
 
-:D-6-1-1 a :Deliverable;
+gk:D-6-1-1 a fp:Deliverable;
 	rdfs:label "Report on customer data selection and retrieval"@en;
-	:deliverableIdentifier "D6.1.1";
-	:task :Task6-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "6"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D6.1.1";
+	fp:task :Task6-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "6"^^xsd:nonNegativeInteger.
 
-:D-6-1-2 a :Deliverable;
+gk:D-6-1-2 a fp:Deliverable;
 	rdfs:label "Report on customer data preparation and transformation for linked data usage"@en;
-	:deliverableIdentifier "D6.1.2";
-	:task :Task6-1;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D6.1.2";
+	fp:task :Task6-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "12"^^xsd:nonNegativeInteger.
 
-:D-6-2-1 a :Deliverable;
+gk:D-6-2-1 a fp:Deliverable;
 	rdfs:label "Integration component model for the E-Commerce use case"@en;
-	:deliverableIdentifier "D6.2.1";
-	:task :Task6-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D6.2.1";
+	fp:task :Task6-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "12"^^xsd:nonNegativeInteger.
 
-:D-6-3-1 a :Deliverable;
+gk:D-6-3-1 a fp:Deliverable;
 	rdfs:label "Design and specification of the Motive based Search Infrastructure"@en;
-	:deliverableIdentifier "D6.3.1";
-	:task :Task6-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D6.3.1";
+	fp:task :Task6-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "18"^^xsd:nonNegativeInteger.
 
-:D-6-3-2 a :Deliverable;
+gk:D-6-3-2 a fp:Deliverable;
 	rdfs:label "First Prototype of the Motive based Search Infrastructure"@en;
-	:deliverableIdentifier "D6.3.2";
-	:task :Task6-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D6.3.2";
+	fp:task :Task6-3;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :CO;
+	fp:deliveryDate "24"^^xsd:nonNegativeInteger.
 
-:D-6-3-3 a :Deliverable;
+gk:D-6-3-3 a fp:Deliverable;
 	rdfs:label "Final Prototype of the Motive based Search Infrastructure"@en;
-	:deliverableIdentifier "D6.3.3";
-	:task :Task6-3;
-	:deliverableNature :Prototype;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :CO;
-	:deliveryDate "33"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D6.3.3";
+	fp:task :Task6-3;
+	fp:deliverableNature :Prototype;
+	fp:deliverableNumber "3"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :CO;
+	fp:deliveryDate "33"^^xsd:nonNegativeInteger.
 
-:D-6-3-4 a :Deliverable;
+gk:D-6-3-4 a fp:Deliverable;
 	rdfs:label "Refinement of Motive based Search demonstrator and UI interfaces"@en;
-	:deliverableIdentifier "D6.3.4";
-	:task :Task6-3;
-	:deliverableNature :Report;
-	:deliverableNumber "4"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D6.3.4";
+	fp:task :Task6-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "4"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "36"^^xsd:nonNegativeInteger.
 
-:D-6-4-1 a :Deliverable;
+gk:D-6-4-1 a fp:Deliverable;
 	rdfs:label "Definition of component and usability test cases based on the requirements analysis"@en;
-	:deliverableIdentifier "D6.4.1";
-	:task :Task6-4;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D6.4.1";
+	fp:task :Task6-4;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "24"^^xsd:nonNegativeInteger.
 
-:D-6-4-2 a :Deliverable;
+gk:D-6-4-2 a fp:Deliverable;
 	rdfs:label "Evaluation of the prototype based on the test results"@en;
-	:deliverableIdentifier "D6.4.2";
-	:task :Task6-4;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D6.4.2";
+	fp:task :Task6-4;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "36"^^xsd:nonNegativeInteger.
 
-:D-7-1-1 a :Deliverable;
+gk:D-7-1-1 a fp:Deliverable;
 	rdfs:label "Project Fact Sheet and Press Release"@en;
-	:deliverableIdentifier "D7.1.1";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "1"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.1.1";
+	fp:task :Task7-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "1"^^xsd:nonNegativeInteger.
 
-:D-7-1-2 a :Deliverable;
+gk:D-7-1-2 a fp:Deliverable;
 	rdfs:label "Project Website"@en;
-	:deliverableIdentifier "D7.1.2";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "3"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.1.2";
+	fp:task :Task7-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "3"^^xsd:nonNegativeInteger.
 
-:D-7-1-3 a :Deliverable;
+gk:D-7-1-3 a fp:Deliverable;
 	rdfs:label "First dissemination report"@en;
-	:deliverableIdentifier "D7.1.3";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.1.3";
+	fp:task :Task7-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "3"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "12"^^xsd:nonNegativeInteger.
 
-:D-7-1-4 a :Deliverable;
+gk:D-7-1-4 a fp:Deliverable;
 	rdfs:label "Second dissemination report"@en;
-	:deliverableIdentifier "D7.1.4";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "4"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.1.4";
+	fp:task :Task7-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "4"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "24"^^xsd:nonNegativeInteger.
 
-:D-7-1-5 a :Deliverable;
+gk:D-7-1-5 a fp:Deliverable;
 	rdfs:label "GeoKnow Show Case"@en;
-	:deliverableIdentifier "D7.1.5";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "5"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "32"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.1.5";
+	fp:task :Task7-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "5"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "32"^^xsd:nonNegativeInteger.
 
-:D-7-1-6 a :Deliverable;
+gk:D-7-1-6 a fp:Deliverable;
 	rdfs:label "Third dissemination report"@en;
-	:deliverableIdentifier "D7.1.6";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "6"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.1.6";
+	fp:task :Task7-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "6"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "36"^^xsd:nonNegativeInteger.
 
-:D-7-1-7 a :Deliverable;
+gk:D-7-1-7 a fp:Deliverable;
 	rdfs:label "Final report"@en;
-	:deliverableIdentifier "D7.1.7";
-	:task :Task7-1;
-	:deliverableNature :Report;
-	:deliverableNumber "7"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.1.7";
+	fp:task :Task7-1;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "7"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "36"^^xsd:nonNegativeInteger.
 
-:D-7-2-1 a :Deliverable;
+gk:D-7-2-1 a fp:Deliverable;
 	rdfs:label "Exploitation plan"@en;
-	:deliverableIdentifier "D7.2.1";
-	:task :Task7-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.2.1";
+	fp:task :Task7-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "12"^^xsd:nonNegativeInteger.
 
-:D-7-2-2 a :Deliverable;
+gk:D-7-2-2 a fp:Deliverable;
 	rdfs:label "First exploitation report"@en;
-	:deliverableIdentifier "D7.2.2";
-	:task :Task7-2;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "20"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.2.2";
+	fp:task :Task7-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "20"^^xsd:nonNegativeInteger.
 
-:D-7-2-3 a :Deliverable;
+gk:D-7-2-3 a fp:Deliverable;
 	rdfs:label "Second exploitation report"@en;
-	:deliverableIdentifier "D7.2.3";
-	:task :Task7-2;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "28"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.2.3";
+	fp:task :Task7-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "3"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "28"^^xsd:nonNegativeInteger.
 
-:D-7-3-1 a :Deliverable;
+gk:D-7-3-1 a fp:Deliverable;
 	rdfs:label "First standardization report"@en;
-	:deliverableIdentifier "D7.3.1";
-	:task :Task7-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "8"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.3.1";
+	fp:task :Task7-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "8"^^xsd:nonNegativeInteger.
 
-:D-7-3-2 a :Deliverable;
+gk:D-7-3-2 a fp:Deliverable;
 	rdfs:label "Second standardization report"@en;
-	:deliverableIdentifier "D7.3.2";
-	:task :Task7-3;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "32"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D7.3.2";
+	fp:task :Task7-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "32"^^xsd:nonNegativeInteger.
 
-:D-8-2-1 a :Deliverable;
+gk:D-8-2-1 a fp:Deliverable;
 	rdfs:label "Intermediate project report"@en;
-	:deliverableIdentifier "D8.2.1";
-	:task :Task8-2;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "6"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D8.2.1";
+	fp:task :Task8-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "6"^^xsd:nonNegativeInteger.
 
-:D-8-2-2 a :Deliverable;
+gk:D-8-2-2 a fp:Deliverable;
 	rdfs:label "Intermediate project report"@en;
-	:deliverableIdentifier "D8.2.2";
-	:task :Task8-2;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "18"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D8.2.2";
+	fp:task :Task8-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "18"^^xsd:nonNegativeInteger.
 
-:D-8-2-3 a :Deliverable;
+gk:D-8-2-3 a fp:Deliverable;
 	rdfs:label "Intermediate project report"@en;
-	:deliverableIdentifier "D8.2.3";
-	:task :Task8-2;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "30"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D8.2.3";
+	fp:task :Task8-2;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "3"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "30"^^xsd:nonNegativeInteger.
 
-:D-8-3-1 a :Deliverable;
+gk:D-8-3-1 a fp:Deliverable;
 	rdfs:label "Yearly cost statement including yearly project report"@en;
-	:deliverableIdentifier "D8.3.1";
-	:task :Task8-3;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "12"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D8.3.1";
+	fp:task :Task8-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "12"^^xsd:nonNegativeInteger.
 
-:D-8-3-2 a :Deliverable;
+gk:D-8-3-2 a fp:Deliverable;
 	rdfs:label "Yearly cost statement including yearly project report"@en;
-	:deliverableIdentifier "D8.3.2";
-	:task :Task8-3;
-	:deliverableNature :Report;
-	:deliverableNumber "2"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "24"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D8.3.2";
+	fp:task :Task8-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "2"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "24"^^xsd:nonNegativeInteger.
 
-:D-8-3-3 a :Deliverable;
+gk:D-8-3-3 a fp:Deliverable;
 	rdfs:label "Yearly cost statement including yearly project report"@en;
-	:deliverableIdentifier "D8.3.3";
-	:task :Task8-3;
-	:deliverableNature :Report;
-	:deliverableNumber "3"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "36"^^xsd:nonNegativeInteger.
+	fp:deliverableIdentifier "D8.3.3";
+	fp:task :Task8-3;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "3"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "36"^^xsd:nonNegativeInteger.
 
-:D-8-4-1 a :Deliverable;
+gk:D-8-4-1 a fp:Deliverable;
 	rdfs:label "Online Collaboration Platform"@en;
-	:deliverableIdentifier "D8.4.1";
-	:task :Task8-4;
-	:deliverableNature :Report;
-	:deliverableNumber "1"^^xsd:nonNegativeInteger;
-	:disseminationLevel :PU;
-	:deliveryDate "1"^^xsd:nonNegativeInteger.
-
-
+	fp:deliverableIdentifier "D8.4.1";
+	fp:task :Task8-4;
+	fp:deliverableNature :Report;
+	fp:deliverableNumber "1"^^xsd:nonNegativeInteger;
+	fp:disseminationLevel :PU;
+	fp:deliveryDate "1"^^xsd:nonNegativeInteger.
