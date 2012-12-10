@@ -11,3 +11,11 @@ $abstract = $this->literal(array(
 ));
 
 ?>
+<header class="intro">
+    <h1><?php echo $this->title . $hookline ?></h1>
+    <?php echo $abstract ?>
+</header> <!-- /.intro -->
+<?php
+echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
+#echo $this->renderx(array('template' => 'local/items/publications.phtml'));
+
