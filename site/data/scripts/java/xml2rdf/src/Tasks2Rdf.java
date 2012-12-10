@@ -1,26 +1,27 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDFS;
 import com.hp.hpl.jena.vocabulary.XSD;
+
+/**
+ * Converts the tasks from a custom xml format (see the input file) RDF Turtle adhering to the research project ontology.
+ * http://purl.org/research-fp#. Prefixes not included.
+ */
 
 public class Tasks2Rdf
 {
@@ -29,8 +30,10 @@ public class Tasks2Rdf
 	public static void main(String[] args) throws XPathExpressionException, IOException
 	{
 		Model model = ModelFactory.createMemModelMaker().createDefaultModel();
-		String prefix = "http://purl.org/research-fp#";
-		model.setNsPrefix("",prefix);
+		String fp = "http://purl.org/research-fp#";
+		String gk = "http://geoknow.eu/resource/";
+		model.setNsPrefix("fp",fp);
+		model.setNsPrefix("gk",gk);
 		model.setNsPrefix("rdfs",RDFS.getURI());
 		model.setNsPrefix("xsd",XSD.getURI());
 		
@@ -39,12 +42,12 @@ public class Tasks2Rdf
 		XPathFactory xpf = XPathFactory.newInstance();
 		InputSource is = new InputSource(new FileReader(f));
 		NodeList tasks = (NodeList) xpf.newXPath().evaluate("/tasks/task", is, XPathConstants.NODESET);
-		Property partnerProperty = model.createProperty(prefix, "partner");
-		Property leadPartnerProperty = model.createProperty(prefix, "leadPartner");
-		Property workpackageProperty = model.createProperty(prefix, "workpackage");
-		Property taskNumberProperty = model.createProperty(prefix, "taskNumber");
-		Property previousProperty = model.createProperty(prefix, "previous");
-		Property nextProperty = model.createProperty(prefix, "next");
+		Property partnerProperty = model.createProperty(fp, "partner");
+		Property leadPartnerProperty = model.createProperty(fp, "leadPartner");
+		Property workpackageProperty = model.createProperty(fp, "workpackage");
+		Property taskNumberProperty = model.createProperty(fp, "taskNumber");
+		Property previousProperty = model.createProperty(fp, "previous");
+		Property nextProperty = model.createProperty(fp, "next");
 		
 		for (int i = 0; i < tasks.getLength(); ++i)
 		{
@@ -52,9 +55,9 @@ public class Tasks2Rdf
 			int workpackageNumber = Integer.valueOf(task.getElementsByTagName("workpackageNumber").item(0).getFirstChild().getNodeValue());
 			int taskNumber = Integer.valueOf(task.getElementsByTagName("taskNumber").item(0).getFirstChild().getNodeValue());
 			
-			Resource jenaTask = model.createResource(prefix+"Task"+workpackageNumber+'-'+taskNumber);
+			Resource jenaTask = model.createResource(fp+"Task"+workpackageNumber+'-'+taskNumber);
 						
-			jenaTask.addProperty(workpackageProperty, model.createResource(prefix+"wp"+workpackageNumber));
+			jenaTask.addProperty(workpackageProperty, model.createResource(fp+"wp"+workpackageNumber));
 			jenaTask.addLiteral(taskNumberProperty,model.createTypedLiteral(taskNumber,XSD.nonNegativeInteger.getURI()));
 			
 			// title as rdfs:label
@@ -65,7 +68,7 @@ public class Tasks2Rdf
 			// previous and next links
 			if(taskNumber>1)
 			{
-				Resource previousTask = model.createResource(prefix+"Task"+workpackageNumber+'-'+(taskNumber-1));
+				Resource previousTask = model.createResource(fp+"Task"+workpackageNumber+'-'+(taskNumber-1));
 				previousTask.addProperty(nextProperty,jenaTask);
 				jenaTask.addProperty(previousProperty,previousTask);
 			}
@@ -89,15 +92,15 @@ public class Tasks2Rdf
 				taskPartnerNames.addAll(partnerNames);			// ...but they are still marked as partner even though leadPartner is a subProperty of partner because of the ease of doing SPARQL queries with it
 			}
 			
-			for(String partnerName : taskPartnerNames)		{jenaTask.addProperty(partnerProperty, model.createResource(prefix+partnerName));}
-			for(String partnerName : taskLeadPartnerNames)	{jenaTask.addProperty(leadPartnerProperty, model.createResource(prefix+partnerName));}
+			for(String partnerName : taskPartnerNames)		{jenaTask.addProperty(partnerProperty, model.createResource(gk+partnerName));}
+			for(String partnerName : taskLeadPartnerNames)	{jenaTask.addProperty(leadPartnerProperty, model.createResource(gk+partnerName));}
 
 //			jenaTask.addLiteral(partnerProperty, model.createResource(prefix+""));
 			
 //			System.out.println(task.getNodeName() + " -> " + task.getTextContent());
 		}
 		
-		model.write(new FileWriter(new File("../../../tasks.ttl")),"TURTLE",prefix);
+		model.write(new FileWriter(new File("../../../tasks.ttl")),"TURTLE",gk);
 //		for(String name : partnerNames) System.out.print("\""+name+"\",");
 	}
 

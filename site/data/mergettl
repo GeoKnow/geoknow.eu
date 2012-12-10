@@ -1,6 +1,6 @@
 #!/bin/bash
-# merges the geoknow scheme with the instance data
+# merges the geoknow instance data files
 grep -v "@prefix" workpackages.ttl > /tmp/workpackages_np.ttl
 grep -v "@prefix" tasks.ttl > /tmp/tasks_np.ttl
 grep -v "@prefix" deliverables.ttl > /tmp/deliverables_np.ttl
-cat geoknow_schema.ttl /tmp/workpackages_np.ttl /tmp/tasks_np.ttl /tmp/deliverables_np.ttl > geoknow_merged.ttl
+cat geoknow_prefixes.ttl /tmp/workpackages_np.ttl /tmp/tasks_np.ttl /tmp/deliverables_np.ttl > geoknow_all_instances.ttl
