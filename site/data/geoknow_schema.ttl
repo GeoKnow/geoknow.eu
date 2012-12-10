@@ -800,11 +800,8 @@ Project means all the work as referred in Annex I to the contract."""@en;
         owl:onProperty :isWorkloadOnWorkPackage
     ] .
 
-:Organization 
+foaf:Organization 
     a owl:Class ;
-    rdfs:subClassOf foaf:Organization;
-    rdfs:comment "An organization that participates in a research project."@en;
-    rdfs:label "Participant"@en;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:minCardinality "1"^^xsd:nonNegativeInteger ;

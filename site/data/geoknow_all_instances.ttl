@@ -27,37 +27,37 @@ GeoKnow will substantially contribute to the evolution of the Web from a medium 
 	dbp:abbreviation "GeoKnow".
 
 gk:InfAI
-	a fp:Organization;
+	a foaf:Organization;
 	rdfs:label "University of Leipzig, Institute of Applied Computer Science."@en;
 	dbp:abbreviation "InAI";
 	foaf:homepage <http://infai.org>;
 	dbo:country dbpedia:Germany.
 gk:ATH
-	a fp:Organization;
+	a foaf:Organization;
 	rdfs:label "Athena Research and Innovation Center."@en;
 	dbp:abbreviation "ATH";
 	foaf:homepage <http://www.athena-innovation.gr>;
 	dbo:country dbpedia:Greece.
 gk:OpenLink
-	a fp:Organization;
+	a foaf:Organization;
 	rdfs:label "OpenLink Software Ltd."@en;
 	dbp:abbreviation "OpenLink";
 	foaf:homepage <http://www.openlinksw.com>;
 	dbo:country dbpedia:United_Kingdom.
 gk:Ontos
-	a fp:Organization;
+	a foaf:Organization;
 	rdfs:label "Ontos AG"@en;
 	dbp:abbreviation "Ontos";
 	foaf:homepage <http://www.ontos.com>;
 	dbo:country dbpedia:Switzerland.
 gk:Unister
-	a fp:Organization;
+	a foaf:Organization;
 	rdfs:label "Unister AG"@en;
 	dbp:abbreviation "Unister";
 	foaf:homepage <http://www.unister.de>;
 	dbo:country dbpedia:Germany.
 gk:FIN
-	a fp:Organization;
+	a foaf:Organization;
 	rdfs:label "FishBase Information and Research Group, Inc."@en;
 	dbp:abbreviation "FIN";
 	foaf:homepage <http://www.fin.ph>;
@@ -65,7 +65,7 @@ gk:FIN
 
 
 gk:brox
-	a fp:Organization;
+	a foaf:Organization;
 	rdfs:label "brox IT-Solutions GmbH"@en;
 	dbp:abbreviation "FIN";
 	foaf:homepage <http://www.fin.ph>;
