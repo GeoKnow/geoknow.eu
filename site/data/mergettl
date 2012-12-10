@@ -3,4 +3,5 @@
 grep -v "@prefix" workpackages.ttl > /tmp/workpackages_np.ttl
 grep -v "@prefix" tasks.ttl > /tmp/tasks_np.ttl
 grep -v "@prefix" deliverables.ttl > /tmp/deliverables_np.ttl
-cat geoknow_prefixes.ttl /tmp/workpackages_np.ttl /tmp/tasks_np.ttl /tmp/deliverables_np.ttl > geoknow_all_instances.ttl
+grep -v "@prefix" geoknow.ttl > /tmp/geoknow_np.ttl
+cat geoknow_prefixes.ttl /tmp/geoknow_np.ttl /tmp/workpackages_np.ttl /tmp/tasks_np.ttl /tmp/deliverables_np.ttl > geoknow_all_instances.ttl
