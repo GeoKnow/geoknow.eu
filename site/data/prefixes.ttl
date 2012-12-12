@@ -7,4 +7,4 @@
 @prefix dbpedia: <http://dbpedia.org/resource> .
 @prefix dbp: <http://dbpedia.org/property/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
-@prefix gk: <http://geoknow.eu/resource/>.
+@prefix gk: <http://geoknow.eu/>.
