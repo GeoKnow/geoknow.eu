@@ -48,15 +48,16 @@ public class Tasks2Rdf
 		Property taskNumberProperty = model.createProperty(fp, "taskNumber");
 		Property previousProperty = model.createProperty(fp, "previous");
 		Property nextProperty = model.createProperty(fp, "next");
+		Property identifier = model.createProperty(gk, "identifier");
 		
 		for (int i = 0; i < tasks.getLength(); ++i)
 		{
 			Element task = (Element) tasks.item(i);						
 			int workpackageNumber = Integer.valueOf(task.getElementsByTagName("workpackageNumber").item(0).getFirstChild().getNodeValue());
-			int taskNumber = Integer.valueOf(task.getElementsByTagName("taskNumber").item(0).getFirstChild().getNodeValue());
-			
-			Resource jenaTask = model.createResource(fp+"Task"+workpackageNumber+'-'+taskNumber);
+			int taskNumber = Integer.valueOf(task.getElementsByTagName("taskNumber").item(0).getFirstChild().getNodeValue());			
+			Resource jenaTask = model.createResource(gk+"Task"+workpackageNumber+'-'+taskNumber);
 						
+			jenaTask.addProperty(identifier, model.createLiteral("T"+workpackageNumber+'-'+taskNumber));
 			jenaTask.addProperty(workpackageProperty, model.createResource(fp+"wp"+workpackageNumber));
 			jenaTask.addLiteral(taskNumberProperty,model.createTypedLiteral(taskNumber,XSD.nonNegativeInteger.getURI()));
 			
