@@ -57,7 +57,7 @@ public class Tasks2Rdf
 			int taskNumber = Integer.valueOf(task.getElementsByTagName("taskNumber").item(0).getFirstChild().getNodeValue());			
 			Resource jenaTask = model.createResource(gk+"Task"+workpackageNumber+'-'+taskNumber);
 						
-			jenaTask.addProperty(identifier, model.createLiteral("T"+workpackageNumber+'-'+taskNumber));
+			jenaTask.addProperty(identifier, model.createLiteral("T"+workpackageNumber+'.'+taskNumber));
 			jenaTask.addProperty(workpackageProperty, model.createResource(fp+"wp"+workpackageNumber));
 			jenaTask.addLiteral(taskNumberProperty,model.createTypedLiteral(taskNumber,XSD.nonNegativeInteger.getURI()));
 			
