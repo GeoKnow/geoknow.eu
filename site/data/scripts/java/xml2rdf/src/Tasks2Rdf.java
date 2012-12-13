@@ -31,7 +31,7 @@ public class Tasks2Rdf
 	{
 		Model model = ModelFactory.createMemModelMaker().createDefaultModel();
 		String fp = "http://purl.org/research-fp#";
-		String gk = "http://geoknow.eu/resource/";
+		String gk = "http://geoknow.eu/";
 		model.setNsPrefix("fp",fp);
 		model.setNsPrefix("gk",gk);
 		model.setNsPrefix("rdfs",RDFS.getURI());
