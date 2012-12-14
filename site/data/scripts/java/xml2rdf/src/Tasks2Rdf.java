@@ -15,6 +15,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
 import com.hp.hpl.jena.vocabulary.XSD;
 
@@ -64,7 +65,7 @@ public class Tasks2Rdf
 			// title as rdfs:label
 			jenaTask.addLiteral(RDFS.label,model.createLiteral(task.getElementsByTagName("title").item(0).getFirstChild().getNodeValue().trim(),"en"));
 			// description as rdfs:comment
-			jenaTask.addLiteral(RDFS.comment, model.createLiteral(task.getElementsByTagName("description").item(0).getFirstChild().getNodeValue().trim(),"en"));
+			jenaTask.addLiteral(DCTerms.description, model.createLiteral(task.getElementsByTagName("description").item(0).getFirstChild().getNodeValue().trim(),"en"));
 
 			// previous and next links
 			if(taskNumber>1)
