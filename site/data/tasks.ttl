@@ -11,7 +11,7 @@ gk:Task8-6
       fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
       fp:previous fp:Task8-5 ;
       fp:taskNumber "6"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp8 .
+      fp:workpackage gk:wp8 .
 
 gk:Task1-2
       rdfs:comment """This task is devoted to specifying the GeoKnow architecture and the detailed design of the GeoKnow Generator. Scalability, extensibility and flexibility shall be achieved by employing Service Oriented Knowledge Utilities (SOKU)1 in order to develop next generation GKS.2 Components of the system will be building blocks developed in individual work packages WP2-4, such as the semantics based geo-spatial information management subsystem (WP2), spatial knowledge fusing and integration methods (WP3), the development of user interfaces for spatial-semantic browsing and authoring (WP4). The developed components will be integrated within this task. While the common technical requirements will be one major input for the system design, other major sources will be the developed use cases and end user requirements as well as interoperability standards.
@@ -21,7 +21,7 @@ The system design defines clear interfaces between the individual components. It
       fp:partner gk:Unister , gk:ATH , gk:Ontos , gk:InfAI ;
       fp:previous fp:Task1-1 ;
       fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp1 .
+      fp:workpackage gk:wp1 .
 
 gk:Task3-3
       rdfs:comment """Community efforts live from the enthusiasm of volunteers. Too strict regulations of the type of content contributed to the effort would be counterproductive. While it helps new contributors to guide with suggestions for categories to be instantiated on a map more experienced users will want to add new categories at their wish. 
@@ -33,7 +33,7 @@ investigate in a community driven consolidation process. Since we are aware that
       fp:partner gk:ATH , gk:InfAI ;
       fp:previous fp:Task3-2 ;
       fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp3 .
+      fp:workpackage gk:wp3 .
 
 fp:Task3-1
       fp:next gk:Task3-2 .
@@ -48,7 +48,7 @@ The major outcome of this work package will be the GeoKnow Exploitation Plan, wh
       fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:Athena , gk:BROX , gk:InfAI , gk:Openlink ;
       fp:previous fp:Task7-1 ;
       fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp7 .
+      fp:workpackage gk:wp7 .
 
 fp:Task5-2
       fp:next gk:Task5-3 .
@@ -63,7 +63,7 @@ The components’ usability will be evaluated in the context of their integratio
       gk:identifier "T4.1" ;
       fp:partner gk:InfAI ;
       fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp4 .
+      fp:workpackage gk:wp4 .
 
 fp:Task7-1
       fp:next gk:Task7-2 .
@@ -75,7 +75,7 @@ gk:Task5-4
       fp:partner gk:ATH , gk:BROX ;
       fp:previous fp:Task5-3 ;
       fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp5 .
+      fp:workpackage gk:wp5 .
 
 gk:Task8-1
       rdfs:comment "Monitoring the application of the Consortium Agreement and the compliance of all partners with the regulations put forth in it. Planning of consortium meetings according to the projects’ work plan and EC guideline."@en ;
@@ -83,7 +83,7 @@ gk:Task8-1
       gk:identifier "T8.1" ;
       fp:partner gk:InfAI ;
       fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp8 .
+      fp:workpackage gk:wp8 .
 
 fp:Task4-3
       fp:next gk:Task4-4 .
@@ -95,7 +95,7 @@ gk:Task6-2
       fp:partner gk:Unister , gk:ATH ;
       fp:previous fp:Task6-1 ;
       fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp6 .
+      fp:workpackage gk:wp6 .
 
 fp:Task8-4
       fp:next gk:Task8-5 .
@@ -107,7 +107,7 @@ gk:Task8-5
       fp:partner gk:InfAI ;
       fp:previous fp:Task8-4 ;
       fp:taskNumber "5"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp8 .
+      fp:workpackage gk:wp8 .
 
 gk:Task2-3
       rdfs:comment "This task implements query optimization based on deep sampling with geospatial predicates. As a query plan is being constructed by the optimizer, it is evaluated on a randomly sampled subset of the data, thus detecting selectivity of joins with real data instead of precomputed statistics. This is robust in the face of data correlations, whereas reliance on precomputed statistics assumes independence of attributes, which is rarely the case. The task applies these methods specially to ordering of geospatial joins and to join order decisions involving spatial and non-spatial criteria."@en ;
@@ -116,7 +116,7 @@ gk:Task2-3
       fp:partner gk:OpenLink , gk:Athena ;
       fp:previous fp:Task2-2 ;
       fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp2 .
+      fp:workpackage gk:wp2 .
 
 gk:Task1-1
       rdfs:comment """The goal of task 1.1 is to collect end user requirements from the application areas, and to specify the use cases for GeoKnow. The end users involved in the project (Unister, BROX) will heavily contribute to this task, as well as all other project partners. Further, current user communities (both end users and technology users) of Schnellecke, OpenStreetMap and geodata.gov.gr will be involved. Combined, these platforms provide access to millions of users with diverse (a) expertise (e.g. researchers, students. SMEs, citizens), (b) thematic areas (e.g. natural sciences, transport, statistics), and technology needs (e.g. data consumers, web services integration).
@@ -126,7 +126,7 @@ The requirements will be monitored throughout the lifetime of the project, and i
       gk:identifier "T1.1" ;
       fp:partner gk:Unister , gk:Ontos , gk:BROX , gk:InfAI ;
       fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp1 .
+      fp:workpackage gk:wp1 .
 
 gk:Task3-4
       rdfs:comment """Community provided information can surpass the level of detail found in official and commercial maps. The first regions where community maps will show a higher level of detail might be countries for which official maps were the base data which was later refined by the community. In this task, we will develop metrics for volunteered geospatial information. The goal is to compare different maps and different regions of a map represented in the RDF data model. In particular we aim at developing metrics for the
@@ -139,7 +139,7 @@ timeliness of data, e.g. measure how recent the covered information is."""@en ;
       fp:partner gk:InfAI ;
       fp:previous fp:Task3-3 ;
       fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp3 .
+      fp:workpackage gk:wp3 .
 
 gk:Task7-1
       rdfs:comment """The first focus of WP7 is the dissemination of the project results supported by community building and cross-fertilisation activities.
@@ -157,7 +157,7 @@ Additionally, we plan to promote cross-fertilisation through inter-disciplinary 
       fp:leadPartner gk:Ontos ;
       fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:Athena , gk:BROX , gk:InfAI , gk:Openlink ;
       fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp7 .
+      fp:workpackage gk:wp7 .
 
 fp:Task3-2
       fp:next gk:Task3-3 .
@@ -173,7 +173,7 @@ All presentation materials for which this appropriate shall be published on the 
       fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
       fp:previous fp:Task7-4 ;
       fp:taskNumber "5"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp7 .
+      fp:workpackage gk:wp7 .
 
 fp:Task2-1
       fp:next gk:Task2-2 .
@@ -191,7 +191,7 @@ gk:Task5-3
       fp:partner gk:BROX , gk:InfAI ;
       fp:previous fp:Task5-2 ;
       fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp5 .
+      fp:workpackage gk:wp5 .
 
 gk:Task6-4
       rdfs:comment "In Task 6.4, we will define and conduct a use case scenario based on testing procedures to validate motive-centered queries. We will setup concrete test cases based on example intelligence queries based on the scenario. After execution of these test cases, we evaluate the respective test results by means of quality and quantity measures to check the correctness, completeness and performance of the developed prototype. Additionally, we will conduct usability tests for the developed search concepts described in deliverable D6.3.2. The tests will be integrated in the current web portal environment, in particular ab-in-den-urlaub.de (smaller German use case) and later on travel24.com (larger international use case). The test users are common customers. They should have already indicated (by the origin Google search or after giving textual input) that they would benefit from motive-based search in the field of application limited by the current features of the prototype. Using A/B testing this user segment will get answers to their queries by the current implementation or by the new search process. About 2-3% of the users will be used for this bucket test. The aim of those tests will be to evaluate whether Unister can benefit from motive based search and spatial data integration. The following metrics will be applied: conversion rate, transaction volume, time to PoS, etc. It is assumed that 1.000 customers per test will lead to a profound result."@en ;
@@ -200,7 +200,7 @@ gk:Task6-4
       fp:partner gk:Unister , gk:Ontos ;
       fp:previous fp:Task6-3 ;
       fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp6 .
+      fp:workpackage gk:wp6 .
 
 fp:Task7-2
       fp:next gk:Task7-3 .
@@ -213,7 +213,7 @@ The current state of the art is focused on querying data statically. Only by usi
       fp:partner gk:Unister , gk:OpenLink ;
       fp:previous fp:Task6-2 ;
       fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp6 .
+      fp:workpackage gk:wp6 .
 
 fp:Task4-2
       fp:next gk:Task4-3 .
@@ -232,7 +232,7 @@ gk:Task8-4
       fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
       fp:previous fp:Task8-3 ;
       fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp8 .
+      fp:workpackage gk:wp8 .
 
 gk:Task2-2
       rdfs:comment "This task implements ETL flows for importing data from external GIS.  The GIS may be accessed via Virtuoso SQL federation, RDB-RDF mapping tools, such as Sparqlify, or web services or by simple file loading from a staging area. The goal is to make import of diversely standards compliant and diversely modelled geodata as nearly automatic as possible. Thereby possible workflows for dealing with updates on the source datasets will be analysed. For example, updates on small datasets may be published as files containing the complete new version of the dataset in monthly intervals. In contrast, providers of large datasets, such as OpenStreetMap, additionally publish files with minutely incremental changes. Alternatively, datasets may for instance already be published in SPARQL endpoints. This analysis will from a basis for the establishment of update processes that serve use cases of the project. In the process, performance of the Virtuoso GIS implementation will be tested and improvement targets identified."@en ;
@@ -241,7 +241,7 @@ gk:Task2-2
       fp:partner gk:Athena , gk:InfAI ;
       fp:previous fp:Task2-1 ;
       fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp2 .
+      fp:workpackage gk:wp2 .
 
 gk:Task4-4
       rdfs:comment "In this task, we will implement social networking interfaces for the authoring components of the GeoKnow Generator. The interfaces will be implemented in two steps, first we integrate a subscription and notification service into the GeoKnow Generator, which will enable users to subscribe to arbitrary information adhering to certain spatial or semantically defined filter criteria. In a second development iteration, we will extend to subscription and notification service for GeoKnow with an API adhering to the Open-social standard. Based on this API, individuals and organisations can be informed on spatial knowledge updates performed by their social neighbourhood. The spatial social networking component is particularly important for the supply chain integration features of WP5."@en ;
@@ -250,7 +250,7 @@ gk:Task4-4
       fp:partner gk:Ontos , gk:BROX ;
       fp:previous fp:Task4-3 ;
       fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp4 .
+      fp:workpackage gk:wp4 .
 
 fp:Task8-2
       fp:next gk:Task8-3 .
@@ -265,7 +265,7 @@ gk:Task7-4
       fp:partner gk:ATH ;
       fp:previous fp:Task7-3 ;
       fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp7 .
+      fp:workpackage gk:wp7 .
 
 fp:Task2-2
       fp:next gk:Task2-3 .
@@ -279,7 +279,7 @@ a distributed system for continuously processing a large amount of conventional 
       gk:identifier "T3.1" ;
       fp:partner gk:OpenLink , gk:InfAI ;
       fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp3 .
+      fp:workpackage gk:wp3 .
 
 fp:Task1-2
       fp:next gk:Task1-3 .
@@ -299,7 +299,7 @@ gk:Task2-1
       gk:identifier "T2.1" ;
       fp:partner gk:ATH ;
       fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp2 .
+      fp:workpackage gk:wp2 .
 
 gk:Task8-3
       rdfs:comment "Preparing and compiling of Periodic Financial Report obtaining Audit Certificates from partners."@en ;
@@ -308,7 +308,7 @@ gk:Task8-3
       fp:partner gk:InfAI ;
       fp:previous fp:Task8-2 ;
       fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp8 .
+      fp:workpackage gk:wp8 .
 
 gk:Task1-3
       rdfs:comment """A benchmarking strategy will be developed and the platforms performance will be evaluated, based on well-established benchmarks, such as the Sequoia 2000 and Paradise benchmark3. In particular, the benchmark will be based on OSM and Natural Earth datasets, complemented by synthetic social data from the LOD2 Social Intelligence Benchmark. Further, to perform benchmarking tests that can deal with very large datasets, we will develop a suitable infrastructure by (1) evaluating existing high-performant and compact GIS storage formats for adoption of best practices (e.g. Oracle Spatial, PostGIS), (2) developing a suitable process for extract-transform-load of geo data, including coordinate transforms and schema mapping (e.g. GDAL/OGR, GeoKettle). This is in itself a matter of benchmarking but also enables running benchmarks targeting diverse geospatial workloads such as localized, potentially high frequency accesses for route planning and querying; as well as aggregation queries that span large portions of the map and join with thematic data.
@@ -324,7 +324,7 @@ Virtuoso's relational GIS functionality will be compared to PostGIS using the fu
       fp:partner gk:ATH , gk:OpenLink ;
       fp:previous fp:Task1-2 ;
       fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp1 .
+      fp:workpackage gk:wp1 .
 
 gk:Task4-3
       rdfs:comment "One of the main innovations of GeoKnow will be the development of a co-evolution approach, which facilitates the synchronized evolution of spatial Linked Open Data sources and company internal data (e.g. E-Commerce data in WP6). Our approach will be based on a declarative definition of evolution patterns, which will ensure, that changes made on imported Linked Open Data sources during the curation process will prevail after these sources are newly downloaded and updated from the Web of Data. This technology will enable any data consumer to select relevant parts of datasets and transform them as needed, thereby retaining the possibility to easily (re)synchronize with the sources should they change. The same technology can also be used by the maintainers of the source data sets for incorporating third party changes, such as fixes, that were made public. The ultimate goal is to create a comprehensive Enterprise knowledge hub (similarly to DBpedia on the Web of Data), which is connected with all major data and knowledge bases relevant for the enterprise and which constitutes a crystallization point for the organizational knowledge of a company."@en ;
@@ -333,7 +333,7 @@ gk:Task4-3
       fp:partner gk:Unister ;
       fp:previous fp:Task4-2 ;
       fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp4 .
+      fp:workpackage gk:wp4 .
 
 gk:Task3-5
       rdfs:comment """The goal of this task is to analyse and evaluate metrics for assessing the spatial data quality on several levels.
@@ -348,7 +348,7 @@ assess the quality of relevant datasets with appropriate metrics"""@en ;
       fp:partner gk:Unister , gk:InfAI ;
       fp:previous fp:Task3-4 ;
       fp:taskNumber "5"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp3 .
+      fp:workpackage gk:wp3 .
 
 fp:Task3-3
       fp:next gk:Task3-4 .
@@ -360,7 +360,7 @@ gk:Task5-2
       fp:partner gk:BROX , gk:Openlink ;
       fp:previous fp:Task5-1 ;
       fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp5 .
+      fp:workpackage gk:wp5 .
 
 fp:Task2-3
       fp:next gk:Task2-4 .
@@ -372,7 +372,7 @@ gk:Task7-3
       fp:partner gk:OpenLink , gk:Ontos , gk:InfAI ;
       fp:previous fp:Task7-2 ;
       fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp7 .
+      fp:workpackage gk:wp7 .
 
 fp:Task6-2
       fp:next gk:Task6-3 .
@@ -387,7 +387,7 @@ gk:Task3-2
       fp:partner gk:ATH ;
       fp:previous fp:Task3-1 ;
       fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp3 .
+      fp:workpackage gk:wp3 .
 
 fp:Task5-3
       fp:next gk:Task5-4 .
@@ -402,7 +402,7 @@ gk:Task5-5
       fp:partner gk:BROX ;
       fp:previous fp:Task5-4 ;
       fp:taskNumber "5"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp5 .
+      fp:workpackage gk:wp5 .
 
 fp:Task7-4
       fp:next gk:Task7-5 .
@@ -413,7 +413,7 @@ gk:Task6-1
       gk:identifier "T6.1" ;
       fp:partner gk:Unister , gk:InfAI ;
       fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp6 .
+      fp:workpackage gk:wp6 .
 
 gk:Task4-2
       rdfs:comment """In this task, we will develop two components for the authoring and curation of spatial-semantic content. Firstly, we will specify a spatial-semantic widget interface, which will allow the creation of small reusable interface components for the creation of domain-specific user-interfaces. The widgets will be RDFa annotated HTML fragments together with JavaScript and CSS code. This will allow one to reuse them in various development environments, as for instance J2EE, LAMP, and Dot.Net. The widget interface definition will contain a number of event handlers, style classes, JavaScript functions, which concrete implementations must support. Widgets should be composeable out of existing smaller ones. For example, a widget for creating train stations, could be composed out of widgets for selecting a certain location and ones for representing object type, associating train lines etc. As part of this task we will develop a library of reusable widgets and common utilities.
@@ -423,7 +423,7 @@ In order to enable the curation of spatial-semantic knowledge, we will develop a
       fp:partner gk:InfAI ;
       fp:previous fp:Task4-1 ;
       fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp4 .
+      fp:workpackage gk:wp4 .
 
 gk:Task1-4
       rdfs:comment """During this task individual components developed in WP2-4 will be integrated into a ready to use GKS Generator and associated APIs in order to enable communities of practice to create domain specific GKSes with a minimum of effort. For example, chosing between map providers (e.g. OpenStreetMap, Google Maps) will require no coding, and there will be a widget library, based on the use-cases, with some widgets (e.g. for place searches, ratings, images and facts) being usable across multiple domains. A plug-in system will ensure that new styles and behaviour can be added in case none of the provided components turn out to be applicable.
@@ -437,7 +437,7 @@ Testing, documentation & tutorials. This sub-task will take the end-user and tec
       fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:Athena , gk:BROX , gk:InfAI , gk:Openlink ;
       fp:previous fp:Task1-3 ;
       fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp1 .
+      fp:workpackage gk:wp1 .
 
 gk:Task8-2
       rdfs:comment "Preparing and creating the necessary management reports according to EC guidelines Contacting the EC services for administrative purposes"@en ;
@@ -446,7 +446,7 @@ gk:Task8-2
       fp:partner gk:InfAI ;
       fp:previous fp:Task8-1 ;
       fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp8 .
+      fp:workpackage gk:wp8 .
 
 gk:Task5-1
       rdfs:comment """In this task we will develop techniques for making the information stored in RFID chips identifiable and accessible on the Web of Data. We will devise an identification scheme for RFID information and map the currently prevalent data models in supply chain applications to RDF. The mapping should be provenance preserving and accommodate temporal information and relationships. A particular aspect tackled in this task is the capturing and representation of access control rules.
@@ -455,7 +455,7 @@ Deliverable 1. Supply chain information model."""@en ;
       gk:identifier "T5.1" ;
       fp:partner gk:BROX , gk:InfAI ;
       fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp5 .
+      fp:workpackage gk:wp5 .
 
 gk:Task2-4
       rdfs:comment """This task implements reorganization of data according to geospatial locality so that thematic data ­­­pertaining to geospatially close geometries is nearly always clustered together in physical storage. Since geospatial access patterns are most often geo-local, it makes sense to also reflect this locality in the placement of thematic data. Technically, this consists of renumbering IRI identifiers according to the geospatial attributes that depend on them through one or more reference steps.
@@ -465,7 +465,7 @@ This further means that in a cluster system the feature and its thematic content
       fp:partner gk:OpenLink ;
       fp:previous fp:Task2-3 ;
       fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage fp:wp2 .
+      fp:workpackage gk:wp2 .
 
 fp:Task3-4
       fp:next gk:Task3-5 .

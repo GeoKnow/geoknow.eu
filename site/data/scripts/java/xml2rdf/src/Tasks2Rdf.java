@@ -58,7 +58,7 @@ public class Tasks2Rdf
 			Resource jenaTask = model.createResource(gk+"Task"+workpackageNumber+'-'+taskNumber);
 						
 			jenaTask.addProperty(identifier, model.createLiteral("T"+workpackageNumber+'.'+taskNumber));
-			jenaTask.addProperty(workpackageProperty, model.createResource(fp+"wp"+workpackageNumber));
+			jenaTask.addProperty(workpackageProperty, model.createResource(gk+"wp"+workpackageNumber));
 			jenaTask.addLiteral(taskNumberProperty,model.createTypedLiteral(taskNumber,XSD.nonNegativeInteger.getURI()));
 			
 			// title as rdfs:label
