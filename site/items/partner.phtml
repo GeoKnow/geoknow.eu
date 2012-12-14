@@ -83,7 +83,7 @@ if (!Erfurt_Uri::check($resourceUri)) {
 
     // prepare related project(s) query
     $relatedProject = $this->query(array(
-        'where'    => '?resourceUri aksw:partner <'.$resourceUri.'>.',
+        'where'    => '?resourceUri fp:partner <'.$resourceUri.'>.',
         'template' => 'li',
         'prefix'   => '<p>We are partner in the following project(s) with ' . $title . ':',
         'suffix'   => '</p>'
