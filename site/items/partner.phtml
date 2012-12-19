@@ -83,7 +83,7 @@ if (!Erfurt_Uri::check($resourceUri)) {
 
     // prepare related project(s) query
     $relatedProject = $this->query(array(
-        'where'    => '?resourceUri fp:partner <'.$resourceUri.'> . ?resourceUri a foaf:Project .',
+        'where'    => '?resourceUri fp:partner <'.$resourceUri.'> . ?resourceUri a foaf:Project . FILTER ( ?resourceUri != <http://geoknow.eu/GeoKnow> ) . ',
         'template' => 'li',
         'prefix'   => '<p>We are partner in the following project(s) with ' . $title . ':',
         'suffix'   => '</p>'
