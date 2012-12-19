@@ -1,89 +1,31 @@
 <?php
-/**
- * This file is part of the {@link http://ontowiki.net OntoWiki} project.
- *
- * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
- * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
- */
-
-/**
- * geoknow.eu workpackage template
- *
- * arranges the content for the WorkPackage class
- */
-
-// prepare hookline and abstract (both optional)
 $hookline = $this->literal(array(
-    'property' => 'aksw:hookline',
+    'property' => 'rdfs:label',
     'class' => 'hookline',
     'prefix' => '<span class="hideme">:</span> '
 ));
-$abstract = $this->literal(array(
-    'property' => 'dcterms:abstract',
+$identifier = $this->literal(array(
+    'property' => 'gk:identifier'));
+
+$description = $this->literal(array(
+    'property' => 'dcterms:description',
     'tag' => 'p',
     'class' => 'abstract'
 ));
 
-// prepare button row
-$query = '
-PREFIX aksw: <http://aksw.org/schema/>
-SELECT DISTINCT ?resourceUri ?label ?propertyUri
-WHERE {
-    { <'.$this->resourceUri.'> ?propertyUri ?resourceUri . }
-        UNION
-    { ?resourceUri ?propertyUri <'.$this->resourceUri.'> . }
-    ?propertyUri aksw:buttonLabel ?label
-}';
-$buttons = $this->querylist($query, 'local/items/buttons.phtml');
-
-// prepare projects for sidelinks
-$promotedProjects = $this->query(array(
-    'where'    => '?resourceUri aksw:promoted "true"^^xsd:boolean .',
-    'template' => 'liplain',
-    'prefix'   => '<li><strong class="headline">promoted projects</strong>',
-    'suffix'   => '</li>'
-));
-$relatedProjects = $this->query(array(
-    'where'    => '{ ?resourceUri aksw:relatedProject <'.$this->resourceUri.'> .} UNION' .
-        '{ <'.$this->resourceUri.'> aksw:relatedProject ?resourceUri . }',
-    'template' => 'liplain',
-    'prefix'   => '<li><strong class="headline">related projects</strong>',
-    'suffix'   => '</li>'
-));
-
-// prepare screenshots
-$screenshots = $this->query(array(
-    'where'    => '{<'.$this->resourceUri.'> ov:screenshot ?resourceUri . } UNION'.
-        '{<'.$this->resourceUri.'> foaf:depiction ?resourceUri . }',
-    'template' => 'depictions'
-));
-
-// prepare main content (uses default content properties)
-$content = $this->literal(array('tag' => 'div', 'class' => 'content'));
-
-// prepare team list
-$team = $this->query(array(
-    'where' => '{?resourceUri foaf:currentProject <'.$this->resourceUri.'> .} UNION '.
-        '{<'.$this->resourceUri.'> doap:maintainer ?resourceUri . }'.
-        ' OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> ?familyName }',
-    'orderby' => 'ASC(?familyName)',
-    'template' => 'liplain',
-    'prefix' => '<h1>Current Team</h1>' . PHP_EOL,
-    'activeSuffix' => ' (Principle Contact / Maintainer)',
-    'active' => $this->literal(array('property' => 'doap:maintainer', 'plain' => 'true'))
-));
 ?>
-
-<nav class="nav-sidelinks">
-    <ul>
-        <?php echo $promotedProjects, $relatedProjects; ?>
-    </ul>
-</nav> <!-- /.nav-sidelinks -->
 <header class="intro">
-    <h1><?php echo $this->title . $hookline ?></h1>
-    <?php echo $screenshots, $abstract, $buttons ?>
+    <h1><?php echo $identifier. " &ndash; " . $this->title; /*. $hookline*/ ?></h1>
 </header> <!-- /.intro -->
-<?php echo $content, $team ?>
-<?php echo $this->renderx(array(
-    'template' => 'local/items/publications.phtml'
-));
+<?php
+echo $description;
+
+ echo $this->query(array(
+        'where' => '?resourceUri fp:task <'.$this->resourceUri.'>. ?resourceUri a fp:Deliverable.',
+        'template' => 'identifiertable',
+        'prefix' => '<h1>Tasks</h1>'
+    ));
+
+//echo $this->literal(array('tag' => 'div', 'class' => 'abstract')); // uses default content properties
+#echo $this->renderx(array('template' => 'local/items/publications.phtml'));
+
