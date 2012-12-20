@@ -72,9 +72,9 @@ $templateData = $this->templateData;
 
     <title><?php echo $templateData['title'] ?> &mdash; <?php echo $this->siteConfig['name'] ?></title>
 </head>
-<body>
+<body
 <?php
-    foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?>
+    foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?> >
     <div class="page_margins">
         <div id="page">
                 <?php echo $this->partial('local/header.phtml', $templateData) ?>
