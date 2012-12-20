@@ -21,7 +21,7 @@ $templateData = $this->templateData;
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
     xmlns:dc="http://purl.org/dc/terms/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-    <?php foreach ($this->namespaces as $prefix => $ns): echo ' xmlns:' . $prefix . '="' . $ns . '"' endforeach; ?>>
+ <?php foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?> >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
