@@ -1,22 +1,22 @@
 <?php
 /**
- * This file is part of the {@link http://ontowiki.net OntoWiki} project.
- *
- * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
- * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
- */
+* This file is part of the {@link http://ontowiki.net OntoWiki} project.
+*
+* @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+* @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+*/
 
 /**
- * aksw.org layout template
- *
- * the most out template layer
- */
+* aksw.org layout template
+*
+* the most out template layer
+*/
 
 // edit link for the universal edit button
 $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
 
 // this is the standard template data
-$templateData           = $this->templateData;
+$templateData = $this->templateData;
 ?><!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
     xmlns:dc="http://purl.org/dc/terms/"
@@ -33,11 +33,6 @@ $templateData           = $this->templateData;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript">document.documentElement.className += 'js';</script>
 
-	<!-- Scripts for sharethis widget -->
-	<script type="text/javascript">var switchTo5x=true;</script>
-	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-	<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
-
     <link
         rel="<?php echo $this->curie('http://xmlns.com/foaf/0.1/primaryTopic') ?>"
         href="<?php echo $this->resourceUri?>" />
@@ -47,19 +42,19 @@ $templateData           = $this->templateData;
         href="<?php echo $this->baseUri ?>/css/all.dev.css"
         title="Standard" />
     <link
-        rel="icon" 
-        type="image/png" 
+        rel="icon"
+        type="image/png"
         href="<?php echo $this->baseUri ?>/images/favicon.png" />
 
     <link rel="alternate"
-        type="application/wiki" 
-        title="Edit this page!" 
+        type="application/wiki"
+        title="Edit this page!"
         href="javascript:RDFauthor.myEdit()" />
 
     <!-- TODO: we should include all the js via a parallel loading script.
-         * separates the js logic from templates/html/caches
-         * improves performance
-    -->
+* separates the js logic from templates/html/caches
+* improves performance
+-->
     <script type="text/javascript" src="<?php echo $this->themeUrlBase ?>scripts/libraries/jquery.js"></script>
     <script type="text/javascript" src="<?php echo $this->themeUrlBase ?>scripts/libraries/jquery-ui.js"></script>
 
@@ -91,16 +86,5 @@ $templateData           = $this->templateData;
             <?php echo $this->partial('local/footer.phtml', $templateData) ?>
         </div> <!-- /#page -->
     </div> <!-- /.page_margins -->
-	
-	<!-- Sharethis widget -->
-	<div>
-		<script type="text/javascript">stLight.options({publisher: "45690818-21c8-414f-abaa-5a471a44e7ea"});</script>
-		<script>
-		var options={ "publisher": "45690818-21c8-414f-abaa-5a471a44e7ea", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["googleplus", "twitter", "linkedin", "facebook", "email"]}};
-		var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
-		</script>
-	</div>
-	
 </body>
 </html>
-
