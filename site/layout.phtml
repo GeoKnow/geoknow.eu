@@ -33,6 +33,11 @@ $templateData           = $this->templateData;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript">document.documentElement.className += 'js';</script>
 
+	<!-- Scripts for sharethis widget -->
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+
     <link
         rel="<?php echo $this->curie('http://xmlns.com/foaf/0.1/primaryTopic') ?>"
         href="<?php echo $this->resourceUri?>" />
@@ -86,6 +91,16 @@ $templateData           = $this->templateData;
             <?php echo $this->partial('local/footer.phtml', $templateData) ?>
         </div> <!-- /#page -->
     </div> <!-- /.page_margins -->
+	
+	<!-- Sharethis widget -->
+	<div>
+		<script type="text/javascript">stLight.options({publisher: "45690818-21c8-414f-abaa-5a471a44e7ea"});</script>
+		<script>
+		var options={ "publisher": "45690818-21c8-414f-abaa-5a471a44e7ea", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["googleplus", "twitter", "linkedin", "facebook", "email"]}};
+		var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+		</script>
+	</div>
+	
 </body>
 </html>
 
