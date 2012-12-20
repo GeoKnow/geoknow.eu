@@ -74,7 +74,7 @@ $templateData = $this->templateData;
 </head>
 <body>
 <?php
-    foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?>>
+    foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?>
     <div class="page_margins">
         <div id="page">
                 <?php echo $this->partial('local/header.phtml', $templateData) ?>
