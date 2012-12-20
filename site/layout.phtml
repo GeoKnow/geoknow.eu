@@ -20,7 +20,8 @@ $templateData = $this->templateData;
 ?><!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
     xmlns:dc="http://purl.org/dc/terms/"
-    xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    <?php foreach ($this->namespaces as $prefix => $ns): echo ' xmlns:' . $prefix . '="' . $ns . '"' endforeach; ?>>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -72,9 +73,7 @@ $templateData = $this->templateData;
 
     <title><?php echo $templateData['title'] ?> &mdash; <?php echo $this->siteConfig['name'] ?></title>
 </head>
-<body
-<?php
-    foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?> >
+<body>
     <div class="page_margins">
         <div id="page">
                 <?php echo $this->partial('local/header.phtml', $templateData) ?>
