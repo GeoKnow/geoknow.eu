@@ -72,7 +72,8 @@ $templateData = $this->templateData;
 
     <title><?php echo $templateData['title'] ?> &mdash; <?php echo $this->siteConfig['name'] ?></title>
 </head>
-<body<?php
+<body>
+<?php
     foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?>>
     <div class="page_margins">
         <div id="page">
