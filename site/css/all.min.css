@@ -22,7 +22,6 @@ blockquote:before,blockquote:after,q:before,q:after{content:""}
 .skip:focus,.skip:active{position:static;top:0;left:0}
 #skiplinks,.skiplinks{position:absolute;top:0;left:-32768px;z-index:1000;margin:0;padding:0;width:100%;list-style-type:none}
 #skiplinks .skip:focus,#skiplinks .skip:active,.skiplinks .skip:focus,.skiplinks .skip:active{position:absolute;left:32768px;width:100%;outline:0 none}
-.content img{width:100%;}
 }
 @media screen,projection{#col1{float:left;width:20%}
 #col2{float:right;width:20%}
