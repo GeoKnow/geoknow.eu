@@ -24,7 +24,7 @@ gk:ATH
 	a foaf:Organization;
 	rdfs:label "Athena Research and Innovation Center"@en;
 	dbp:abbreviation "ATH";
-	foaf:homepage <http://www.athena-innovation.gr>;
+	foaf:homepage <http://www.imis.athena-innovation.gr/>;
 	dbo:country dbpedia:Greece.
 gk:OpenLink
 	a foaf:Organization;
