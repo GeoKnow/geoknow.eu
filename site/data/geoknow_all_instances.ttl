@@ -28,19 +28,19 @@ GeoKnow will substantially contribute to the evolution of the Web from a medium 
 
 gk:InfAI
 	a foaf:Organization;
-	rdfs:label "University of Leipzig, Institute of Applied Computer Science."@en;
+	rdfs:label "University of Leipzig, Institute of Applied Computer Science"@en;
 	dbp:abbreviation "InAI";
 	foaf:homepage <http://infai.org>;
 	dbo:country dbpedia:Germany.
 gk:ATH
 	a foaf:Organization;
-	rdfs:label "Athena Research and Innovation Center."@en;
+	rdfs:label "Athena Research and Innovation Center"@en;
 	dbp:abbreviation "ATH";
-	foaf:homepage <http://www.athena-innovation.gr>;
+	foaf:homepage <http://www.imis.athena-innovation.gr/>;
 	dbo:country dbpedia:Greece.
 gk:OpenLink
 	a foaf:Organization;
-	rdfs:label "OpenLink Software Ltd."@en;
+	rdfs:label "OpenLink Software Ltd"@en;
 	dbp:abbreviation "OpenLink";
 	foaf:homepage <http://www.openlinksw.com>;
 	dbo:country dbpedia:United_Kingdom.
@@ -58,7 +58,7 @@ gk:Unister
 	dbo:country dbpedia:Germany.
 gk:FIN
 	a foaf:Organization;
-	rdfs:label "FishBase Information and Research Group, Inc."@en;
+	rdfs:label "FishBase Information and Research Group, Inc"@en;
 	dbp:abbreviation "FIN";
 	foaf:homepage <http://www.fin.ph>;
 	dbo:country dbpedia:Phillipines.
