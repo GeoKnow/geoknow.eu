@@ -14,10 +14,6 @@
  *
  * TODO: make more independend from the query (e.g. take the first)
  */
-
-?>
-<div class="nav-sidelinks">
-<?
 // prepare vars from the querylist helper
 $resourceUri = $this->resourceUri;
 $title       = $this->title;
@@ -68,5 +64,4 @@ if (!Erfurt_Uri::check($resourceUri)) {
 if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
     echo "</$tag>" . PHP_EOL;
 }
-?>
-</div>
+
