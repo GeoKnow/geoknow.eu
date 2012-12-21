@@ -34,13 +34,13 @@ gk:OpenLink
 	dbo:country dbpedia:United_Kingdom.
 gk:Ontos
 	a foaf:Organization;
-	rdfs:label "Ontos GmbH"@en;
+	rdfs:label "Ontos AG"@en;
 	dbp:abbreviation "Ontos";
 	foaf:homepage <http://www.ontos.com>;
 	dbo:country dbpedia:Switzerland.
 gk:Unister
 	a foaf:Organization;
-	rdfs:label "Unister AG"@en;
+	rdfs:label "Unister GmbH"@en;
 	dbp:abbreviation "Unister";
 	foaf:homepage <http://www.unister.de>;
 	dbo:country dbpedia:Germany.
