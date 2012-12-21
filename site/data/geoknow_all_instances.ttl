@@ -52,7 +52,7 @@ gk:Ontos
 	dbo:country dbpedia:Switzerland.
 gk:Unister
 	a foaf:Organization;
-	rdfs:label "Unister AG"@en;
+	rdfs:label "Unister GmbH"@en;
 	dbp:abbreviation "Unister";
 	foaf:homepage <http://www.unister.de>;
 	dbo:country dbpedia:Germany.

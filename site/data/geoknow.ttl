@@ -34,7 +34,7 @@ gk:OpenLink
 	dbo:country dbpedia:United_Kingdom.
 gk:Ontos
 	a foaf:Organization;
-	rdfs:label "Ontos AG"@en;
+	rdfs:label "Ontos GmbH"@en;
 	dbp:abbreviation "Ontos";
 	foaf:homepage <http://www.ontos.com>;
 	dbo:country dbpedia:Switzerland.
