@@ -23,7 +23,7 @@ echo $description;
  echo $this->query(array(
         'where' => '?resourceUri fp:task <'.$this->resourceUri.'>. ?resourceUri a fp:Deliverable.',
         'template' => 'identifiertable',
-        'prefix' => '<h1>Tasks</h1>'
+        'prefix' => '<h1>Deliverables</h1>'
     ));
 
 //echo $this->literal(array('tag' => 'div', 'class' => 'abstract')); // uses default content properties
