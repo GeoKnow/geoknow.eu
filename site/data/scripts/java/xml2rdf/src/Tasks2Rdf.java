@@ -2,20 +2,25 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.DCTerms;
+import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 import com.hp.hpl.jena.vocabulary.XSD;
 
@@ -26,6 +31,11 @@ import com.hp.hpl.jena.vocabulary.XSD;
 
 public class Tasks2Rdf
 {
+//	static final Writer writer = new OutputStreamWriter(System.out);
+	static final Writer writer;
+	static {
+		try {writer = new FileWriter(new File("../../../tasks.ttl"));} catch(Exception e) {throw new RuntimeException(e);}
+	}
 	static final Set<String> partnerNames = new HashSet<>(Arrays.asList(new String[] {"Athena","ATH","Ontos","Openlink","OpenLink","BROX","Unister","InfAI"}));
 	
 	public static void main(String[] args) throws XPathExpressionException, IOException
@@ -56,10 +66,11 @@ public class Tasks2Rdf
 			Element task = (Element) tasks.item(i);						
 			int workpackageNumber = Integer.valueOf(task.getElementsByTagName("workpackageNumber").item(0).getFirstChild().getNodeValue());
 			int taskNumber = Integer.valueOf(task.getElementsByTagName("taskNumber").item(0).getFirstChild().getNodeValue());			
+			
 			Resource jenaTask = model.createResource(gk+"Task"+workpackageNumber+'-'+taskNumber);
-						
+			jenaTask.addProperty(RDF.type, model.createResource(fp+"Task"));			
 			jenaTask.addProperty(identifier, model.createLiteral("T"+workpackageNumber+'.'+taskNumber));
-			jenaTask.addProperty(workpackageProperty, model.createResource(gk+"wp"+workpackageNumber));
+			jenaTask.addProperty(workpackageProperty, model.createResource(gk+"WP"+workpackageNumber));
 			jenaTask.addLiteral(taskNumberProperty,model.createTypedLiteral(taskNumber,XSD.nonNegativeInteger.getURI()));
 			
 			// title as rdfs:label
@@ -70,7 +81,7 @@ public class Tasks2Rdf
 			// previous and next links
 			if(taskNumber>1)
 			{
-				Resource previousTask = model.createResource(fp+"Task"+workpackageNumber+'-'+(taskNumber-1));
+				Resource previousTask = model.createResource(gk+"Task"+workpackageNumber+'-'+(taskNumber-1));
 				previousTask.addProperty(nextProperty,jenaTask);
 				jenaTask.addProperty(previousProperty,previousTask);
 			}
@@ -102,7 +113,7 @@ public class Tasks2Rdf
 //			System.out.println(task.getNodeName() + " -> " + task.getTextContent());
 		}
 		
-		model.write(new FileWriter(new File("../../../tasks.ttl")),"TURTLE",gk);
+		model.write(writer,"TURTLE",gk);
 //		for(String name : partnerNames) System.out.print("\""+name+"\",");
 	}
 
