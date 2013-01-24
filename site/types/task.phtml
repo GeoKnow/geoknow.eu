@@ -17,13 +17,31 @@ $description = $this->literal(array(
 <header class="intro">
     <h1><?php echo $identifier. " &ndash; " . $this->title; /*. $hookline*/ ?></h1>
 </header> <!-- /.intro -->
+<div class="nav-sidelinks"> 
+  <ul><li>WorkPackages</li>
+    <li> 
+      <?php 
+      echo $this->query(array(
+        "where" =>"?resourceUri a fp:WorkPackage. ?resourceUri fp:workpackageNumber ?workPackageNumber.",
+        "template" =>"lmenu" ,
+        "orderby" => "ASC(?workpackageNumber)"))
+      ?>
+    </li>
+  </ul>
+</div>
+
 <?php
 echo $description;
-
- echo $this->query(array(
+echo $this->query(array(
         'where' => '?resourceUri fp:task <'.$this->resourceUri.'>. ?resourceUri a fp:Deliverable.',
         'template' => 'identifiertable',
         'prefix' => '<h1>Deliverables</h1>'
+    ));
+
+echo $this->query(array(
+        'where' => '<'.$this->resourceUri.'>  fp:workpackage ?wp . ?resourceUri fp:workpackage ?wp . FILTER(<â'.$this->resourceUri.'> != ?resourceUri)', 
+        'template' => 'identifiertable',
+        'prefix' => '<h1>Other Tasks in this Workpackage</h1>'
     ));
 
 //echo $this->literal(array('tag' => 'div', 'class' => 'abstract')); // uses default content properties
