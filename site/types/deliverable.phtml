@@ -4,8 +4,8 @@ $hookline = $this->literal(array(
     'class' => 'hookline',
     'prefix' => '<span class="hideme">:</span> '
 ));
-$deliverableIdentifier = $this->literal(array(
-    'property' => 'fp:deliverableIdentifier'));
+$identifier = $this->literal(array(
+    'property' => 'dcterms:identifier'));
 
 $abstract = $this->literal(array(
     'property' => 'dcterms:description',
@@ -15,7 +15,7 @@ $abstract = $this->literal(array(
 
 ?>
 <header class="intro">
-    <h1><?php echo $deliverableIdentifier. " &ndash; " . $this->title; /*. $hookline*/ ?></h1>
+    <h1><?php echo $identifier. " &ndash; " . $this->title; /*. $hookline*/ ?></h1>
 </header> <!-- /.intro -->
 <?php
 echo $abstract;
