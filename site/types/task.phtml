@@ -33,8 +33,9 @@ $description = $this->literal(array(
 <?php
 echo $description;
 echo $this->query(array(
-        'where' => '?resourceUri fp:task <'.$this->resourceUri.'>. ?resourceUri a fp:Deliverable.',
-        'template' => 'identifiertable',
+        'where' => '?resourceUri fp:task <'.$this->resourceUri.'>. ?resourceUri a fp:Deliverable. ?resourceUri gk:identifier ?id .',
+        'orderby'=> 'ASC(?id)',
+        'template' => 'identifiertableDocument',
         'prefix' => '<h1>Deliverables</h1>'
     ));
 
