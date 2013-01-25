@@ -34,7 +34,8 @@ $abstract = $this->literal(array(
 echo $abstract;
 
 echo $this->query(array(
-        'where' => '?resourceUri fp:workpackage <'.$this->resourceUri.'>. ?resourceUri a fp:Task.',
+        'where' => '?resourceUri fp:workpackage <'.$this->resourceUri.'>. ?resourceUri a fp:Task. ?resourceUri a fp:taskNumber.',
+	'orderby'=> 'ASC(?taskNumber)',
         'template' => 'identifiertable',
         'prefix' => '<h1>Tasks</h1>'
     ));
