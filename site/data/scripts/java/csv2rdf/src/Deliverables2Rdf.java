@@ -45,6 +45,7 @@ public class Deliverables2Rdf
 		out.println("@prefix fp:      <http://purl.org/research-fp#> .");
 		out.println("@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .");
 		out.println("@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .");
+		out.println("@prefix dcterms: <http://purl.org/dc/terms/> .");
 		try(CSVReader reader = new CSVReader(new FileReader(f)))
 		{
 			boolean first = true;
@@ -57,7 +58,7 @@ public class Deliverables2Rdf
 					int workpackageNumber	= Integer.parseInt(deliverableIdentifier[0]);
 					int taskNumber			= Integer.parseInt(deliverableIdentifier[1]);
 					int deliverableNumber	= Integer.parseInt(deliverableIdentifier[2]);
-					String uri = "gk:D-"+workpackageNumber+'-'+taskNumber+'-'+deliverableNumber;
+					String uri = "gk:d"+workpackageNumber+'-'+taskNumber+'-'+deliverableNumber;
 
 					String label = "\""+row[1].trim()+"\"@en";												
 					String nature = deliverableMap.get(row[3].trim());					
@@ -69,10 +70,10 @@ public class Deliverables2Rdf
 					first=false;
 					out.println(uri+" a fp:Deliverable;");
 					printlnProperty(out,"rdfs:label",label,false);
-					printlnProperty(out,"fp:deliverableIdentifier","\""+row[0].trim()+"\"",false);
-					printlnProperty(out,"gk:identifier","\""+row[0].trim()+"\"",false);
+//					printlnProperty(out,"fp:deliverableIdentifier","\""+row[0].trim()+"\"",false);
+					printlnProperty(out,"dcterms:identifier","\""+row[0].trim()+"\"",false);
 //					printlnProperty(out,":workpackageNumber",workpackageNumber,false);
-					printlnProperty(out,"fp:task","gk:Task"+workpackageNumber+"-"+taskNumber,false);
+					printlnProperty(out,"fp:task","gk:t"+workpackageNumber+"-"+taskNumber,false);
 					printlnProperty(out,"fp:deliverableNature",nature,false);
 					printlnProperty(out,"fp:deliverableNumber",deliverableNumber,false);
 					printlnProperty(out,"fp:disseminationLevel",disseminationLevel,false);

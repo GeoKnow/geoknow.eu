@@ -47,6 +47,7 @@ public class Tasks2Rdf
 		model.setNsPrefix("gk",gk);
 		model.setNsPrefix("rdfs",RDFS.getURI());
 		model.setNsPrefix("xsd",XSD.getURI());
+		model.setNsPrefix("dcterms",DCTerms.getURI());
 		
 		File f = new File((args.length>0)?args[0]:"../../../tasks.xml");
 		if(!f.exists()) throw new AssertionError("file "+f+" doesnt exist");
@@ -59,7 +60,7 @@ public class Tasks2Rdf
 		Property taskNumberProperty = model.createProperty(fp, "taskNumber");
 		Property previousProperty = model.createProperty(fp, "previous");
 		Property nextProperty = model.createProperty(fp, "next");
-		Property identifier = model.createProperty(gk, "identifier");
+//		Property identifier = model.createProperty(gk, "identifier");
 		
 		for (int i = 0; i < tasks.getLength(); ++i)
 		{
@@ -67,10 +68,10 @@ public class Tasks2Rdf
 			int workpackageNumber = Integer.valueOf(task.getElementsByTagName("workpackageNumber").item(0).getFirstChild().getNodeValue());
 			int taskNumber = Integer.valueOf(task.getElementsByTagName("taskNumber").item(0).getFirstChild().getNodeValue());			
 			
-			Resource jenaTask = model.createResource(gk+"Task"+workpackageNumber+'-'+taskNumber);
+			Resource jenaTask = model.createResource(gk+"t"+workpackageNumber+'-'+taskNumber);
 			jenaTask.addProperty(RDF.type, model.createResource(fp+"Task"));			
-			jenaTask.addProperty(identifier, model.createLiteral("T"+workpackageNumber+'.'+taskNumber));
-			jenaTask.addProperty(workpackageProperty, model.createResource(gk+"WP"+workpackageNumber));
+			jenaTask.addProperty(DCTerms.identifier, model.createLiteral("T"+workpackageNumber+'.'+taskNumber));
+			jenaTask.addProperty(workpackageProperty, model.createResource(gk+"wp"+workpackageNumber));
 			jenaTask.addLiteral(taskNumberProperty,model.createTypedLiteral(taskNumber,XSD.nonNegativeInteger.getURI()));
 			
 			// title as rdfs:label
@@ -81,7 +82,7 @@ public class Tasks2Rdf
 			// previous and next links
 			if(taskNumber>1)
 			{
-				Resource previousTask = model.createResource(gk+"Task"+workpackageNumber+'-'+(taskNumber-1));
+				Resource previousTask = model.createResource(gk+"t"+workpackageNumber+'-'+(taskNumber-1));
 				previousTask.addProperty(nextProperty,jenaTask);
 				jenaTask.addProperty(previousProperty,previousTask);
 			}

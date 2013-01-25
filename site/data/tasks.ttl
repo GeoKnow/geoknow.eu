@@ -2,162 +2,415 @@
 @prefix gk:      <http://geoknow.eu/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix fp:      <http://purl.org/research-fp#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
 
-gk:Task8-6
-      rdfs:label "Quality assurance of deliverables"@en ;
-      gk:identifier "T8.6" ;
-      <http://purl.org/dc/terms/description>
-              "Establishing a quality assurance procedure that every deliverable has to undergo before submission to the EC."@en ;
-      fp:leadPartner gk:InfAI ;
+gk:t7-3
+      a       fp:Task ;
+      rdfs:label "Standardisation"@en ;
+      dcterms:description "GeoKnow will actively participate in appropriate standards bodies, specifically the W3C and/or DC. Such participation is twofold; on the one hand to ensure that established and emerging standards are taken into account appropriately in the GeoKnow project and, on the other hand, to seek to influence standardisation bodies. Concrete standardisation activities pursued in the context of GeoKnow are listed in section B1.9.4. The consortium represented by its W3C members (OpenLink and Ontos) will together with other actors establish a W3C Spatial Linked Data interest group in order to found a nucleolus for the growing user community of Spatial Data Web technologies."@en ;
+      dcterms:identifier "T7.3" ;
+      fp:next gk:t7-4 ;
+      fp:partner gk:OpenLink , gk:Ontos , gk:InfAI ;
+      fp:previous gk:t7-2 ;
+      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp7 .
+
+gk:t7-5
+      a       fp:Task ;
+      rdfs:label "Publishing directives"@en ;
+      dcterms:description """All publications even partially funded by the project will prominently acknowledge the grant under which the project is funded. Every publication will be tagged with \"GEOKNOW-318159\". Details of all publications even partially funded by the project shall be uploaded to some specific and agreed Bibliographic social networks such as http://www.citeulike.org/, http://www.mendeley.com/ or http://www.bibsonomy.org/. Whenever such Bibliographic social networks allow for a catalogue of publications to be retrieved by tag or published as an RSS feed, the project's web site should expose such a catalogue.
+All presentation materials for which this appropriate shall be published on the project's web site under a Creative Commons licence (http://creativecommons.org/) or another appropriate license. All open source software produced by the consortium shall be published on publicly available software repositories such as http://sourceforge.net/, http://github.com/ or http://osor.eu. All data sets for which this appropriate shall be published on the project's web site under a Creative Commons licence (http://creativecommons.org/) or another appropriate license."""@en ;
+      dcterms:identifier "T7.5" ;
       fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
-      fp:previous fp:Task8-5 ;
+      fp:previous gk:t7-4 ;
+      fp:taskNumber "5"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp7 .
+
+gk:t8-2
+      a       fp:Task ;
+      rdfs:label "Communication with the EC"@en ;
+      dcterms:description "Preparing and creating the necessary management reports according to EC guidelines Contacting the EC services for administrative purposes"@en ;
+      dcterms:identifier "T8.2" ;
+      fp:next gk:t8-3 ;
+      fp:partner gk:InfAI ;
+      fp:previous gk:t8-1 ;
+      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp8 .
+
+gk:t8-6
+      a       fp:Task ;
+      rdfs:label "Quality assurance of deliverables"@en ;
+      dcterms:description "Establishing a quality assurance procedure that every deliverable has to undergo before submission to the EC."@en ;
+      dcterms:identifier "T8.6" ;
+      fp:leadPartner gk:InfAI ;
+      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:Athena , gk:BROX , gk:InfAI , gk:Openlink ;
+      fp:previous gk:t8-5 ;
       fp:taskNumber "6"^^xsd:nonNegativeInteger ;
       fp:workpackage gk:wp8 .
 
-gk:Task1-2
-      rdfs:label "GeoKnow architecture & system design"@en ;
-      gk:identifier "T1.2" ;
-      <http://purl.org/dc/terms/description>
-              """This task is devoted to specifying the GeoKnow architecture and the detailed design of the GeoKnow Generator. Scalability, extensibility and flexibility shall be achieved by employing Service Oriented Knowledge Utilities (SOKU)1 in order to develop next generation GKS.2 Components of the system will be building blocks developed in individual work packages WP2-4, such as the semantics based geo-spatial information management subsystem (WP2), spatial knowledge fusing and integration methods (WP3), the development of user interfaces for spatial-semantic browsing and authoring (WP4). The developed components will be integrated within this task. While the common technical requirements will be one major input for the system design, other major sources will be the developed use cases and end user requirements as well as interoperability standards.
-The system design defines clear interfaces between the individual components. It will be based on existing standards and will provide a modular plug’n’serve structure and shall be able to accommodate REST components and JavaScript user interface widgets. The architecture will be centred around the OWL/RDF-statement paradigm, which enables interactions between components on different conceptual levels, such as triples, classes and instances, ontologies, logical axioms etc."""@en ;
-      fp:partner gk:Unister , gk:ATH , gk:Ontos , gk:InfAI ;
-      fp:previous fp:Task1-1 ;
-      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp1 .
-
-gk:Task3-3
-      rdfs:label "Quality aware spatial knowledge aggregation"@en ;
-      gk:identifier "T3.3" ;
-      <http://purl.org/dc/terms/description>
-              """Community efforts live from the enthusiasm of volunteers. Too strict regulations of the type of content contributed to the effort would be counterproductive. While it helps new contributors to guide with suggestions for categories to be instantiated on a map more experienced users will want to add new categories at their wish. 
-In this task we aim at consolidating the type of information entered in volunteered geographic knowledge bases not by restricting the set of categories but rather:
-develop algorithms semantically consolidating the meaning of categories. We aim at developing algorithms automatically mapping newly added categories to existing categories. The user has then the choice to reuse an existing definition of a well described and frequently used category or begin to define a new category. Newly added categories will be grouped with other categories into higher types of categories.
-investigate in a community driven consolidation process. Since we are aware that an algorithmic approach will not solve the problem entirely, the goal is to develop means to define aggregated categories and allow the community to agree on them."""@en ;
-      fp:partner gk:ATH , gk:InfAI ;
-      fp:previous fp:Task3-2 ;
-      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp3 .
-
-fp:Task3-1
-      fp:next gk:Task3-2 .
-
-gk:Task7-2
-      rdfs:label "Exploitation"@en ;
-      gk:identifier "T7.2" ;
-      <http://purl.org/dc/terms/description>
-              """The two case studies and the industrial and end-user community partners will drive the exploitation. Their task is to extend the research activities by promoting and supporting the exploitation of the results along with take-up activities related to the perspective applications. The majority of the project results will be made available as open source and the open source exploitation strategy will describe how to leverage the potential of such an open source initiative.
-The pillars of GeoKnow exploitation strategy are: tracking important technical and commercial developments in geo data management, semantic web, Web 2.0 as well as geospatial e-science and enterprise applications; analyzing the market sector(s) where the results can be applied and possibly licensed commercially; identifying the results of GeoKnow that are exploitable: particularly the GeoKnow Generator, some of the components and the innovative applications developed within the use cases; and identifying the appropriate distribution channels (including open source community) to exploit the different results of the project.
-The major outcome of this work package will be the GeoKnow Exploitation Plan, which will include a list of opportunities that arise from GeoKnow scientific and technical achievements and a detailed analysis of benefit and impact for the GeoKnow consortium as a whole as well as for the results of individual participants. The prestige of both the industrial partners and the use case partners makes the GeoKnow Consortium an international partnership."""@en ;
-      fp:leadPartner gk:Unister ;
-      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:Athena , gk:BROX , gk:InfAI , gk:Openlink ;
-      fp:previous fp:Task7-1 ;
-      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp7 .
-
-fp:Task5-2
-      fp:next gk:Task5-3 .
-
-gk:Task4-1
-      rdfs:label "Spatial-semantic visualization and exploration"@en ;
-      gk:identifier "T4.1" ;
-      <http://purl.org/dc/terms/description>
-              """In this task we will develop a reusable components for visualizing and exploring spatial content. The component will consist of a library of different spatial-semantic visualization and exploration components:
-A slippy map, which allows users to zoom-to and select a certain geographical area. The slippy map will be based on existing Web map implementations, such as for example OpenLayers1 from Open Source Geospatial Foundation. The implementation will be extended to allow an overlaying of the displayed raster maps with additional information represented in vector formats, such as various types of markers, polygons and curves. 
-A facet filtering component, which displays (a hierarchy of) semantic facets detected in conjunction with the selected map area. Only facets, which have respective adhering objects in the selected area as well as the overall number of objects adhering to each facet in the selected area will be displayed. Depending on the facet type, different selection widgets will allow to specify eligible facet-constraints, e.g date and number ranges and enumeration of facet values.
-A result view, which lists in addition to markers and regions on the map the retrieved objects adhering to the selected facets. For each individual object in the result set, its properties can be displayed in a configurable way. It will be possible to define templates for the visual presentation of certain spatial objects, e.g. train stations, cities, parks etc. Based on existing vocabularies such templates will display semantic information in a customizable and domain specific way. 
-The components’ usability will be evaluated in the context of their integration into the portals of the project partners, as described in WP5 and WP6. For this reason, we do not plan to evaluate the usability of the widgets “on their own”, as this will be covered by the respective reports. The evaluation findings will be considered for further developments and improvements of the components."""@en ;
-      fp:partner gk:InfAI ;
-      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp4 .
-
-fp:Task7-1
-      fp:next gk:Task7-2 .
-
-gk:Task5-4
-      rdfs:label "GeoKnow background knowledge for the supply chain"@en ;
-      gk:identifier "T5.4" ;
-      <http://purl.org/dc/terms/description>
-              "We will adopt the GeoKnow generator for slicing and dicing spatial data of the supply chain for particular members. We will implement prototypical services for supply chains using background knowledge from the Spatial Data Web, such as geo-coding applications, routing, spatial object disambiguation etc."@en ;
-      fp:partner gk:ATH , gk:BROX ;
-      fp:previous fp:Task5-3 ;
-      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp5 .
-
-gk:Task8-1
-      rdfs:label "Management of the consortium"@en ;
-      gk:identifier "T8.1" ;
-      <http://purl.org/dc/terms/description>
-              "Monitoring the application of the Consortium Agreement and the compliance of all partners with the regulations put forth in it. Planning of consortium meetings according to the projects’ work plan and EC guideline."@en ;
-      fp:partner gk:InfAI ;
-      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp8 .
-
-fp:Task4-3
-      fp:next gk:Task4-4 .
-
-gk:Task6-2
-      rdfs:label "Design integration methods and develop prototype to utilize RTD results"@en ;
-      gk:identifier "T6.2" ;
-      <http://purl.org/dc/terms/description>
-              "In this task, we will design integrative components based on the results and algorithms of WP2 and WP3. Therefore, a component model will be realised that adapts solutions from the mentioned work packages to the travel use case. Fusing and interlinking components will use the transformed tourism data from Task 6 and integrate it with geospatial open linked data. In parallel, we will develop user-friendly and simple UI components for business intelligence interfaces as well as reporting views to visualize analysis results. This subtask builds on WP4 and adapts metaphors and concepts developed in that WP. Concretely, the usability and potential benefit for users provided by the integration of the map visualization of points-of-interests in conjunction with the widget for facet selection will be evaluated. Lightweight widgets that visualize data snippets, such as styled fact boxes about touristic locations are also in the scope of this task."@en ;
-      fp:partner gk:Unister , gk:ATH ;
-      fp:previous fp:Task6-1 ;
-      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp6 .
-
-fp:Task8-4
-      fp:next gk:Task8-5 .
-
-gk:Task8-5
-      rdfs:label "Monitoring of resource expenditure"@en ;
-      gk:identifier "T8.5" ;
-      <http://purl.org/dc/terms/description>
-              "Establishing and maintaining an internal tool to monitor resource expenditure (person months spending) per partner and per WP."@en ;
-      fp:partner gk:InfAI ;
-      fp:previous fp:Task8-4 ;
-      fp:taskNumber "5"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp8 .
-
-gk:Task2-3
-      rdfs:label "Geospatial query optimization"@en ;
-      gk:identifier "T2.3" ;
-      <http://purl.org/dc/terms/description>
-              "This task implements query optimization based on deep sampling with geospatial predicates. As a query plan is being constructed by the optimizer, it is evaluated on a randomly sampled subset of the data, thus detecting selectivity of joins with real data instead of precomputed statistics. This is robust in the face of data correlations, whereas reliance on precomputed statistics assumes independence of attributes, which is rarely the case. The task applies these methods specially to ordering of geospatial joins and to join order decisions involving spatial and non-spatial criteria."@en ;
-      fp:partner gk:OpenLink , gk:Athena ;
-      fp:previous fp:Task2-2 ;
-      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp2 .
-
-gk:Task1-1
-      rdfs:label "Common requirements specification"@en ;
-      gk:identifier "T1.1" ;
-      <http://purl.org/dc/terms/description>
-              """The goal of task 1.1 is to collect end user requirements from the application areas, and to specify the use cases for GeoKnow. The end users involved in the project (Unister, BROX) will heavily contribute to this task, as well as all other project partners. Further, current user communities (both end users and technology users) of Schnellecke, OpenStreetMap and geodata.gov.gr will be involved. Combined, these platforms provide access to millions of users with diverse (a) expertise (e.g. researchers, students. SMEs, citizens), (b) thematic areas (e.g. natural sciences, transport, statistics), and technology needs (e.g. data consumers, web services integration).
-User requirements will be collected through a combination of appropriate instruments: (a) one-to one interviews with prominent users (10-15 users), (b) group meetings with expert users (10-15), (c) invitational online questionnaires for specific non-overlapping thematic areas and high technical expertise (30-60 users), (d) mass online questionnaires (100-200 users). The resulting requirements document for the GeoKnow Generator will be the basis for the subsequent RTD work. All tasks in WP2-WP4 that deal with requirement analysis and specification contribute to this joint activity. InfAI, OpenLink and Ontos will analyse and specify the technical requirements for metadata identification, access to spatial data, selection, construction of knowledge stores, and metadata transfer, that is, in tandem with the development and evaluation of the application-specific demonstrators developed in WP5-WP6, we will also define all necessary technical requirements related to the development under WP2-4.
-The requirements will be monitored throughout the lifetime of the project, and in case some additional requirements have to be satisfied, an update of the deliverable D1.1.1 shall be prepared."""@en ;
-      fp:partner gk:Unister , gk:Ontos , gk:BROX , gk:InfAI ;
-      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp1 .
-
-gk:Task3-4
+gk:t3-4
+      a       fp:Task ;
       rdfs:label "Metrics for Volunteered Geographic Information"@en ;
-      gk:identifier "T3.4" ;
-      <http://purl.org/dc/terms/description>
-              """Community provided information can surpass the level of detail found in official and commercial maps. The first regions where community maps will show a higher level of detail might be countries for which official maps were the base data which was later refined by the community. In this task, we will develop metrics for volunteered geospatial information. The goal is to compare different maps and different regions of a map represented in the RDF data model. In particular we aim at developing metrics for the
+      dcterms:description """Community provided information can surpass the level of detail found in official and commercial maps. The first regions where community maps will show a higher level of detail might be countries for which official maps were the base data which was later refined by the community. In this task, we will develop metrics for volunteered geospatial information. The goal is to compare different maps and different regions of a map represented in the RDF data model. In particular we aim at developing metrics for the
 coverage of a category in a region, e.g. the percentage of buildings contained in a part of the map,
 precision of geometry and meta data, e.g. measuring the deviation of spatial objects from those in a reference dataset.
 pertinence of geographic information, e.g. by comparing the number of occurrences of categories between regions of the same or different datasets. For example, this could be used for tracking the importance of nodes in a supply chain, by keeping track of the amount of goods that pass through them.
 timeliness of data, e.g. measure how recent the covered information is."""@en ;
+      dcterms:identifier "T3.4" ;
+      fp:next gk:t3-5 ;
       fp:partner gk:InfAI ;
-      fp:previous fp:Task3-3 ;
+      fp:previous gk:t3-3 ;
       fp:taskNumber "4"^^xsd:nonNegativeInteger ;
       fp:workpackage gk:wp3 .
 
-gk:Task7-1
+gk:t8-4
+      a       fp:Task ;
+      rdfs:label "Internal communication"@en ;
+      dcterms:description "Establishing and maintaining of mailing lists according to the needs of the project Establishing and maintaining of project website/document repository."@en ;
+      dcterms:identifier "T8.4" ;
+      fp:leadPartner gk:InfAI ;
+      fp:next gk:t8-5 ;
+      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
+      fp:previous gk:t8-3 ;
+      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp8 .
+
+gk:t1-1
+      a       fp:Task ;
+      rdfs:label "Common requirements specification"@en ;
+      dcterms:description """The goal of task 1.1 is to collect end user requirements from the application areas, and to specify the use cases for GeoKnow. The end users involved in the project (Unister, BROX) will heavily contribute to this task, as well as all other project partners. Further, current user communities (both end users and technology users) of Schnellecke, OpenStreetMap and geodata.gov.gr will be involved. Combined, these platforms provide access to millions of users with diverse (a) expertise (e.g. researchers, students. SMEs, citizens), (b) thematic areas (e.g. natural sciences, transport, statistics), and technology needs (e.g. data consumers, web services integration).
+User requirements will be collected through a combination of appropriate instruments: (a) one-to one interviews with prominent users (10-15 users), (b) group meetings with expert users (10-15), (c) invitational online questionnaires for specific non-overlapping thematic areas and high technical expertise (30-60 users), (d) mass online questionnaires (100-200 users). The resulting requirements document for the GeoKnow Generator will be the basis for the subsequent RTD work. All tasks in WP2-WP4 that deal with requirement analysis and specification contribute to this joint activity. InfAI, OpenLink and Ontos will analyse and specify the technical requirements for metadata identification, access to spatial data, selection, construction of knowledge stores, and metadata transfer, that is, in tandem with the development and evaluation of the application-specific demonstrators developed in WP5-WP6, we will also define all necessary technical requirements related to the development under WP2-4.
+The requirements will be monitored throughout the lifetime of the project, and in case some additional requirements have to be satisfied, an update of the deliverable D1.1.1 shall be prepared."""@en ;
+      dcterms:identifier "T1.1" ;
+      fp:next gk:t1-2 ;
+      fp:partner gk:Unister , gk:Ontos , gk:BROX , gk:InfAI ;
+      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp1 .
+
+gk:t4-2
+      a       fp:Task ;
+      rdfs:label "Adaptive spatial-semantic authoring and curation"@en ;
+      dcterms:description """In this task, we will develop two components for the authoring and curation of spatial-semantic content. Firstly, we will specify a spatial-semantic widget interface, which will allow the creation of small reusable interface components for the creation of domain-specific user-interfaces. The widgets will be RDFa annotated HTML fragments together with JavaScript and CSS code. This will allow one to reuse them in various development environments, as for instance J2EE, LAMP, and Dot.Net. The widget interface definition will contain a number of event handlers, style classes, JavaScript functions, which concrete implementations must support. Widgets should be composeable out of existing smaller ones. For example, a widget for creating train stations, could be composed out of widgets for selecting a certain location and ones for representing object type, associating train lines etc. As part of this task we will develop a library of reusable widgets and common utilities.
+In order to enable the curation of spatial-semantic knowledge, we will develop an interface allowing to curate (i.e. annotation or modification) single spatial objects or complete sets of spatial objects. The curation of sets of objects will start with a search and faceted-refinement. Subsequently, all retrieved spatial entities can be updated in a single step thus mimicking data cleansing tools from the database and ETL world."""@en ;
+      dcterms:identifier "T4.2" ;
+      fp:next gk:t4-3 ;
+      fp:partner gk:InfAI ;
+      fp:previous gk:t4-1 ;
+      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp4 .
+
+gk:t4-3
+      a       fp:Task ;
+      rdfs:label "Public-private spatial data co-evolution"@en ;
+      dcterms:description "One of the main innovations of GeoKnow will be the development of a co-evolution approach, which facilitates the synchronized evolution of spatial Linked Open Data sources and company internal data (e.g. E-Commerce data in WP6). Our approach will be based on a declarative definition of evolution patterns, which will ensure, that changes made on imported Linked Open Data sources during the curation process will prevail after these sources are newly downloaded and updated from the Web of Data. This technology will enable any data consumer to select relevant parts of datasets and transform them as needed, thereby retaining the possibility to easily (re)synchronize with the sources should they change. The same technology can also be used by the maintainers of the source data sets for incorporating third party changes, such as fixes, that were made public. The ultimate goal is to create a comprehensive Enterprise knowledge hub (similarly to DBpedia on the Web of Data), which is connected with all major data and knowledge bases relevant for the enterprise and which constitutes a crystallization point for the organizational knowledge of a company."@en ;
+      dcterms:identifier "T4.3" ;
+      fp:next gk:t4-4 ;
+      fp:partner gk:Unister ;
+      fp:previous gk:t4-2 ;
+      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp4 .
+
+gk:t3-1
+      a       fp:Task ;
+      rdfs:label "Spatial knowledge mapping"@en ;
+      dcterms:description """One goal of this task is to develop algorithms and services to map spatial (datasets with geometric information) and non-spatial RDF data. For example, often datasets only contain implicit geographic references, such as city names. However, this information alone is not sufficient for unambiguously identifying geographic entities.A further goal is therefore to provide a tool assisted way of providing context information and parameterizing transformations for the generation of high quality RDF datasets. The following components will be developed:
+a component to lift implicit geographical references in data sets. Given an RDF data set with implicit geographical references, the module will automatically detect potential types of geospatial information and the relations to existing vocabularies. For instance, a dataset containing address information could be automatically geocoded using a service such as Nominatim. The address information itself can be identified either by the used vocabulary or by crosschecking the used values against reference lists of e.g. country, city and street names. Additionally, this enables interlinking with spatial datasets, such as GeoNames, DBpedia or LinkedGeoData. The component will be manually evaluated (a) using information retrieval measures, such as precision and recall, and (b) by comparison with reference datasets. For large datasets, sampling methods will be applied. 
+a component to configure transformation of data in conventional formats into RDF using existing vocabularies. Based on the detected implicit information,the user will be able to specify the type, format, granularity and amount of data being transformed. 
+a distributed system for continuously processing a large amount of conventional data into an RDF representation based on the configuration. The challenge here is the expected amount of data to be processed. Since the original data sets remain unchanged and evolve over time it is required to be able to quickly re-process large amount of RDF data. This component will be evaluated for its performance, such as by measuring the process time for different datasets and dataset sizes."""@en ;
+      dcterms:identifier "T3.1" ;
+      fp:next gk:t3-2 ;
+      fp:partner gk:OpenLink , gk:InfAI ;
+      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp3 .
+
+gk:t3-3
+      a       fp:Task ;
+      rdfs:label "Quality aware spatial knowledge aggregation"@en ;
+      dcterms:description """Community efforts live from the enthusiasm of volunteers. Too strict regulations of the type of content contributed to the effort would be counterproductive. While it helps new contributors to guide with suggestions for categories to be instantiated on a map more experienced users will want to add new categories at their wish. 
+In this task we aim at consolidating the type of information entered in volunteered geographic knowledge bases not by restricting the set of categories but rather:
+develop algorithms semantically consolidating the meaning of categories. We aim at developing algorithms automatically mapping newly added categories to existing categories. The user has then the choice to reuse an existing definition of a well described and frequently used category or begin to define a new category. Newly added categories will be grouped with other categories into higher types of categories.
+investigate in a community driven consolidation process. Since we are aware that an algorithmic approach will not solve the problem entirely, the goal is to develop means to define aggregated categories and allow the community to agree on them."""@en ;
+      dcterms:identifier "T3.3" ;
+      fp:next gk:t3-4 ;
+      fp:partner gk:ATH , gk:InfAI ;
+      fp:previous gk:t3-2 ;
+      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp3 .
+
+gk:t5-3
+      a       fp:Task ;
+      rdfs:label "Consolidated spatial view of the whole supply chain"@en ;
+      dcterms:description "Once supply chain information is accessible and aggregated in a central or federated supply chain spatial data infrastructure we will adapt spatial visualization techniques for generating unified view on the state of the supply chain. These views will allow stakeholders to obtain an overview on the current state of the supply chain, identify bottlenecks and optimization potential and to perform distinct actions."@en ;
+      dcterms:identifier "T5.3" ;
+      fp:next gk:t5-4 ;
+      fp:partner gk:BROX , gk:InfAI ;
+      fp:previous gk:t5-2 ;
+      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp5 .
+
+gk:t5-5
+      a       fp:Task ;
+      rdfs:label "Evaluation and testing"@en ;
+      dcterms:description "In this task, the GeoKnow demonstrator application will be tested wrt. performance, usability and robustness. The testing methodology will be based on (1) the definition of a test-bed scenario and test-protocol at Schnellecke, (2) the deployment of the GeoKnow demonstrator application for this test-bed, (3) the training of respective operational personnel, (4) live test where operational personnel will spend at least 20 hours testing the system according to a the-specified test-protocol, (5) assessment of the test results and derivation of application and deployment guidelines. The operational personnel will be people involved in managing and executing logistics services in the supply chain from Schnellecke and cooperation partners. This will include people dealing with operational procedures (e.g. operating RFID readers) directly in the supply chain, supervisors and management personnel aiming to gain oversight and strategic views on the supply chain. We will also assess in this task to what extent additional information from the LOD cloud is beneficial and for which particular tasks. Currently, we do not foresee logistics partners' data to be published openly on the Web. Particular attention during the test and evaluation will be paid to involving several stakeholders to for obtaining a unified view on the supply chain. The test-bed and test-data as well as contacts to additional stakeholders and organizations required for this task will be provided by Schnellecke (cf. Letter of Support) free of charge to the project."@en ;
+      dcterms:identifier "T5.5" ;
+      fp:partner gk:BROX ;
+      fp:previous gk:t5-4 ;
+      fp:taskNumber "5"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp5 .
+
+gk:t2-1
+      a       fp:Task ;
+      rdfs:label "State of the Art in geospatial and semantic data management"@en ;
+      dcterms:description "This task reviews the current state of the art in geospatial and semantic data management concerning performance, scaling, expressiveness, as well as conformance with de facto and de jure standards (Open Geospatial Consortium, ISO TC211, W3C, INSPIRE Directive).First, we will examine currently available standards to embed spatial representations in RDF (e.g. RDFID Geo, GeoRDF, GML, GeoRSS, KML). Second, we will document and analyze the support of existing semantic repositories for the aforementioned spatial representations. Third, we will design and execute analytical benchmarks to compare the performance and real-world relevance of current semantic repositories toFLOSS and proprietary geospatial databases (e.g. PostGIS, Oracle Spatial). Specifically, we will use Open Street Map data as a very large data source, and typical geospatial queries performed by the OSM community as workloads. Our findings will establish a baseline for evaluating performance and scaling attributes of current approaches, and provide quantitative metrics for evaluating the performance of prototypes produced later in the project."@en ;
+      dcterms:identifier "T2.1" ;
+      fp:next gk:t2-2 ;
+      fp:partner gk:ATH ;
+      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp2 .
+
+gk:t1-4
+      a       fp:Task ;
+      rdfs:label "Component integration and GeoKnow Generator"@en ;
+      dcterms:description """During this task individual components developed in WP2-4 will be integrated into a ready to use GKS Generator and associated APIs in order to enable communities of practice to create domain specific GKSes with a minimum of effort. For example, chosing between map providers (e.g. OpenStreetMap, Google Maps) will require no coding, and there will be a widget library, based on the use-cases, with some widgets (e.g. for place searches, ratings, images and facts) being usable across multiple domains. A plug-in system will ensure that new styles and behaviour can be added in case none of the provided components turn out to be applicable.
+Thus, this task consists of the following subtasks:
+Integration of User Interface Components. The goal of this sub-task is to provide rich GUIs for social-aware GKS applications. 
+Integration of GeoKnow Generator and API. The objective of this sub-task is to integrate the GeoKnow components developed in WP2-4 and the Web 2.0 toolkit into a ready to use GKS Generator with underlying service APIs. Within this task we will perform software integration activities together with WP2-4. 
+Testing, documentation & tutorials. This sub-task will take the end-user and technical feedbacks resulting from WP5-6 into account to improve the final GeoKnow Generator and provide documentation and tutorials. The documentation of the evaluation should provide both quantitative and qualitative results, through real-life trials of the proposed work. A number of alpha and beta testing results will be documented by this task, which will be conducted after the delivery of each module and provide quantitative results."""@en ;
+      dcterms:identifier "T1.4" ;
+      fp:leadPartner gk:Ontos ;
+      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
+      fp:previous gk:t1-3 ;
+      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp1 .
+
+gk:t6-2
+      a       fp:Task ;
+      rdfs:label "Design integration methods and develop prototype to utilize RTD results"@en ;
+      dcterms:description "In this task, we will design integrative components based on the results and algorithms of WP2 and WP3. Therefore, a component model will be realised that adapts solutions from the mentioned work packages to the travel use case. Fusing and interlinking components will use the transformed tourism data from Task 6 and integrate it with geospatial open linked data. In parallel, we will develop user-friendly and simple UI components for business intelligence interfaces as well as reporting views to visualize analysis results. This subtask builds on WP4 and adapts metaphors and concepts developed in that WP. Concretely, the usability and potential benefit for users provided by the integration of the map visualization of points-of-interests in conjunction with the widget for facet selection will be evaluated. Lightweight widgets that visualize data snippets, such as styled fact boxes about touristic locations are also in the scope of this task."@en ;
+      dcterms:identifier "T6.2" ;
+      fp:next gk:t6-3 ;
+      fp:partner gk:Unister , gk:ATH ;
+      fp:previous gk:t6-1 ;
+      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp6 .
+
+gk:t6-4
+      a       fp:Task ;
+      rdfs:label "Evaluation and testing of the search prototype"@en ;
+      dcterms:description "In Task 6.4, we will define and conduct a use case scenario based on testing procedures to validate motive-centered queries. We will setup concrete test cases based on example intelligence queries based on the scenario. After execution of these test cases, we evaluate the respective test results by means of quality and quantity measures to check the correctness, completeness and performance of the developed prototype. Additionally, we will conduct usability tests for the developed search concepts described in deliverable D6.3.2. The tests will be integrated in the current web portal environment, in particular ab-in-den-urlaub.de (smaller German use case) and later on travel24.com (larger international use case). The test users are common customers. They should have already indicated (by the origin Google search or after giving textual input) that they would benefit from motive-based search in the field of application limited by the current features of the prototype. Using A/B testing this user segment will get answers to their queries by the current implementation or by the new search process. About 2-3% of the users will be used for this bucket test. The aim of those tests will be to evaluate whether Unister can benefit from motive based search and spatial data integration. The following metrics will be applied: conversion rate, transaction volume, time to PoS, etc. It is assumed that 1.000 customers per test will lead to a profound result."@en ;
+      dcterms:identifier "T6.4" ;
+      fp:partner gk:Unister , gk:Ontos ;
+      fp:previous gk:t6-3 ;
+      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp6 .
+
+gk:t2-3
+      a       fp:Task ;
+      rdfs:label "Geospatial query optimization"@en ;
+      dcterms:description "This task implements query optimization based on deep sampling with geospatial predicates. As a query plan is being constructed by the optimizer, it is evaluated on a randomly sampled subset of the data, thus detecting selectivity of joins with real data instead of precomputed statistics. This is robust in the face of data correlations, whereas reliance on precomputed statistics assumes independence of attributes, which is rarely the case. The task applies these methods specially to ordering of geospatial joins and to join order decisions involving spatial and non-spatial criteria."@en ;
+      dcterms:identifier "T2.3" ;
+      fp:next gk:t2-4 ;
+      fp:partner gk:OpenLink , gk:Athena ;
+      fp:previous gk:t2-2 ;
+      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp2 .
+
+gk:t7-4
+      a       fp:Task ;
+      rdfs:label "Orchestration with other projects"@en ;
+      dcterms:description "The Consortium partners will engage in technical EC-orchestration activities in two directions: (1) to facilitate the take-up of GeoKnow technology by other projects, and (2) to get input from other EU-funded projects, which are relevant for the development in GeoKnow. In section B1.2.4 of the proposal, we have assembled and presented a comprehensive list of relevant European and other projects. We are committed to technical collaboration with all European projects, which are related to the GeoKnow technology."@en ;
+      dcterms:identifier "T7.4" ;
+      fp:next gk:t7-5 ;
+      fp:partner gk:ATH ;
+      fp:previous gk:t7-3 ;
+      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp7 .
+
+gk:t8-1
+      a       fp:Task ;
+      rdfs:label "Management of the consortium"@en ;
+      dcterms:description "Monitoring the application of the Consortium Agreement and the compliance of all partners with the regulations put forth in it. Planning of consortium meetings according to the projects’ work plan and EC guideline."@en ;
+      dcterms:identifier "T8.1" ;
+      fp:next gk:t8-2 ;
+      fp:partner gk:InfAI ;
+      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp8 .
+
+gk:t7-2
+      a       fp:Task ;
+      rdfs:label "Exploitation"@en ;
+      dcterms:description """The two case studies and the industrial and end-user community partners will drive the exploitation. Their task is to extend the research activities by promoting and supporting the exploitation of the results along with take-up activities related to the perspective applications. The majority of the project results will be made available as open source and the open source exploitation strategy will describe how to leverage the potential of such an open source initiative.
+The pillars of GeoKnow exploitation strategy are: tracking important technical and commercial developments in geo data management, semantic web, Web 2.0 as well as geospatial e-science and enterprise applications; analyzing the market sector(s) where the results can be applied and possibly licensed commercially; identifying the results of GeoKnow that are exploitable: particularly the GeoKnow Generator, some of the components and the innovative applications developed within the use cases; and identifying the appropriate distribution channels (including open source community) to exploit the different results of the project.
+The major outcome of this work package will be the GeoKnow Exploitation Plan, which will include a list of opportunities that arise from GeoKnow scientific and technical achievements and a detailed analysis of benefit and impact for the GeoKnow consortium as a whole as well as for the results of individual participants. The prestige of both the industrial partners and the use case partners makes the GeoKnow Consortium an international partnership."""@en ;
+      dcterms:identifier "T7.2" ;
+      fp:leadPartner gk:Unister ;
+      fp:next gk:t7-3 ;
+      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
+      fp:previous gk:t7-1 ;
+      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp7 .
+
+gk:t8-5
+      a       fp:Task ;
+      rdfs:label "Monitoring of resource expenditure"@en ;
+      dcterms:description "Establishing and maintaining an internal tool to monitor resource expenditure (person months spending) per partner and per WP."@en ;
+      dcterms:identifier "T8.5" ;
+      fp:next gk:t8-6 ;
+      fp:partner gk:InfAI ;
+      fp:previous gk:t8-4 ;
+      fp:taskNumber "5"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp8 .
+
+gk:t3-5
+      a       fp:Task ;
+      rdfs:label "Spatial knowledge quality assessment"@en ;
+      dcterms:description """The goal of this task is to analyse and evaluate metrics for assessing the spatial data quality on several levels.
+Specifically we will:
+analyse which of the developed metrics are suitable for quality assessment
+extend the metrics with special purpose quality assurance metrics, such as description richness.
+adapt existing quality metrics for spatial data to RDF, such as metrics for computing the deviation of spatial data to a reference dataset.
+analyse manual, semi-automatic and automatic approaches for the detection and repair of wrong information and the enrichment in case of missing information. For example, statistical approaches based on the distribution of properties and values per class can be used for the detection of erroneous and missing information.
+assess the quality of relevant datasets with appropriate metrics"""@en ;
+      dcterms:identifier "T3.5" ;
+      fp:partner gk:Unister , gk:InfAI ;
+      fp:previous gk:t3-4 ;
+      fp:taskNumber "5"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp3 .
+
+gk:t5-1
+      a       fp:Task ;
+      rdfs:label "Connecting RFID Data to the Web of Data"@en ;
+      dcterms:description """In this task we will develop techniques for making the information stored in RFID chips identifiable and accessible on the Web of Data. We will devise an identification scheme for RFID information and map the currently prevalent data models in supply chain applications to RDF. The mapping should be provenance preserving and accommodate temporal information and relationships. A particular aspect tackled in this task is the capturing and representation of access control rules.
+Deliverable 1. Supply chain information model."""@en ;
+      dcterms:identifier "T5.1" ;
+      fp:next gk:t5-2 ;
+      fp:partner gk:BROX , gk:InfAI ;
+      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp5 .
+
+gk:t1-2
+      a       fp:Task ;
+      rdfs:label "GeoKnow architecture & system design"@en ;
+      dcterms:description """This task is devoted to specifying the GeoKnow architecture and the detailed design of the GeoKnow Generator. Scalability, extensibility and flexibility shall be achieved by employing Service Oriented Knowledge Utilities (SOKU)1 in order to develop next generation GKS.2 Components of the system will be building blocks developed in individual work packages WP2-4, such as the semantics based geo-spatial information management subsystem (WP2), spatial knowledge fusing and integration methods (WP3), the development of user interfaces for spatial-semantic browsing and authoring (WP4). The developed components will be integrated within this task. While the common technical requirements will be one major input for the system design, other major sources will be the developed use cases and end user requirements as well as interoperability standards.
+The system design defines clear interfaces between the individual components. It will be based on existing standards and will provide a modular plug’n’serve structure and shall be able to accommodate REST components and JavaScript user interface widgets. The architecture will be centred around the OWL/RDF-statement paradigm, which enables interactions between components on different conceptual levels, such as triples, classes and instances, ontologies, logical axioms etc."""@en ;
+      dcterms:identifier "T1.2" ;
+      fp:next gk:t1-3 ;
+      fp:partner gk:Unister , gk:ATH , gk:Ontos , gk:InfAI ;
+      fp:previous gk:t1-1 ;
+      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp1 .
+
+gk:t8-3
+      a       fp:Task ;
+      rdfs:label "Financial Management"@en ;
+      dcterms:description "Preparing and compiling of Periodic Financial Report obtaining Audit Certificates from partners."@en ;
+      dcterms:identifier "T8.3" ;
+      fp:next gk:t8-4 ;
+      fp:partner gk:InfAI ;
+      fp:previous gk:t8-2 ;
+      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp8 .
+
+gk:t2-4
+      a       fp:Task ;
+      rdfs:label "Geospatial clustering"@en ;
+      dcterms:description """This task implements reorganization of data according to geospatial locality so that thematic data ­­­pertaining to geospatially close geometries is nearly always clustered together in physical storage. Since geospatial access patterns are most often geo-local, it makes sense to also reflect this locality in the placement of thematic data. Technically, this consists of renumbering IRI identifiers according to the geospatial attributes that depend on them through one or more reference steps.
+This further means that in a cluster system the feature and its thematic content will be co-located on the same server. The benefits will be much higher retrieval speed due to more localized access patters, thus deriving full benefit from vectored execution and column store techniques that rely on locality for performance."""@en ;
+      dcterms:identifier "T2.4" ;
+      fp:partner gk:OpenLink ;
+      fp:previous gk:t2-3 ;
+      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp2 .
+
+gk:t4-4
+      a       fp:Task ;
+      rdfs:label "Spatial social networking"@en ;
+      dcterms:description "In this task, we will implement social networking interfaces for the authoring components of the GeoKnow Generator. The interfaces will be implemented in two steps, first we integrate a subscription and notification service into the GeoKnow Generator, which will enable users to subscribe to arbitrary information adhering to certain spatial or semantically defined filter criteria. In a second development iteration, we will extend to subscription and notification service for GeoKnow with an API adhering to the Open-social standard. Based on this API, individuals and organisations can be informed on spatial knowledge updates performed by their social neighbourhood. The spatial social networking component is particularly important for the supply chain integration features of WP5."@en ;
+      dcterms:identifier "T4.4" ;
+      fp:partner gk:Ontos , gk:BROX ;
+      fp:previous gk:t4-3 ;
+      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp4 .
+
+gk:t4-1
+      a       fp:Task ;
+      rdfs:label "Spatial-semantic visualization and exploration"@en ;
+      dcterms:description """In this task we will develop a reusable components for visualizing and exploring spatial content. The component will consist of a library of different spatial-semantic visualization and exploration components:
+A slippy map, which allows users to zoom-to and select a certain geographical area. The slippy map will be based on existing Web map implementations, such as for example OpenLayers1 from Open Source Geospatial Foundation. The implementation will be extended to allow an overlaying of the displayed raster maps with additional information represented in vector formats, such as various types of markers, polygons and curves. 
+A facet filtering component, which displays (a hierarchy of) semantic facets detected in conjunction with the selected map area. Only facets, which have respective adhering objects in the selected area as well as the overall number of objects adhering to each facet in the selected area will be displayed. Depending on the facet type, different selection widgets will allow to specify eligible facet-constraints, e.g date and number ranges and enumeration of facet values.
+A result view, which lists in addition to markers and regions on the map the retrieved objects adhering to the selected facets. For each individual object in the result set, its properties can be displayed in a configurable way. It will be possible to define templates for the visual presentation of certain spatial objects, e.g. train stations, cities, parks etc. Based on existing vocabularies such templates will display semantic information in a customizable and domain specific way. 
+The components’ usability will be evaluated in the context of their integration into the portals of the project partners, as described in WP5 and WP6. For this reason, we do not plan to evaluate the usability of the widgets “on their own”, as this will be covered by the respective reports. The evaluation findings will be considered for further developments and improvements of the components."""@en ;
+      dcterms:identifier "T4.1" ;
+      fp:next gk:t4-2 ;
+      fp:partner gk:InfAI ;
+      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp4 .
+
+gk:t3-2
+      a       fp:Task ;
+      rdfs:label "Spatial knowledge fusing"@en ;
+      dcterms:description "A problem in the field of geospatial data management is the requirement to combine two or more geospatial data sets that have been derived from different sources. The same geographic feature can have a different RDF representations, different metadata and differing geometry associated with it. The goal of this task is to automate fusing based on semantic links in the maps. While in WP2 we are developing the infrastructure for fusing geospatial data sets, this task has the goal to develop the algorithms necessary for fusing different RDF representations of maps. Here, we will develop a module (1) to map different RDF representations of geometry; (2) to merge different metadata associated with spatial objects; (3) to combine different representations of relations between spatial objects."@en ;
+      dcterms:identifier "T3.2" ;
+      fp:next gk:t3-3 ;
+      fp:partner gk:ATH ;
+      fp:previous gk:t3-1 ;
+      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp3 .
+
+gk:t5-2
+      a       fp:Task ;
+      rdfs:label "Supply Chain Geo Data Management infrastructure"@en ;
+      dcterms:description "Based on the results of Task 5.1, this task is devoted to read RFID information and propagated this information into central or de-centralized spatial SPARQL endpoint infrastructures. We will adapt the GeoKnow generator framework to serve as a basis for such a supply chain spatial data infrastructure. For the de-centralized case, we will develop mechanisms for selecting designated parts of the information in one supply chain information endpoint, making this information available to cooperation partners in the supply chain by applying Linked Data techniques such as Semantic Pingback, PubSubhubbub and WebId. This information is syndicated and we will develop techniques for update propagation of such information along the supply chain."@en ;
+      dcterms:identifier "T5.2" ;
+      fp:next gk:t5-3 ;
+      fp:partner gk:BROX , gk:Openlink ;
+      fp:previous gk:t5-1 ;
+      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp5 .
+
+gk:t6-1
+      a       fp:Task ;
+      rdfs:label "Customer data selection, retrieval and preparation"@en ;
+      dcterms:description "The first step in this task will be the identification and selection of relevant data partitions of existing real CRM systems and travel/tourism portals (e.g. ab-in-den-urlaub.de, travel24.com, fluege.de). Here, we will investigate internal data as well as its interlinkability with other open data sets as geospatial and spatial social network data. We will develop retrieval methods and tools and aggregate this data. Additionally, we will execute preparations and needed transformations on that data to ensure ease of integration with the GKS and efficient processing of the data. A part of this will be the transformation into an RDF representation. In Task 6.1 a proprietary CRM, developed in-house at Unister, is used. Because Unister has to deal with many different and changing vendors of travel/tourism services and products, this special CRM takes into account the many different CRM data structures provided by these vendors. It is more appropriate to identify it as system of CRMs."@en ;
+      dcterms:identifier "T6.1" ;
+      fp:next gk:t6-2 ;
+      fp:partner gk:Unister , gk:InfAI ;
+      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp6 .
+
+gk:t1-3
+      a       fp:Task ;
+      rdfs:label "Performance Benchmarking and Evaluation"@en ;
+      dcterms:description """A benchmarking strategy will be developed and the platforms performance will be evaluated, based on well-established benchmarks, such as the Sequoia 2000 and Paradise benchmark3. In particular, the benchmark will be based on OSM and Natural Earth datasets, complemented by synthetic social data from the LOD2 Social Intelligence Benchmark. Further, to perform benchmarking tests that can deal with very large datasets, we will develop a suitable infrastructure by (1) evaluating existing high-performant and compact GIS storage formats for adoption of best practices (e.g. Oracle Spatial, PostGIS), (2) developing a suitable process for extract-transform-load of geo data, including coordinate transforms and schema mapping (e.g. GDAL/OGR, GeoKettle). This is in itself a matter of benchmarking but also enables running benchmarks targeting diverse geospatial workloads such as localized, potentially high frequency accesses for route planning and querying; as well as aggregation queries that span large portions of the map and join with thematic data.
+
+The Sequoia workload is an initial checklist item for validating functionality and relative performance as opposed to existing GIS. Geoknow will move beyond the state of the art by using and further refining the geospatial benchmark built in LOD2, emulating heavy drill-down style online access patterns and accessing large volumes of thematic data. An example of this is zooming on a map shaded according to population density or real estate prices. Beyond this, benchmarking will look at more complex analytics such as deciding locations of services based on population distribution, competitive services, road network capacity and the like. The last category is not expressible as a query but requires database resident application logic.
+
+Further, to compare GKS and its components with other state of the art systems, we will use the SEALS project benchmarking services. This will provide us with an objective evaluation of the GKS and its components.
+
+Benchmarks will be done early, so as to provide constant tracking of performance.
+Virtuoso's relational GIS functionality will be compared to PostGIS using the full scale OSM data and typical OSM queries and updates. Further, an RDF version of this will be run on Virtuoso and its performance will be compared to the performance attained with OSM in relational form on Virtuoso."""@en ;
+      dcterms:identifier "T1.3" ;
+      fp:next gk:t1-4 ;
+      fp:partner gk:ATH , gk:OpenLink ;
+      fp:previous gk:t1-2 ;
+      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp1 .
+
+gk:t5-4
+      a       fp:Task ;
+      rdfs:label "GeoKnow background knowledge for the supply chain"@en ;
+      dcterms:description "We will adopt the GeoKnow generator for slicing and dicing spatial data of the supply chain for particular members. We will implement prototypical services for supply chains using background knowledge from the Spatial Data Web, such as geo-coding applications, routing, spatial object disambiguation etc."@en ;
+      dcterms:identifier "T5.4" ;
+      fp:next gk:t5-5 ;
+      fp:partner gk:ATH , gk:BROX ;
+      fp:previous gk:t5-3 ;
+      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
+      fp:workpackage gk:wp5 .
+
+gk:t7-1
+      a       fp:Task ;
       rdfs:label "Dissemination, community building and cross-fertilisation"@en ;
-      gk:identifier "T7.1" ;
-      <http://purl.org/dc/terms/description>
-              """The first focus of WP7 is the dissemination of the project results supported by community building and cross-fertilisation activities.
+      dcterms:description """The first focus of WP7 is the dissemination of the project results supported by community building and cross-fertilisation activities.
 Both the industrial and the academic partners will play active roles in dissemination. For the use case partners, the case studies will form a key part of the dissemination activity. For the academic partners, consultancy to business and contractual research and development will be a significant part of dissemination, besides the normal channels of publications, conference papers, workshop organisation, and educational courses at university sites.
 The dissemination programme foresees a multi-channel dissemination approach. First, the project outcomes will be disseminated by use of publicly available channels – such as workshop, conference, magazine, and journal publications. These will be aimed at sharing the results of the project with the scientific community, particularly the European, but also the international scientific community, to encourage their incorporation into the work of other scientists and technologists. Complementing this, there will be a programme of papers and articles in IT, Web Technologies and general business publications, and presentations at geo data, library, IT and business expos and conferences (e.g. LinkedDataPlanet, KM Europe, Dublin Core Metadata Initiative (DCMI), Digital Curation Conference, CeBIT or Systems for telecommunication and IT) particularly targeted at the European Union and associated countries. We envisage that the innovative technology required for building spatial Linked Data applications, and the resulting open GeoKnow Generator, will be of great interest to both SMEs and large businesses alike.
 We will put a special focus on demonstration activities in different forms of the possibilities that the newly developed technologies will offer. Target audience will be relevant industry and research actors whose main focus is the development of data and knowledge management systems, new scalable collaboration paradigms and their combination with information retrieval. The participation of globally acting partners (Ontos, OpenLink, BROX) will provide an additional, global dimension to our dissemination programme, in particular with Unister and Openlink as a globally acting E-Commerce and software vendor with offices in the US, and major European countries. Taking advantage of its worldwide unique information infrastructure, with products for enterprise information management, Unister can provide current research and technological solutions developed by the GeoKnow partners an ideal environment for demonstrating their real added value. The GeoKnow consortium will organize two end-user and industry days, one for each of the two case study applications corporate spatial business intelligence and e-science.
@@ -167,342 +420,32 @@ GeoKnow will create a Researcher Early Access Group that will be open to partici
 In the first month of the project, the GeoKnow consortium will create a fact sheet suitable for Web publishing. The Fact Sheet will outline the project's rationale and objectives, specify its technical baseline and intended target groups and application domains, and detail intermediate and final outputs. The facts-sheet will be maintained and updated until the end of the project; this will be documented in the regular dissemination reports. It will be published on the website and related EC sponsored websites controlled by the consortium. Related to the fact sheet, the consortium will issue press releases within one month of the start of the project (prepared by InfAI and Ontos, translation and dissemination by all partners). The press releases will target the local or national press of all partners. The press release will describe the goals of the project in simple, jargon free language and whenever possible highlight the benefits to the region/country and the importance of the local partner being part of a EU consortium. A PDF version of the collection of such press releases will be listed as part of Deliverable D7.1.1. 
 If suitable, the consortium may commit to radio and TV appearances. If this is feasible audio/video clips will also be submitted as additional deliverables.
 Additionally, we plan to promote cross-fertilisation through inter-disciplinary workshops, organized alongside major conferences in the respective research fields. The GeoKnow partners representing each of these diverse research areas will be responsible to promote the project results within the respective communities. The project partners undertake – when invited – to contribute to and participate in focused concertation actions, themed seminars or special interest groups."""@en ;
+      dcterms:identifier "T7.1" ;
       fp:leadPartner gk:Ontos ;
-      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:Athena , gk:BROX , gk:InfAI , gk:Openlink ;
+      fp:next gk:t7-2 ;
+      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
       fp:taskNumber "1"^^xsd:nonNegativeInteger ;
       fp:workpackage gk:wp7 .
 
-fp:Task3-2
-      fp:next gk:Task3-3 .
-
-fp:Task1-3
-      fp:next gk:Task1-4 .
-
-gk:Task7-5
-      rdfs:label "Publishing directives"@en ;
-      gk:identifier "T7.5" ;
-      <http://purl.org/dc/terms/description>
-              """All publications even partially funded by the project will prominently acknowledge the grant under which the project is funded. Every publication will be tagged with \"GEOKNOW-318159\". Details of all publications even partially funded by the project shall be uploaded to some specific and agreed Bibliographic social networks such as http://www.citeulike.org/, http://www.mendeley.com/ or http://www.bibsonomy.org/. Whenever such Bibliographic social networks allow for a catalogue of publications to be retrieved by tag or published as an RSS feed, the project's web site should expose such a catalogue.
-All presentation materials for which this appropriate shall be published on the project's web site under a Creative Commons licence (http://creativecommons.org/) or another appropriate license. All open source software produced by the consortium shall be published on publicly available software repositories such as http://sourceforge.net/, http://github.com/ or http://osor.eu. All data sets for which this appropriate shall be published on the project's web site under a Creative Commons licence (http://creativecommons.org/) or another appropriate license."""@en ;
-      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
-      fp:previous fp:Task7-4 ;
-      fp:taskNumber "5"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp7 .
-
-fp:Task2-1
-      fp:next gk:Task2-2 .
-
-fp:Task5-1
-      fp:next gk:Task5-2 .
-
-fp:Task8-1
-      fp:next gk:Task8-2 .
-
-gk:Task5-3
-      rdfs:label "Consolidated spatial view of the whole supply chain"@en ;
-      gk:identifier "T5.3" ;
-      <http://purl.org/dc/terms/description>
-              "Once supply chain information is accessible and aggregated in a central or federated supply chain spatial data infrastructure we will adapt spatial visualization techniques for generating unified view on the state of the supply chain. These views will allow stakeholders to obtain an overview on the current state of the supply chain, identify bottlenecks and optimization potential and to perform distinct actions."@en ;
-      fp:partner gk:BROX , gk:InfAI ;
-      fp:previous fp:Task5-2 ;
-      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp5 .
-
-gk:Task6-4
-      rdfs:label "Evaluation and testing of the search prototype"@en ;
-      gk:identifier "T6.4" ;
-      <http://purl.org/dc/terms/description>
-              "In Task 6.4, we will define and conduct a use case scenario based on testing procedures to validate motive-centered queries. We will setup concrete test cases based on example intelligence queries based on the scenario. After execution of these test cases, we evaluate the respective test results by means of quality and quantity measures to check the correctness, completeness and performance of the developed prototype. Additionally, we will conduct usability tests for the developed search concepts described in deliverable D6.3.2. The tests will be integrated in the current web portal environment, in particular ab-in-den-urlaub.de (smaller German use case) and later on travel24.com (larger international use case). The test users are common customers. They should have already indicated (by the origin Google search or after giving textual input) that they would benefit from motive-based search in the field of application limited by the current features of the prototype. Using A/B testing this user segment will get answers to their queries by the current implementation or by the new search process. About 2-3% of the users will be used for this bucket test. The aim of those tests will be to evaluate whether Unister can benefit from motive based search and spatial data integration. The following metrics will be applied: conversion rate, transaction volume, time to PoS, etc. It is assumed that 1.000 customers per test will lead to a profound result."@en ;
-      fp:partner gk:Unister , gk:Ontos ;
-      fp:previous fp:Task6-3 ;
-      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp6 .
-
-fp:Task7-2
-      fp:next gk:Task7-3 .
-
-gk:Task6-3
+gk:t6-3
+      a       fp:Task ;
       rdfs:label "Motive and topic-based Search Infrastructure and UI interfaces"@en ;
-      gk:identifier "T6.3" ;
-      <http://purl.org/dc/terms/description>
-              """This task will focus on the aggregation and transformation of integrated linked geospatial data into search-optimized data structures such as optimized index structures. These data structures can then be used by applications to run enhanced queries focussing on topics and customer motives on the integrated GKS data. Motive and topic based search is a new search paradigm, combining elements of information retrieval and questions answering. Such searches are particularly important in the e-Commerce domain, where customers search for parameters of products and services. An example of a motive and topic based search is “winter holiday with culture and mountains”, which could return travel options offering hiking as well as cultural highlights during the winter school holidays in the region of the searcher. Such searches require substantial (spatial) background knowledge as it can be only provided by the Web of Data.
+      dcterms:description """This task will focus on the aggregation and transformation of integrated linked geospatial data into search-optimized data structures such as optimized index structures. These data structures can then be used by applications to run enhanced queries focussing on topics and customer motives on the integrated GKS data. Motive and topic based search is a new search paradigm, combining elements of information retrieval and questions answering. Such searches are particularly important in the e-Commerce domain, where customers search for parameters of products and services. An example of a motive and topic based search is “winter holiday with culture and mountains”, which could return travel options offering hiking as well as cultural highlights during the winter school holidays in the region of the searcher. Such searches require substantial (spatial) background knowledge as it can be only provided by the Web of Data.
 The current state of the art is focused on querying data statically. Only by using the Linked Data paradigm it is possible to derive data from the Data graph dynamically. However, this approach would cause a large effort if the data is not organized well (state explosion during derivation). Therefore, the research task is located on the research area where ontology-based question answering overlaps with heuristic-based derivation as well as statistic-based IR."""@en ;
+      dcterms:identifier "T6.3" ;
+      fp:next gk:t6-4 ;
       fp:partner gk:Unister , gk:OpenLink ;
-      fp:previous fp:Task6-2 ;
+      fp:previous gk:t6-2 ;
       fp:taskNumber "3"^^xsd:nonNegativeInteger ;
       fp:workpackage gk:wp6 .
 
-fp:Task4-2
-      fp:next gk:Task4-3 .
-
-fp:Task8-5
-      fp:next gk:Task8-6 .
-
-fp:Task6-1
-      fp:next gk:Task6-2 .
-
-gk:Task8-4
-      rdfs:label "Internal communication"@en ;
-      gk:identifier "T8.4" ;
-      <http://purl.org/dc/terms/description>
-              "Establishing and maintaining of mailing lists according to the needs of the project Establishing and maintaining of project website/document repository."@en ;
-      fp:leadPartner gk:InfAI ;
-      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:BROX , gk:Athena , gk:InfAI , gk:Openlink ;
-      fp:previous fp:Task8-3 ;
-      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp8 .
-
-gk:Task2-2
+gk:t2-2
+      a       fp:Task ;
       rdfs:label "Integration with external geospatial databases"@en ;
-      gk:identifier "T2.2" ;
-      <http://purl.org/dc/terms/description>
-              "This task implements ETL flows for importing data from external GIS.  The GIS may be accessed via Virtuoso SQL federation, RDB-RDF mapping tools, such as Sparqlify, or web services or by simple file loading from a staging area. The goal is to make import of diversely standards compliant and diversely modelled geodata as nearly automatic as possible. Thereby possible workflows for dealing with updates on the source datasets will be analysed. For example, updates on small datasets may be published as files containing the complete new version of the dataset in monthly intervals. In contrast, providers of large datasets, such as OpenStreetMap, additionally publish files with minutely incremental changes. Alternatively, datasets may for instance already be published in SPARQL endpoints. This analysis will from a basis for the establishment of update processes that serve use cases of the project. In the process, performance of the Virtuoso GIS implementation will be tested and improvement targets identified."@en ;
+      dcterms:description "This task implements ETL flows for importing data from external GIS.  The GIS may be accessed via Virtuoso SQL federation, RDB-RDF mapping tools, such as Sparqlify, or web services or by simple file loading from a staging area. The goal is to make import of diversely standards compliant and diversely modelled geodata as nearly automatic as possible. Thereby possible workflows for dealing with updates on the source datasets will be analysed. For example, updates on small datasets may be published as files containing the complete new version of the dataset in monthly intervals. In contrast, providers of large datasets, such as OpenStreetMap, additionally publish files with minutely incremental changes. Alternatively, datasets may for instance already be published in SPARQL endpoints. This analysis will from a basis for the establishment of update processes that serve use cases of the project. In the process, performance of the Virtuoso GIS implementation will be tested and improvement targets identified."@en ;
+      dcterms:identifier "T2.2" ;
+      fp:next gk:t2-3 ;
       fp:partner gk:Athena , gk:InfAI ;
-      fp:previous fp:Task2-1 ;
+      fp:previous gk:t2-1 ;
       fp:taskNumber "2"^^xsd:nonNegativeInteger ;
       fp:workpackage gk:wp2 .
-
-gk:Task4-4
-      rdfs:label "Spatial social networking"@en ;
-      gk:identifier "T4.4" ;
-      <http://purl.org/dc/terms/description>
-              "In this task, we will implement social networking interfaces for the authoring components of the GeoKnow Generator. The interfaces will be implemented in two steps, first we integrate a subscription and notification service into the GeoKnow Generator, which will enable users to subscribe to arbitrary information adhering to certain spatial or semantically defined filter criteria. In a second development iteration, we will extend to subscription and notification service for GeoKnow with an API adhering to the Open-social standard. Based on this API, individuals and organisations can be informed on spatial knowledge updates performed by their social neighbourhood. The spatial social networking component is particularly important for the supply chain integration features of WP5."@en ;
-      fp:partner gk:Ontos , gk:BROX ;
-      fp:previous fp:Task4-3 ;
-      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp4 .
-
-fp:Task8-2
-      fp:next gk:Task8-3 .
-
-fp:Task6-3
-      fp:next gk:Task6-4 .
-
-gk:Task7-4
-      rdfs:label "Orchestration with other projects"@en ;
-      gk:identifier "T7.4" ;
-      <http://purl.org/dc/terms/description>
-              "The Consortium partners will engage in technical EC-orchestration activities in two directions: (1) to facilitate the take-up of GeoKnow technology by other projects, and (2) to get input from other EU-funded projects, which are relevant for the development in GeoKnow. In section B1.2.4 of the proposal, we have assembled and presented a comprehensive list of relevant European and other projects. We are committed to technical collaboration with all European projects, which are related to the GeoKnow technology."@en ;
-      fp:partner gk:ATH ;
-      fp:previous fp:Task7-3 ;
-      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp7 .
-
-fp:Task2-2
-      fp:next gk:Task2-3 .
-
-gk:Task3-1
-      rdfs:label "Spatial knowledge mapping"@en ;
-      gk:identifier "T3.1" ;
-      <http://purl.org/dc/terms/description>
-              """One goal of this task is to develop algorithms and services to map spatial (datasets with geometric information) and non-spatial RDF data. For example, often datasets only contain implicit geographic references, such as city names. However, this information alone is not sufficient for unambiguously identifying geographic entities.A further goal is therefore to provide a tool assisted way of providing context information and parameterizing transformations for the generation of high quality RDF datasets. The following components will be developed:
-a component to lift implicit geographical references in data sets. Given an RDF data set with implicit geographical references, the module will automatically detect potential types of geospatial information and the relations to existing vocabularies. For instance, a dataset containing address information could be automatically geocoded using a service such as Nominatim. The address information itself can be identified either by the used vocabulary or by crosschecking the used values against reference lists of e.g. country, city and street names. Additionally, this enables interlinking with spatial datasets, such as GeoNames, DBpedia or LinkedGeoData. The component will be manually evaluated (a) using information retrieval measures, such as precision and recall, and (b) by comparison with reference datasets. For large datasets, sampling methods will be applied. 
-a component to configure transformation of data in conventional formats into RDF using existing vocabularies. Based on the detected implicit information,the user will be able to specify the type, format, granularity and amount of data being transformed. 
-a distributed system for continuously processing a large amount of conventional data into an RDF representation based on the configuration. The challenge here is the expected amount of data to be processed. Since the original data sets remain unchanged and evolve over time it is required to be able to quickly re-process large amount of RDF data. This component will be evaluated for its performance, such as by measuring the process time for different datasets and dataset sizes."""@en ;
-      fp:partner gk:OpenLink , gk:InfAI ;
-      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp3 .
-
-fp:Task1-2
-      fp:next gk:Task1-3 .
-
-fp:Task5-4
-      fp:next gk:Task5-5 .
-
-fp:Task7-3
-      fp:next gk:Task7-4 .
-
-fp:Task4-1
-      fp:next gk:Task4-2 .
-
-gk:Task2-1
-      rdfs:label "State of the Art in geospatial and semantic data management"@en ;
-      gk:identifier "T2.1" ;
-      <http://purl.org/dc/terms/description>
-              "This task reviews the current state of the art in geospatial and semantic data management concerning performance, scaling, expressiveness, as well as conformance with de facto and de jure standards (Open Geospatial Consortium, ISO TC211, W3C, INSPIRE Directive).First, we will examine currently available standards to embed spatial representations in RDF (e.g. RDFID Geo, GeoRDF, GML, GeoRSS, KML). Second, we will document and analyze the support of existing semantic repositories for the aforementioned spatial representations. Third, we will design and execute analytical benchmarks to compare the performance and real-world relevance of current semantic repositories toFLOSS and proprietary geospatial databases (e.g. PostGIS, Oracle Spatial). Specifically, we will use Open Street Map data as a very large data source, and typical geospatial queries performed by the OSM community as workloads. Our findings will establish a baseline for evaluating performance and scaling attributes of current approaches, and provide quantitative metrics for evaluating the performance of prototypes produced later in the project."@en ;
-      fp:partner gk:ATH ;
-      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp2 .
-
-gk:Task8-3
-      rdfs:label "Financial Management"@en ;
-      gk:identifier "T8.3" ;
-      <http://purl.org/dc/terms/description>
-              "Preparing and compiling of Periodic Financial Report obtaining Audit Certificates from partners."@en ;
-      fp:partner gk:InfAI ;
-      fp:previous fp:Task8-2 ;
-      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp8 .
-
-gk:Task1-3
-      rdfs:label "Performance Benchmarking and Evaluation"@en ;
-      gk:identifier "T1.3" ;
-      <http://purl.org/dc/terms/description>
-              """A benchmarking strategy will be developed and the platforms performance will be evaluated, based on well-established benchmarks, such as the Sequoia 2000 and Paradise benchmark3. In particular, the benchmark will be based on OSM and Natural Earth datasets, complemented by synthetic social data from the LOD2 Social Intelligence Benchmark. Further, to perform benchmarking tests that can deal with very large datasets, we will develop a suitable infrastructure by (1) evaluating existing high-performant and compact GIS storage formats for adoption of best practices (e.g. Oracle Spatial, PostGIS), (2) developing a suitable process for extract-transform-load of geo data, including coordinate transforms and schema mapping (e.g. GDAL/OGR, GeoKettle). This is in itself a matter of benchmarking but also enables running benchmarks targeting diverse geospatial workloads such as localized, potentially high frequency accesses for route planning and querying; as well as aggregation queries that span large portions of the map and join with thematic data.
-
-The Sequoia workload is an initial checklist item for validating functionality and relative performance as opposed to existing GIS. Geoknow will move beyond the state of the art by using and further refining the geospatial benchmark built in LOD2, emulating heavy drill-down style online access patterns and accessing large volumes of thematic data. An example of this is zooming on a map shaded according to population density or real estate prices. Beyond this, benchmarking will look at more complex analytics such as deciding locations of services based on population distribution, competitive services, road network capacity and the like. The last category is not expressible as a query but requires database resident application logic.
-
-Further, to compare GKS and its components with other state of the art systems, we will use the SEALS project benchmarking services. This will provide us with an objective evaluation of the GKS and its components.
-
-Benchmarks will be done early, so as to provide constant tracking of performance.
-Virtuoso's relational GIS functionality will be compared to PostGIS using the full scale OSM data and typical OSM queries and updates. Further, an RDF version of this will be run on Virtuoso and its performance will be compared to the performance attained with OSM in relational form on Virtuoso."""@en ;
-      fp:partner gk:ATH , gk:OpenLink ;
-      fp:previous fp:Task1-2 ;
-      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp1 .
-
-gk:Task4-3
-      rdfs:label "Public-private spatial data co-evolution"@en ;
-      gk:identifier "T4.3" ;
-      <http://purl.org/dc/terms/description>
-              "One of the main innovations of GeoKnow will be the development of a co-evolution approach, which facilitates the synchronized evolution of spatial Linked Open Data sources and company internal data (e.g. E-Commerce data in WP6). Our approach will be based on a declarative definition of evolution patterns, which will ensure, that changes made on imported Linked Open Data sources during the curation process will prevail after these sources are newly downloaded and updated from the Web of Data. This technology will enable any data consumer to select relevant parts of datasets and transform them as needed, thereby retaining the possibility to easily (re)synchronize with the sources should they change. The same technology can also be used by the maintainers of the source data sets for incorporating third party changes, such as fixes, that were made public. The ultimate goal is to create a comprehensive Enterprise knowledge hub (similarly to DBpedia on the Web of Data), which is connected with all major data and knowledge bases relevant for the enterprise and which constitutes a crystallization point for the organizational knowledge of a company."@en ;
-      fp:partner gk:Unister ;
-      fp:previous fp:Task4-2 ;
-      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp4 .
-
-gk:Task3-5
-      rdfs:label "Spatial knowledge quality assessment"@en ;
-      gk:identifier "T3.5" ;
-      <http://purl.org/dc/terms/description>
-              """The goal of this task is to analyse and evaluate metrics for assessing the spatial data quality on several levels.
-Specifically we will:
-analyse which of the developed metrics are suitable for quality assessment
-extend the metrics with special purpose quality assurance metrics, such as description richness.
-adapt existing quality metrics for spatial data to RDF, such as metrics for computing the deviation of spatial data to a reference dataset.
-analyse manual, semi-automatic and automatic approaches for the detection and repair of wrong information and the enrichment in case of missing information. For example, statistical approaches based on the distribution of properties and values per class can be used for the detection of erroneous and missing information.
-assess the quality of relevant datasets with appropriate metrics"""@en ;
-      fp:partner gk:Unister , gk:InfAI ;
-      fp:previous fp:Task3-4 ;
-      fp:taskNumber "5"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp3 .
-
-fp:Task3-3
-      fp:next gk:Task3-4 .
-
-gk:Task5-2
-      rdfs:label "Supply Chain Geo Data Management infrastructure"@en ;
-      gk:identifier "T5.2" ;
-      <http://purl.org/dc/terms/description>
-              "Based on the results of Task 5.1, this task is devoted to read RFID information and propagated this information into central or de-centralized spatial SPARQL endpoint infrastructures. We will adapt the GeoKnow generator framework to serve as a basis for such a supply chain spatial data infrastructure. For the de-centralized case, we will develop mechanisms for selecting designated parts of the information in one supply chain information endpoint, making this information available to cooperation partners in the supply chain by applying Linked Data techniques such as Semantic Pingback, PubSubhubbub and WebId. This information is syndicated and we will develop techniques for update propagation of such information along the supply chain."@en ;
-      fp:partner gk:BROX , gk:Openlink ;
-      fp:previous fp:Task5-1 ;
-      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp5 .
-
-fp:Task2-3
-      fp:next gk:Task2-4 .
-
-gk:Task7-3
-      rdfs:label "Standardisation"@en ;
-      gk:identifier "T7.3" ;
-      <http://purl.org/dc/terms/description>
-              "GeoKnow will actively participate in appropriate standards bodies, specifically the W3C and/or DC. Such participation is twofold; on the one hand to ensure that established and emerging standards are taken into account appropriately in the GeoKnow project and, on the other hand, to seek to influence standardisation bodies. Concrete standardisation activities pursued in the context of GeoKnow are listed in section B1.9.4. The consortium represented by its W3C members (OpenLink and Ontos) will together with other actors establish a W3C Spatial Linked Data interest group in order to found a nucleolus for the growing user community of Spatial Data Web technologies."@en ;
-      fp:partner gk:OpenLink , gk:Ontos , gk:InfAI ;
-      fp:previous fp:Task7-2 ;
-      fp:taskNumber "3"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp7 .
-
-fp:Task6-2
-      fp:next gk:Task6-3 .
-
-fp:Task8-3
-      fp:next gk:Task8-4 .
-
-gk:Task3-2
-      rdfs:label "Spatial knowledge fusing"@en ;
-      gk:identifier "T3.2" ;
-      <http://purl.org/dc/terms/description>
-              "A problem in the field of geospatial data management is the requirement to combine two or more geospatial data sets that have been derived from different sources. The same geographic feature can have a different RDF representations, different metadata and differing geometry associated with it. The goal of this task is to automate fusing based on semantic links in the maps. While in WP2 we are developing the infrastructure for fusing geospatial data sets, this task has the goal to develop the algorithms necessary for fusing different RDF representations of maps. Here, we will develop a module (1) to map different RDF representations of geometry; (2) to merge different metadata associated with spatial objects; (3) to combine different representations of relations between spatial objects."@en ;
-      fp:partner gk:ATH ;
-      fp:previous fp:Task3-1 ;
-      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp3 .
-
-fp:Task5-3
-      fp:next gk:Task5-4 .
-
-fp:Task1-1
-      fp:next gk:Task1-2 .
-
-gk:Task5-5
-      rdfs:label "Evaluation and testing"@en ;
-      gk:identifier "T5.5" ;
-      <http://purl.org/dc/terms/description>
-              "In this task, the GeoKnow demonstrator application will be tested wrt. performance, usability and robustness. The testing methodology will be based on (1) the definition of a test-bed scenario and test-protocol at Schnellecke, (2) the deployment of the GeoKnow demonstrator application for this test-bed, (3) the training of respective operational personnel, (4) live test where operational personnel will spend at least 20 hours testing the system according to a the-specified test-protocol, (5) assessment of the test results and derivation of application and deployment guidelines. The operational personnel will be people involved in managing and executing logistics services in the supply chain from Schnellecke and cooperation partners. This will include people dealing with operational procedures (e.g. operating RFID readers) directly in the supply chain, supervisors and management personnel aiming to gain oversight and strategic views on the supply chain. We will also assess in this task to what extent additional information from the LOD cloud is beneficial and for which particular tasks. Currently, we do not foresee logistics partners' data to be published openly on the Web. Particular attention during the test and evaluation will be paid to involving several stakeholders to for obtaining a unified view on the supply chain. The test-bed and test-data as well as contacts to additional stakeholders and organizations required for this task will be provided by Schnellecke (cf. Letter of Support) free of charge to the project."@en ;
-      fp:partner gk:BROX ;
-      fp:previous fp:Task5-4 ;
-      fp:taskNumber "5"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp5 .
-
-fp:Task7-4
-      fp:next gk:Task7-5 .
-
-gk:Task6-1
-      rdfs:label "Customer data selection, retrieval and preparation"@en ;
-      gk:identifier "T6.1" ;
-      <http://purl.org/dc/terms/description>
-              "The first step in this task will be the identification and selection of relevant data partitions of existing real CRM systems and travel/tourism portals (e.g. ab-in-den-urlaub.de, travel24.com, fluege.de). Here, we will investigate internal data as well as its interlinkability with other open data sets as geospatial and spatial social network data. We will develop retrieval methods and tools and aggregate this data. Additionally, we will execute preparations and needed transformations on that data to ensure ease of integration with the GKS and efficient processing of the data. A part of this will be the transformation into an RDF representation. In Task 6.1 a proprietary CRM, developed in-house at Unister, is used. Because Unister has to deal with many different and changing vendors of travel/tourism services and products, this special CRM takes into account the many different CRM data structures provided by these vendors. It is more appropriate to identify it as system of CRMs."@en ;
-      fp:partner gk:Unister , gk:InfAI ;
-      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp6 .
-
-gk:Task4-2
-      rdfs:label "Adaptive spatial-semantic authoring and curation"@en ;
-      gk:identifier "T4.2" ;
-      <http://purl.org/dc/terms/description>
-              """In this task, we will develop two components for the authoring and curation of spatial-semantic content. Firstly, we will specify a spatial-semantic widget interface, which will allow the creation of small reusable interface components for the creation of domain-specific user-interfaces. The widgets will be RDFa annotated HTML fragments together with JavaScript and CSS code. This will allow one to reuse them in various development environments, as for instance J2EE, LAMP, and Dot.Net. The widget interface definition will contain a number of event handlers, style classes, JavaScript functions, which concrete implementations must support. Widgets should be composeable out of existing smaller ones. For example, a widget for creating train stations, could be composed out of widgets for selecting a certain location and ones for representing object type, associating train lines etc. As part of this task we will develop a library of reusable widgets and common utilities.
-In order to enable the curation of spatial-semantic knowledge, we will develop an interface allowing to curate (i.e. annotation or modification) single spatial objects or complete sets of spatial objects. The curation of sets of objects will start with a search and faceted-refinement. Subsequently, all retrieved spatial entities can be updated in a single step thus mimicking data cleansing tools from the database and ETL world."""@en ;
-      fp:partner gk:InfAI ;
-      fp:previous fp:Task4-1 ;
-      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp4 .
-
-gk:Task1-4
-      rdfs:label "Component integration and GeoKnow Generator"@en ;
-      gk:identifier "T1.4" ;
-      <http://purl.org/dc/terms/description>
-              """During this task individual components developed in WP2-4 will be integrated into a ready to use GKS Generator and associated APIs in order to enable communities of practice to create domain specific GKSes with a minimum of effort. For example, chosing between map providers (e.g. OpenStreetMap, Google Maps) will require no coding, and there will be a widget library, based on the use-cases, with some widgets (e.g. for place searches, ratings, images and facts) being usable across multiple domains. A plug-in system will ensure that new styles and behaviour can be added in case none of the provided components turn out to be applicable.
-Thus, this task consists of the following subtasks:
-Integration of User Interface Components. The goal of this sub-task is to provide rich GUIs for social-aware GKS applications. 
-Integration of GeoKnow Generator and API. The objective of this sub-task is to integrate the GeoKnow components developed in WP2-4 and the Web 2.0 toolkit into a ready to use GKS Generator with underlying service APIs. Within this task we will perform software integration activities together with WP2-4. 
-Testing, documentation & tutorials. This sub-task will take the end-user and technical feedbacks resulting from WP5-6 into account to improve the final GeoKnow Generator and provide documentation and tutorials. The documentation of the evaluation should provide both quantitative and qualitative results, through real-life trials of the proposed work. A number of alpha and beta testing results will be documented by this task, which will be conducted after the delivery of each module and provide quantitative results."""@en ;
-      fp:leadPartner gk:Ontos ;
-      fp:partner gk:Unister , gk:ATH , gk:OpenLink , gk:Ontos , gk:Athena , gk:BROX , gk:InfAI , gk:Openlink ;
-      fp:previous fp:Task1-3 ;
-      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp1 .
-
-gk:Task8-2
-      rdfs:label "Communication with the EC"@en ;
-      gk:identifier "T8.2" ;
-      <http://purl.org/dc/terms/description>
-              "Preparing and creating the necessary management reports according to EC guidelines Contacting the EC services for administrative purposes"@en ;
-      fp:partner gk:InfAI ;
-      fp:previous fp:Task8-1 ;
-      fp:taskNumber "2"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp8 .
-
-gk:Task5-1
-      rdfs:label "Connecting RFID Data to the Web of Data"@en ;
-      gk:identifier "T5.1" ;
-      <http://purl.org/dc/terms/description>
-              """In this task we will develop techniques for making the information stored in RFID chips identifiable and accessible on the Web of Data. We will devise an identification scheme for RFID information and map the currently prevalent data models in supply chain applications to RDF. The mapping should be provenance preserving and accommodate temporal information and relationships. A particular aspect tackled in this task is the capturing and representation of access control rules.
-Deliverable 1. Supply chain information model."""@en ;
-      fp:partner gk:BROX , gk:InfAI ;
-      fp:taskNumber "1"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp5 .
-
-gk:Task2-4
-      rdfs:label "Geospatial clustering"@en ;
-      gk:identifier "T2.4" ;
-      <http://purl.org/dc/terms/description>
-              """This task implements reorganization of data according to geospatial locality so that thematic data ­­­pertaining to geospatially close geometries is nearly always clustered together in physical storage. Since geospatial access patterns are most often geo-local, it makes sense to also reflect this locality in the placement of thematic data. Technically, this consists of renumbering IRI identifiers according to the geospatial attributes that depend on them through one or more reference steps.
-This further means that in a cluster system the feature and its thematic content will be co-located on the same server. The benefits will be much higher retrieval speed due to more localized access patters, thus deriving full benefit from vectored execution and column store techniques that rely on locality for performance."""@en ;
-      fp:partner gk:OpenLink ;
-      fp:previous fp:Task2-3 ;
-      fp:taskNumber "4"^^xsd:nonNegativeInteger ;
-      fp:workpackage gk:wp2 .
-
-fp:Task3-4
-      fp:next gk:Task3-5 .
