@@ -1,0 +1,47 @@
+<?php
+$hookline = $this->literal(array(
+    'property' => 'rdfs:label',
+    'class' => 'hookline',
+    'prefix' => '<span class="hideme">:</span> '
+));
+
+$abstract = $this->literal(array(
+    'property' => 'dcterms:abstract',
+    'tag' => 'p',
+    'class' => 'abstract'
+));
+
+?>
+<header class="intro">
+    <h1><?php echo $this->title; /*. $hookline*/ ?></h1>
+</header> <!-- /.intro -->
+
+<div class="nav-sidelinks"> 
+  <ul><li>Partners</li>
+    <li> 
+      <?php 
+      echo $this->query(array(
+        "where" =>"?resourceUri a fp:Partner. ",
+        "template" =>"lmenu" 
+        ))
+      ?>
+    </li>
+  </ul>
+</div>
+<?php
+
+echo $abstract;
+
+// LEADING WP
+echo $this->query(array(
+        'where' => '?resourceUri fp:leadPartner <'.$this->resourceUri.'>. ?resourceUri a fp:WorkPackage. ?resourceUri fp:workpackageNumber ?wpnumber.',
+	      'orderby'=> 'ASC(?wpnumber)',
+        'template' => 'identifiertable',
+        'prefix' => '<h2>Leading workpackages:</h2>'
+    ));
+
+// 
+//echo $this->literal(array('tag' => 'div', 'class' => 'abstract')); // uses default content properties
+#echo $this->renderx(array('template' => 'local/items/publications.phtml'));
+
+
