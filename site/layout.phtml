@@ -74,6 +74,9 @@ $templateData = $this->templateData;
     <title><?php echo $templateData['title'] ?> &mdash; <?php echo $this->siteConfig['name'] ?></title>
 </head>
 <body>
+    <!-- google analytics -->
+    <?php include_once ("analyticstracking.php")>
+    
     <div class="page_margins">
         <div id="page">
                 <?php echo $this->partial('local/header.phtml', $templateData) ?>
