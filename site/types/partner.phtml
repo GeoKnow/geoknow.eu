@@ -1,45 +1,86 @@
 <?php
-$hookline = $this->literal(array(
-    'property' => 'rdfs:label',
-    'class' => 'hookline',
-    'prefix' => '<span class="hideme">:</span> '
+$title       = $this->title;
+$resourceUri = $this->resourceUri;
+$heading     = '';
+
+$description = $this->literal(array(
+    'property' => 'dcterms:description',
+    'tag' => 'div',
+    'class' => 'description'
 ));
 
-$abstract = $this->literal(array(
-    'property' => 'dcterms:abstract',
-    'tag' => 'p',
-    'class' => 'abstract'
+$homepage = $this->literal(array('property' => 'foaf:homepage', 'plain' => 'true'));
+
+// prepare the heading
+if ($homepage != '') {
+    $heading = $this->link(array(
+        'uri'    => $homepage, 'text' => $title,
+        'direct' => true,
+        'prefix' => '<header class="intro"><h1>', 'suffix' => '<h1/></header>'
+    ));
+} else {
+    $heading = '<header class="intro"><h1>'. $title .'</h1></header>' .PHP_EOL;
+}
+
+// prepare the logo
+$logo = '';
+$logoimg       = $this->img(array(
+    'property' => 'foaf:logo',
+    'class'    => 'logo',
+    'alt'      => 'logo ' . $title,
+    'prefix'   => '<div class="logo">',
+    'suffix'   => '</div>'
 ));
+
+if ($logoimg != '') {
+    if ($homepage != '') {
+        $logo = $this->link(array(
+            'uri'  => $homepage,
+            'direct' => true,
+            'text' => $logoimg
+        ));
+    } else {
+       $logo = $logoimg;
+    }
+} else {
+    $logo = '';
+}
 
 ?>
-<header class="intro">
-    <h1><?php echo $this->title; /*. $hookline*/ ?></h1>
-</header> <!-- /.intro -->
 
 <div class="nav-sidelinks"> 
   <ul><li>Partners</li>
     <li> 
       <?php 
       echo $this->query(array(
-        "where" =>"?resourceUri a fp:Partner. ",
-        "template" =>"lmenu" 
+        'where' => '?resourceUri a fp:Partner. ',
+        'template' =>'lmenu' 
         ))
       ?>
     </li>
   </ul>
 </div>
-<?php
 
-echo $abstract;
+<div about="<?php echo $this->curie($resourceUri) ?>"
+    class="abstract <?php echo $logo?'abstract-with-logo':''; ?>" >
+    <?php echo $heading, $logo, $description ?>
+    <?php
 
-// LEADING WP
-echo $this->query(array(
-        'where' => '?resourceUri fp:leadPartner <'.$this->resourceUri.'>. ?resourceUri a fp:WorkPackage. ?resourceUri fp:workpackageNumber ?wpnumber.',
-	      'orderby'=> 'ASC(?wpnumber)',
+    // LEADING WP
+    echo $this->query(array(
+        'where' => '?resourceUri fp:leadPartner <'.$resourceUri.'>. ?resourceUri a fp:WorkPackage. ?resourceUri fp:workpackageNumber ?wpnumber.',
+	'orderby'=> 'ASC(?wpnumber)',
         'template' => 'identifiertable',
         'prefix' => '<h2>Leading workpackages:</h2>'
     ));
 
-// 
-//echo $this->literal(array('tag' => 'div', 'class' => 'abstract')); // uses default content properties
-#echo $this->renderx(array('template' => 'local/items/publications.phtml'));
+    // TASKS 
+    echo $this->query(array(
+        'where' => '?resourceUri fp:partner <'.$resourceUri.'>. ?resourceUri a fp:Task. ?resourceUri dcterms:identifier ?id.',
+        'orderby'=> 'ASC(?id)',
+        'template' => 'identifiertable',
+        'prefix' => '<h2>Contributing to tasks:</h2>'
+    ));
+     ?>
+</div>
+ 
