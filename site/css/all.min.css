@@ -86,16 +86,16 @@ nav a:focus,nav a:hover,nav a:active{text-decoration:underline}
 #nav-main ul a,#nav-main ul strong{display:block;margin:0;padding:.308em .615em}
 #nav-main ul li{float:left}
 #nav-main a,#nav-main strong{color:black}
-#nav-main a:focus,#nav-main a:hover,#nav-main a:active{background-color:#333;color:white}
-#nav-main strong,#nav-main .active a{background-color:#333;color:white}
+#nav-main a:focus,#nav-main a:hover,#nav-main a:active{background-color:#BC1B8B;color:white}
+#nav-main strong,#nav-main .active a{background-color:#BC1B8B;color:white}
 #nav-top{position:absolute;top:0;right:0}
 #nav-top ul{overflow:hidden;margin:0;list-style:none}
 #nav-top ul li{margin:0;padding:0}
 #nav-top ul a,#nav-top ul strong{display:block;margin:0;padding:.308em .615em}
 #nav-top ul li{float:left}
 #nav-top a,#nav-top strong{color:#585858}
-#nav-top a:focus,#nav-top a:hover,#nav-top a:active{background-color:#333;color:white}
-#nav-top strong,#nav-top .active a{background-color:#333;color:white}
+#nav-top a:focus,#nav-top a:hover,#nav-top a:active{background-color:#BC1B8B;color:white}
+#nav-top strong,#nav-top .active a{background-color:#BC1B8B;color:white}
 #nav-breadcrumbs{border-bottom:solid 1px #333}
 #nav-breadcrumbs a{color:#333;font-weight:normal}
 #nav-breadcrumbs strong{color:black}
