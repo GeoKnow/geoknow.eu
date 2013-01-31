@@ -569,7 +569,7 @@
   #nav-main ul a, #nav-main ul strong {
     display: block;
     margin: 0;
-    padding: 0 0.615em;
+    padding: 0.407em 0.615em 0 0;
   }
   #nav-main ul li {
     float: left;
@@ -728,7 +728,7 @@
   }
 
   #sidecontent h1, #sidecontent h2, #sidecontent h3, #sidecontent h4, #sidecontent details summary, details #sidecontent summary, #sidecontent h5, #sidecontent h6 {
-    color: black;
+    color: #BC1B8B;
     text-transform: none;
     font-weight: bold;
     font-variant: normal;
@@ -739,9 +739,13 @@
     padding: 0.407em 0;
     border-width: 1px;
     border-style: solid none;
-    border-color: #333333;
+    border-color: #84BB41;
     font-size: 1.41em;
     line-height: 1.091;
+  }
+  
+  #content h1{
+	color: #84BB41;
   }
 
   h1 {
