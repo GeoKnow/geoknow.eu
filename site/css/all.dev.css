@@ -561,7 +561,6 @@
   #nav-main li a {
     border-bottom: 0 none;
     color: #BC1B8B;
-    font-weight: bold;
     line-height: 3.69231;
     text-transform: uppercase;
     white-space: nowrap;
@@ -569,7 +568,7 @@
   #nav-main ul a, #nav-main ul strong {
     display: block;
     margin: 0;
-    padding: 0.308em 0.615em;
+    padding: 0 0.615em;
   }
   #nav-main ul li {
     float: left;
@@ -579,12 +578,10 @@
     color: black;
   }
   #nav-main a:focus, #nav-main a:hover, #nav-main a:active {
-    background-color: #333333;
-    color: white;
+    color: #84BB41;
   }
   #nav-main strong, #nav-main .active a {
-    background-color: #333333;
-    color: white;
+    color: 84BB41;
   }
 
   /* -- Top menu --------------------------------------------------------- */
