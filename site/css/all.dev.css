@@ -407,8 +407,8 @@
   }
   #header h1 img, #header h1 a {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 120%;
+    margin-bottom: 5px;
   }
 
   #associations {
@@ -613,15 +613,15 @@
   }
 
   #nav-top a, #nav-top strong {
-    color: #585858;
+    color: #BC1B8B;
   }
   #nav-top a:focus, #nav-top a:hover, #nav-top a:active {
-    background-color: #333333;
-    color: white;
+    color: #84BB41;
+	text-decoration:none;
   }
   #nav-top strong, #nav-top .active a {
-    background-color: #333333;
-    color: white;
+    color: #84BB41;
+	text-decoration:none;
   }
 
   /* -- Breadcrumbs ------------------------------------------------------ */
@@ -747,14 +747,14 @@
   h1 {
     margin-bottom: 0.5em;
     color: #84BB41;
-    font-size: 1.57143rem;
+    font-size: 2.5rem;
     font-weight: bold;
     line-height: 1.5;
   }
 
   h2 {
     margin-bottom: 0.667em;
-    font-size: 1.154em;
+    font-size: 1.8em;
     line-height: 1.333;
   }
 
