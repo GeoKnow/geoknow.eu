@@ -743,15 +743,12 @@
     font-size: 1.41em;
     line-height: 1.091;
   }
-  
-  h1#content{
-	color: #84BB41;
-  }
 
   h1 {
     margin-bottom: 0.5em;
-    font-variant: normal;
-    font-size: 1.538em;
+    color: #84BB41;
+    font-size: 1.57143rem;
+    font-weight: bold;
     line-height: 1.5;
   }
 
