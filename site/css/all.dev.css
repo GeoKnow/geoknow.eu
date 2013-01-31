@@ -442,7 +442,7 @@
     padding: 0.407em 0;
     border-width: 1px;
     border-style: solid none;
-    border-color: #333333;
+    border-color: #84BB41;
     font-size: 1.41em;
     line-height: 1.091;
   }
@@ -569,7 +569,7 @@
   #nav-main ul a, #nav-main ul strong {
     display: block;
     margin: 0;
-    padding: 0.407em 0.615em 0 0;
+    padding: 0.407em 0.615em 0.407em 0;
   }
   #nav-main ul li {
     float: left;
@@ -744,7 +744,7 @@
     line-height: 1.091;
   }
   
-  #content h1{
+  h1#content{
 	color: #84BB41;
   }
 
