@@ -672,6 +672,10 @@
     padding-right: 0;
   }
   .nav-sidelinks a, .nav-sidelinks strong {
+    color: #BC1B8B;
+    text-transform: none;
+  }
+  .nav-sidelinks a:hover, .nav-sidelinks strong:hover {
     color: #84BB41;
     text-transform: none;
   }

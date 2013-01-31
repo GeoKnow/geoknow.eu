@@ -36,14 +36,14 @@ echo $this->query(array(
         'where' => '?resourceUri fp:task <'.$this->resourceUri.'>. ?resourceUri a fp:Deliverable. ?resourceUri fp:deliverableNumber ?deliverableNumber.',
 	'orderby' => 'ASC(?deliverableNumber)', 
         'template' => 'identifiertableDocument',
-        'prefix' => '<h1>Deliverables</h1>'
+        'prefix' => '<h2>Deliverables</h2>'
     ));
 
 echo $this->query(array(
         'where' => '<'.$this->resourceUri.'>  fp:workpackage ?wp . ?resourceUri fp:workpackage ?wp . ?resourceUri fp:taskNumber ?taskNumber . FILTER(<'.$this->resourceUri.'> != ?resourceUri)',
 	'orderby' => 'ASC(?taskNumber)', 
         'template' => 'identifiertable',
-        'prefix' => '<h1>Other Tasks in this Workpackage</h1>'
+        'prefix' => '<h2>Other Tasks in this Workpackage</h2>'
     ));
 
 //echo $this->literal(array('tag' => 'div', 'class' => 'abstract')); // uses default content properties
