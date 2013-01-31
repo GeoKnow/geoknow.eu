@@ -16,12 +16,14 @@ $publicationTag   = $this->literal(array(
     'property' => 'aksw:publicationTag'
 ));
 $exhibitData = $this->literal(array(
-    'property' => 'http://lod2.eu/schema/exhibitData'
+    'property' => 'fp:exhibitData'
 ));
 $templateOptions = $this->literal(array(
     'property' => 'site:templateOption',
     'array' => 'true'
 ));
+
+echo 'x:'.$exhibitData;
 if (($publicationTag != "") || ($exhibitData != '')) :
 ?>
 
