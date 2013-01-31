@@ -561,9 +561,10 @@
   #nav-main li a {
     border-bottom: 0 none;
     color: #BC1B8B;
-    line-height: 3.69231;
+	padding: 0.407em 0;
     text-transform: uppercase;
     white-space: nowrap;
+	font-weight: bold;
 }
   #nav-main ul a, #nav-main ul strong {
     display: block;
@@ -579,9 +580,11 @@
   }
   #nav-main a:focus, #nav-main a:hover, #nav-main a:active {
     color: #84BB41;
+	text-decoration:none;
   }
   #nav-main strong, #nav-main .active a {
     color: 84BB41;
+	text-decoration:none;
   }
 
   /* -- Top menu --------------------------------------------------------- */
@@ -819,23 +822,29 @@
   }
 
   a {
-    color: #4c78a4;
-    text-decoration: underline;
+    color: #84BB41;
+    text-decoration: none;
     font-weight: bold;
   }
   a:focus, a:hover, a:active {
     text-decoration: none;
+	color: #ED7E23;
   }
 
   .invertlinks a, h1 a, h2 a, h3 a {
     text-decoration: none;
   }
   .invertlinks a:focus, .invertlinks a:hover, .invertlinks a:active, h1 a:focus, h1 a:hover, h1 a:active, h2 a:focus, h2 a:hover, h2 a:active, h3 a:focus, h3 a:hover, h3 a:active {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   #sidecontent a {
-    color: #333333;
+    color: #84BB41;
+  }
+  
+  #sidecontent a:focus, #sidecontent a:hover, #sidecontent a:active {
+    text-decoration: none;
+	color: #ED7E23;
   }
 
   abbr {
