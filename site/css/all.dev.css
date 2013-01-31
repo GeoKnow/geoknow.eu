@@ -549,6 +549,11 @@
     overflow: hidden;
     margin: 0;
     list-style: none;
+	border-bottom: 1px solid #84BB41;
+    border-top: 1px solid #84BB41;
+    display: inline-block !important;
+    text-align: left;
+    width: 100%;
   }
   #nav-main ul li {
     margin: 0;
