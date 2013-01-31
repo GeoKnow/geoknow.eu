@@ -542,7 +542,6 @@
   #nav-main {
     float: left;
     width: 66.737%;
-    border-top: solid 1px #585858;
   }
 
   #nav-main ul {
@@ -559,6 +558,14 @@
     margin: 0;
     padding: 0;
   }
+  #nav-main li a {
+    border-bottom: 0 none;
+    color: #BC1B8B;
+    font-weight: bold;
+    line-height: 3.69231;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
   #nav-main ul a, #nav-main ul strong {
     display: block;
     margin: 0;
@@ -688,7 +695,7 @@
   body {
     background-color: white;
     color: #333333;
-    font-family: 'Droid Sans', 'Verdana', 'Arial' , sans-serif;
+    font-family: 'Droid Sans', 'Helvetica' , 'Arial' , sans-serif;
   }
 
   .page_margins {
