@@ -672,7 +672,7 @@
     padding-right: 0;
   }
   .nav-sidelinks a, .nav-sidelinks strong {
-    color: #333333;
+    color: #84BB41;
     text-transform: none;
   }
   .nav-sidelinks strong, .nav-sidelinks .active a {
@@ -715,8 +715,8 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     text-transform: none;
-    font-size: 3.077em;
-    line-height: 1;
+    font-size: 2em;
+    line-height: 1.5;
   }
   .intro h1 .hookline {
     display: block;
