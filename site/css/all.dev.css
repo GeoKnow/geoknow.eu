@@ -409,8 +409,13 @@
     display: block;
     width: 180%;
     margin-bottom: 5px;
-  }
+	}
 
+  #header h1 img{
+    height: 121px; 
+	width: 552px;
+  } 
+  
   #associations {
     margin-bottom: 1em;
   }
