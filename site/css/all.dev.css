@@ -569,7 +569,7 @@
   #nav-main ul a, #nav-main ul strong {
     display: block;
     margin: 0;
-    padding: 0.407em 0.615em 0.407em 0;
+    padding: 0.407em 1.2em 0.407em 0;
   }
   #nav-main ul li {
     float: left;
@@ -613,15 +613,13 @@
   }
 
   #nav-top a, #nav-top strong {
-    color: #BC1B8B;
+    color: black;
   }
   #nav-top a:focus, #nav-top a:hover, #nav-top a:active {
-    color: #84BB41;
-	text-decoration:none;
+	text-decoration:underline;
   }
   #nav-top strong, #nav-top .active a {
-    color: #84BB41;
-	text-decoration:none;
+	text-decoration:underline;
   }
 
   /* -- Breadcrumbs ------------------------------------------------------ */
