@@ -19,14 +19,12 @@ $exhibitData = $this->literal(array(
     'property' => 'fp:exhibitData'
 ));
 $templateOptions = $this->literal(array(
-    'property' => 'ns1:templateOption',
+    'property' => 'http://ns.ontowiki.net/SysOnt/Site/templateOption',
     'array' => 'true'
 ));
 
 if (($publicationTag != "") || ($exhibitData != '')) :
 ?>
-<?php echo $exhibitData; ?>
-<?php print_r($templateOptions); ?>
 
 <?php if (in_array('noheading', $templateOptions) === false) : ?>
 <h1>Publications</h1>
