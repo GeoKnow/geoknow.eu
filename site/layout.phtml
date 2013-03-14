@@ -88,6 +88,7 @@ $templateData = $this->templateData;
     <Script src="http://static.simile.mit.edu/exhibit/api-2.0/exhibit-api.js" type="text/javascript"></script>
     <script>SimileAjax.History.enabled = false;</script >
     <link href="http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=relevantfor/group/geoknow&callback=cb" type="application/jsonp" rel="exhibit/data" ex:jsonp-callback="cb" />
+
 </head>
 <body>
     <div class="page_margins">
@@ -101,12 +102,23 @@ $templateData = $this->templateData;
                     <h2>Hosted by</h2>
                     <a href="http://www.uni-leipzig.de"><img src="<?php echo $this->baseUri; ?>/images/logo-unileipzig.png" alt="Universität Leipzig" /></a> <span>,</span>
                     <a href="http://infai.org"><img src="<?php echo $this->baseUri; ?>/images/logo-infai.png" alt="InfAI: Institut für Angewandte Informatik" /></a>
-					<h2>Funded by</h2>
-					<div>
-						<a href="http://cordis.europa.eu/fp7/home_en.html">
-						<img alt="EU Seventh Framework Programme (FP7)" src="http://www.geoknow.eu/site/images/eu-logos.jpg">
-						</a>
-					</div>
+		    <h2>Funded by</h2>
+		    <div>
+		      <a href="http://cordis.europa.eu/fp7/home_en.html">
+                      <img alt="EU Seventh Framework Programme (FP7)" src="http://www.geoknow.eu/site/images/eu-logos.jpg"/></a>
+                    </div>
+                    <h2>Community and Social Media </h2>
+                    <div>
+                        <a href="https://twitter.com/geoknow" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @geoknow</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        <!-- Place this code where you want the badge to render. -->
+                        <a href="https://plus.google.com/113838869687778043247?prsrc=3" rel="publisher" style="text-decoration:none;"><img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/></a> 
+                        <a href="http://www.linkedin.com/groups/Geoknow-4748293?gid=4748293&trk=hb_side_g"><img src="http://www.geoknow.eu/site/images/in_groups.jpg"/></a>
+                        <a href="http://www.w3.org/community/geosemweb/"><img src="http://www.geoknow.eu/site/images/community-group-logo.png"/></a> 
+                        <a href="http://blog.geoknow.eu/feed/"><img src="http://www.geoknow.eu/site/images/icon_rss.png"/></a>
+                        <a href="mailto:pr@geoknow.eu"><img src="http://www.geoknow.eu/site/images/email-icon.png"/></a> 
+                   <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fgeoknow&amp;width=292&amp;height=62&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false&amp;appId=347322272043466" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:62px;" allowTransparency="true"></iframe> 
+                   </div>
                 </div> <!-- /#associations -->
                 <?php echo $this->partial('local/feed.phtml', $templateData) ?>
             </section> <!-- /#sidecontent -->
