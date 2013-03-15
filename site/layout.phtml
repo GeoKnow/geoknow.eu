@@ -85,10 +85,18 @@ $templateData = $this->templateData;
       })();
     </script>
 
-    <Script src="http://static.simile.mit.edu/exhibit/api-2.0/exhibit-api.js" type="text/javascript"></script>
-    <script>SimileAjax.History.enabled = false;</script >
+    <?php 
+    $this->headScriptExhibit( array(
+        array ('uri' => 'http://aksw.org/schema/publicationTag',
+               'sprintf' => 'http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=relevantfor/group/geoknow&callback=cb'),
+        array ('uri' => 'http://purl.org/research-fp#exhibitData')
+    ));
+    ?>
+<!--
+    <script src="<?php echo $this->baseUri ?>/libs/exhibit/api-2.0/exhibit-api.js" type="text/javascript"></script>
+    <script>SimileAjax.History.enabled = false;</script>
     <link href="http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=relevantfor/group/geoknow&callback=cb" type="application/jsonp" rel="exhibit/data" ex:jsonp-callback="cb" />
-
+-->
 </head>
 <body>
     <div class="page_margins">
