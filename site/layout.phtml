@@ -32,7 +32,15 @@ $templateData = $this->templateData;
     <link rel="pingback" href="<?php echo $this->pingbackUrl ?>" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <script type="text/javascript">document.documentElement.className += 'js';</script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript">
+            var html4elements = 'article footer header nav section aside time';
+            html4elements.replace(/\w+/g,function(n){document.createElement(n)})
+        </script>
+    <![endif]-->
 
     <link
         rel="<?php echo $this->curie('http://xmlns.com/foaf/0.1/primaryTopic') ?>"
@@ -97,6 +105,7 @@ $templateData = $this->templateData;
     <script>SimileAjax.History.enabled = false;</script>
     <link href="http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=relevantfor/group/geoknow&callback=cb" type="application/jsonp" rel="exhibit/data" ex:jsonp-callback="cb" />
 -->
+
 </head>
 <body>
     <div class="page_margins">
@@ -124,7 +133,7 @@ $templateData = $this->templateData;
                         <a href="http://www.linkedin.com/groups/Geoknow-4748293?gid=4748293&trk=hb_side_g"><img src="http://www.geoknow.eu/site/images/in_groups.jpg"/></a>
                         <a href="http://www.w3.org/community/geosemweb/"><img src="http://www.geoknow.eu/site/images/community-group-logo.png"/></a> 
                         <a href="http://blog.geoknow.eu/feed/"><img src="http://www.geoknow.eu/site/images/icon_rss.png"/></a>
-                        <a href="mailto:pr@geoknow.eu"><img src="http://www.geoknow.eu/site/images/email-icon.png"/></a> 
+                        <a href="mailto:pr@geoknow.eu"><img src="http://www.geoknow.eu/site/images/email-icon.png"/></a>
                    <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fgeoknow&amp;width=292&amp;height=62&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false&amp;appId=347322272043466" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:62px;" allowTransparency="true"></iframe> 
                    </div>
                 </div> <!-- /#associations -->
