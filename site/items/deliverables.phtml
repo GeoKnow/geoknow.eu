@@ -1,0 +1,94 @@
+ <?php
+
+// prepare vars from the querylist helper
+$resourceUri = $this->resourceUri;
+$title       = $this->title;
+$oddclass    = $this->oddclass;
+$tag         = (isset($this->tag)) ? $this->tag : 'table';
+
+$identifier  = $this->literal(array(
+    'property' => 'dcterms:identifier'
+));
+
+$seeAlso  = $this->literal(array(
+    'property' => 'rdfs:seeAlso', 
+    'plain' => 'true'
+));
+
+if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
+    echo "<$tag>" . PHP_EOL;
+}
+
+// if we have a literal item, do not do anything but an li item
+if (!Erfurt_Uri::check($resourceUri)) {
+    echo "<tr class='$oddclass'>$title</tr>";
+} else {
+
+    $link = $title;
+    if($seeAlso != ""){
+      $link = $this->link(array(
+        'uri' => $seeAlso, 
+        'text' => $title, 
+        'direct' => true,
+        'target' => '_blanc'
+      ));
+    }
+
+    $hasVersion = $this->query(array(
+        'where'    => '<'.$resourceUri.'> dcterms:hasVersion ?resourceUri. ',
+        'template' => 'seealsolist'   
+    ));
+
+   $disseminationLevel = $this->query(array(
+        'where'    => '<'.$resourceUri.'> fp:disseminationLevel ?resourceUri. ',
+        'plain' => 'true'
+    ));
+/*
+    $disseminationLevelUri = $this->literal(array(
+         'property' => 'fp:disseminationLevel'
+    ));
+
+   if($disseminationLevelUri != ""){
+      $link = $this->link(array(
+        'uri' => $disseminationLevelUri,
+        'title' => 'test'
+      ));
+    }
+  */ 
+ /*   echo $disseminationLevelUri;
+    $disseminationLevel = $this->literal(array(
+        'uri'      => $this->curie($disseminationLevelUri),
+        'property' => 'rdfs:label'
+    ));*/
+
+   // try to prepare an active class
+    if (isset($this->active)) {
+        $activeResource = $this->active;
+    } else {
+        $activeResource = (string) OntoWiki::getInstance()->selectedResource;
+    }
+    if ($resourceUri == $activeResource) {
+        $active = ' active';
+    } else {
+        $active = '';
+    }
+?>
+    <tr class="<?php echo $oddclass . $active ?>" about="<?php echo $this->curie($resourceUri) ?>">
+      <?php if($identifier!="") echo '<td>'.$identifier.'</td>'  ?>
+      <td><?php echo $link ?></td> 
+      <?php if($hasVersion!="") echo '<td>'.$hasVersion.'</td>'  ?>
+      <?php if($disseminationLevel!="") echo '<td><div class="listNoStyle">'.$disseminationLevel.'</div></td>'  ?>
+<?php
+    if (isset($this->activeSuffix)) {
+        if ($resourceUri == $activeResource) {
+            echo $this->activeSuffix;
+       }
+    }
+?>
+   </td> </tr>
+<?php
+}
+
+if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
+    echo "</$tag>" . PHP_EOL;
+}

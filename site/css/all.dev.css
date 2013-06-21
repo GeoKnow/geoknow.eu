@@ -785,6 +785,10 @@
  margin:0\9;
  padding:0\9;
 }
+ .listNoStyle ul{
+   list-style:none;
+ }
+
  footer {
   font-size:10pt\9;
  }
