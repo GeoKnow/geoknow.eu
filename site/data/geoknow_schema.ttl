@@ -644,131 +644,13 @@ Project means all the work as referred in Annex I to the contract."""@en;
     rdfs:domain :WorkPackage ;
     rdfs:range :Milestone .
 
-:hasAssociated
-    a owl:ObjectProperty ;
-    rdfs:domain :Milestone ;
-    rdfs:label "has associated"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Documentation+Ontology#Deliverable> .
 
-:hasAssociated1
-    a owl:ObjectProperty ;
-    rdfs:domain :Project ;
-    rdfs:label "has associated"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Documentation+Ontology#Documentation> .
-
-:hasAssociated2
-    a owl:ObjectProperty ;
-    rdfs:domain :Task ;
-    rdfs:label "has associated"@en;
-    rdfs:range :Milestone .
-
-:hasAssociated3
-    a owl:ObjectProperty ;
-    rdfs:domain :WorkPackage ;
-    rdfs:label "has associated"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Documentation+Ontology#Deliverable> .
-
-:hasAssociated_meeting
-    a owl:ObjectProperty ;
-    rdfs:domain :Project ;
-    rdfs:label "has associated meeting"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Event+Ontology#Event> .
-
-:hasContractorLeading
-    a owl:ObjectProperty ;
-    rdfs:domain :WorkPackage ;
-    rdfs:label "has contractor leading"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
-
-:hasInvolvedPartner
-    a owl:ObjectProperty ;
-    rdfs:domain :Task ;
-    rdfs:label "has involved partner"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
-
-:hasInvolvedPartner1
-    a owl:ObjectProperty ;
-    rdfs:domain :WorkPackage ;
-    rdfs:label "has involved partner"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
-
-:hasParticipantLeader
-    a owl:ObjectProperty ;
-    rdfs:domain :Task ;
-    rdfs:label "has participant leader"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
-
-:hasParticipantWithWorkload
-    a owl:ObjectProperty ;
-    rdfs:domain :WorkPackage ;
-    rdfs:label "has participant with workload"@en;
-    rdfs:range :workpackage_workload .
-
-:hasPersonLeader
-    a owl:ObjectProperty ;
-    rdfs:domain :WorkPackage ;
-    rdfs:label "has person leader"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
-
-:hasPersonParticipant
-    a owl:ObjectProperty ;
-    rdfs:domain :WorkPackage ;
-    rdfs:label "has person participant"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
-
-:hasResponsiblePerson
-    a owl:ObjectProperty ;
-    rdfs:domain :Task ;
-    rdfs:label "has responsible person"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
-
-:isAssociatedWith
-    a owl:ObjectProperty ;
-    rdfs:domain :Milestone ;
-    rdfs:label "is associated with"@en;
-    rdfs:range :WorkPackage .
-
-:isDevelopedBy
-    a owl:ObjectProperty ;
-    rdfs:domain :Project ;
-    rdfs:label "is developed by"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
-
-:isMadeUpOf
-    a owl:ObjectProperty ;
-    rdfs:domain :WorkPackage ;
-    rdfs:label "is made up of"@en;
-    rdfs:range :Task .
-
-:isParticipationPeriodOn
-    a owl:ObjectProperty ;
-    rdfs:domain :ProjectParticipationPeriod ;
-    rdfs:label "is participation period on"@en;
-    rdfs:range :Project .
-
-:isRelatedTo
-    a owl:ObjectProperty ;
-    rdfs:domain :Milestone ;
-    rdfs:label "is related to"@en;
-    rdfs:range :Task .
-
-:isWorkloadOf
-    a owl:ObjectProperty ;
-    rdfs:domain :workpackage_workload ;
-    rdfs:label "is workload of"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
 
 :isWorkloadOnWorkPackage
     a owl:ObjectProperty ;
     rdfs:domain :workpackage_workload ;
     rdfs:label "is workload on workpackage"@en;
     rdfs:range :WorkPackage .
-
-:teamIsFormedBy
-    a owl:ObjectProperty ;
-    rdfs:domain :Task ;
-    rdfs:label "team is formed by"@en;
-    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
 
 :workpackage_workload
     a owl:Class ;
@@ -820,3 +702,125 @@ foaf:Organization
         owl:onProperty foaf:homepage
     ] .
 
+
+### stuff to revise
+
+#:hasAssociated
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Milestone ;
+#    rdfs:label "has associated"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Documentation+Ontology#Deliverable> .
+#
+#:hasAssociated1
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Project ;
+#    rdfs:label "has associated"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Documentation+Ontology#Documentation> .
+#
+#:hasAssociated2
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Task ;
+#    rdfs:label "has associated"@en;
+#    rdfs:range :Milestone .
+#
+#:hasAssociated3
+#    a owl:ObjectProperty ;
+#    rdfs:domain :WorkPackage ;
+#    rdfs:label "has associated"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Documentation+Ontology#Deliverable> .
+#
+#:hasAssociated_meeting
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Project ;
+#    rdfs:label "has associated meeting"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Event+Ontology#Event> .
+#
+#:hasContractorLeading
+#    a owl:ObjectProperty ;
+#    rdfs:domain :WorkPackage ;
+#    rdfs:label "has contractor leading"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+#
+#:hasInvolvedPartner
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Task ;
+#    rdfs:label "has involved partner"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+#
+#:hasInvolvedPartner1
+#    a owl:ObjectProperty ;
+#    rdfs:domain :WorkPackage ;
+#    rdfs:label "has involved partner"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+#
+#:hasParticipantLeader
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Task ;
+#    rdfs:label "has participant leader"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+#
+#:hasParticipantWithWorkload
+#    a owl:ObjectProperty ;
+#    rdfs:domain :WorkPackage ;
+#    rdfs:label "has participant with workload"@en;
+#    rdfs:range :workpackage_workload .
+#
+#:hasPersonLeader
+#    a owl:ObjectProperty ;
+#    rdfs:domain :WorkPackage ;
+#    rdfs:label "has person leader"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
+#
+#:hasPersonParticipant
+#    a owl:ObjectProperty ;
+#    rdfs:domain :WorkPackage ;
+#    rdfs:label "has person participant"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
+#
+#:hasResponsiblePerson
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Task ;
+#    rdfs:label "has responsible person"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
+#
+#:isAssociatedWith
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Milestone ;
+#    rdfs:label "is associated with"@en;
+#    rdfs:range :WorkPackage .
+#
+#:isDevelopedBy
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Project ;
+#    rdfs:label "is developed by"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+#
+#:isMadeUpOf
+#    a owl:ObjectProperty ;
+#    rdfs:domain :WorkPackage ;
+#    rdfs:label "is made up of"@en;
+#    rdfs:range :Task .
+#
+#:isParticipationPeriodOn
+#    a owl:ObjectProperty ;
+#    rdfs:domain :ProjectParticipationPeriod ;
+#    rdfs:label "is participation period on"@en;
+#    rdfs:range :Project .
+#
+#:isRelatedTo
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Milestone ;
+#    rdfs:label "is related to"@en;
+#    rdfs:range :Task .
+#
+#:isWorkloadOf
+#    a owl:ObjectProperty ;
+#    rdfs:domain :workpackage_workload ;
+#    rdfs:label "is workload of"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Organization+Ontology#Organization> .
+#
+#:teamIsFormedBy
+#    a owl:ObjectProperty ;
+#    rdfs:domain :Task ;
+#    rdfs:label "team is formed by"@en;
+#    rdfs:range <webode://droz.dia.fi.upm.es/Person+Ontology#Person> .
