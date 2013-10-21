@@ -10,9 +10,9 @@ if (!extension_loaded('odbc')) {
 // Check for config.ini
 $confiDirPath =  dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
 
-$dsn      = null;
-$username = null;
-$password = null;
+$dsn      = VOS;
+$username = dba;
+$password = dba;
 
 $customConfigPath  = $confiDirPath . 'config.ini';
 $defaultConfigPath = $confiDirPath . 'config.ini.dist';
