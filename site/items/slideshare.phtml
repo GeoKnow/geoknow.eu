@@ -1,0 +1,110 @@
+<?php
+/**
+ * slideshare template
+ *
+ * this template renders a user's slides from slideshare
+ */
+
+// API  public key and secret key
+
+$slideshareUser   = $this->literal(array(
+    'property' => 'fp:slideshareUser'
+));
+
+if ($slideshareUser != "") {
+
+    $key='bjJ3ao3k';
+    $secret='WsLqAmSl';
+
+    // Do not change this
+    $apiurl='https://www.slideshare.net/api/2/';
+    $api_posturl='/api/2/';
+    $api_postserver='www.slideshare.net';
+
+
+    class PhpViewer {
+        private $key;
+        private $secret;
+        private $user;
+        private $password;
+        private $apiurl;
+
+        public function PhpViewer() {
+            $this->key=$GLOBALS['key'];
+            $this->secret=$GLOBALS['secret'];
+            $this->apiurl=$GLOBALS['apiurl'];
+            $this->api_posturl=$GLOBALS['api_posturl'];
+            $this->api_postserver=$GLOBALS['api_postserver'];
+        }
+
+
+        private function XMLtoArray($data)
+        {
+            $parser = xml_parser_create();
+            xml_parse_into_struct($parser, $data, $values, $tags);
+            xml_parser_free($parser);
+            foreach ($tags as $key=>$val) {
+                if(strtoupper($key) == "SLIDESHARESERVICEERROR") {
+                    $finarr[0]["Error"]="true";
+                    $finarr[0]["Message"]=$values[$tags["MESSAGE"][0]]["value"];
+                    return $finarr;
+                }     
+                if ((strtolower($key) != "slideshow") &&  (strtolower($key) != "slideshows") && (strtolower($key) != "slideshowdeleted") && (strtolower($key) != "slideshowuploaded") && (strtolower($key) != "tags")  && (strtolower($key) != "group") && (strtolower($key) != "name") && (strtolower($key) != "count") && (strtolower($key) != "user")) {
+                    for($i = 0;$i < count($val);$i++) {
+                          $finarr[$i][$key]=$values[$val[$i]]["value"];
+                    }
+                }
+                else {
+                    continue;
+                }
+            }
+        return $finarr;
+        }
+
+        private function get_data($call,$params) {
+            $ts=time();
+            $hash=sha1($this->secret.$ts);
+            try {
+                $res=file_get_contents($this->apiurl.$call."?api_key=$this->key&ts=$ts&hash=$hash".$params);
+            } catch (Exception $e) {
+            // Log the exception and return $res as blank
+            }
+            return utf8_encode($res);
+        }
+
+        /* Get all the user's slide information  in a simple multi-dimensional array */
+        public function get_slidesUser($user,$offset=0,$limit=0) {
+            return $this->XMLtoArray($this->get_data("get_slideshows_by_user","&username_for=$user&offset=$offset&limit=$limit"));
+        }
+
+    }
+
+    ?>
+
+    <div class="slideshare">
+        <ul>
+        <?php
+        include_once 'PhpViewer.php';
+        $viewer=new PhpViewer();
+        $slides = $viewer->get_slidesUser($slideshareUser, 0,10);
+        foreach($slides as $slide){
+            ?>
+            <li>
+              <a href="<?php echo $slide['URL']; ?>" title="<?php echo $slide["TITLE"] ?>">
+                <img class="" src="<?php echo $slide["THUMBNAILSMALLURL"] ?>" alt="<?php echo $slide["TITLE"] ?>" 
+                       width="120" original="<?php echo $slide["THUMBNAILURL"] ?>" >
+
+                <dl>
+                    <dt><?php echo $slide["TITLE"] ?></dt>
+                    <dd><?php echo $slide["DESCRIPTION"] ?></dd>
+                </dl>
+              </a>
+            </li>
+        <?php
+        }
+        ?>
+        </ul>
+    </div>
+
+}
+
