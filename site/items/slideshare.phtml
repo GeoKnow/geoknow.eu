@@ -8,19 +8,11 @@
 // API  public key and secret key
 
 $slideshareUser   = $this->literal(array(
-    'property' => 'fp:slideshareUser'
+    'property' => 'fp:slideshareUser',
+    'plain' => 'true'
 ));
 
-if ($slideshareUser != "") {
-
-    $key='bjJ3ao3k';
-    $secret='WsLqAmSl';
-
-    // Do not change this
-    $apiurl='https://www.slideshare.net/api/2/';
-    $api_posturl='/api/2/';
-    $api_postserver='www.slideshare.net';
-
+if ($slideshareUser != '') {
 
     class PhpViewer {
         private $key;
@@ -30,11 +22,9 @@ if ($slideshareUser != "") {
         private $apiurl;
 
         public function PhpViewer() {
-            $this->key=$GLOBALS['key'];
-            $this->secret=$GLOBALS['secret'];
-            $this->apiurl=$GLOBALS['apiurl'];
-            $this->api_posturl=$GLOBALS['api_posturl'];
-            $this->api_postserver=$GLOBALS['api_postserver'];
+          $this->key='bjJ3ao3k';
+          $this->secret='WsLqAmSl';
+          $this->apiurl='https://www.slideshare.net/api/2/';
         }
 
 
@@ -48,6 +38,7 @@ if ($slideshareUser != "") {
                     $finarr[0]["Error"]="true";
                     $finarr[0]["Message"]=$values[$tags["MESSAGE"][0]]["value"];
                     return $finarr;
+                    
                 }     
                 if ((strtolower($key) != "slideshow") &&  (strtolower($key) != "slideshows") && (strtolower($key) != "slideshowdeleted") && (strtolower($key) != "slideshowuploaded") && (strtolower($key) != "tags")  && (strtolower($key) != "group") && (strtolower($key) != "name") && (strtolower($key) != "count") && (strtolower($key) != "user")) {
                     for($i = 0;$i < count($val);$i++) {
@@ -58,7 +49,7 @@ if ($slideshareUser != "") {
                     continue;
                 }
             }
-        return $finarr;
+            return $finarr;
         }
 
         private function get_data($call,$params) {
@@ -67,8 +58,10 @@ if ($slideshareUser != "") {
             try {
                 $res=file_get_contents($this->apiurl.$call."?api_key=$this->key&ts=$ts&hash=$hash".$params);
             } catch (Exception $e) {
+                echo "<br/>ERROR ". $e;
             // Log the exception and return $res as blank
             }
+
             return utf8_encode($res);
         }
 
@@ -84,13 +77,14 @@ if ($slideshareUser != "") {
     <div class="slideshare">
         <ul>
         <?php
-        include_once 'PhpViewer.php';
         $viewer=new PhpViewer();
         $slides = $viewer->get_slidesUser($slideshareUser, 0,10);
+        if($slides[0]["Error"]== true)
+           echo $slides[0]["Message"];
         foreach($slides as $slide){
             ?>
             <li>
-              <a href="<?php echo $slide['URL']; ?>" title="<?php echo $slide["TITLE"] ?>">
+              <a href="<?php echo $slide['URL']; ?>" target="_blanc" title="<?php echo $slide["TITLE"] ?>">
                 <img class="" src="<?php echo $slide["THUMBNAILSMALLURL"] ?>" alt="<?php echo $slide["TITLE"] ?>" 
                        width="120" original="<?php echo $slide["THUMBNAILURL"] ?>" >
 
@@ -105,6 +99,7 @@ if ($slideshareUser != "") {
         ?>
         </ul>
     </div>
-
+<?php
 }
+?>
 

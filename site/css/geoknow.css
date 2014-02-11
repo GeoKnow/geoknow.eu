@@ -1,0 +1,23 @@
+.slideshare {
+	width:"600px";
+}
+
+.slideshare ul {
+	list-style: none;
+}
+
+
+.slideshare a {
+	text-decoration: none;
+
+}
+
+.slideshare dl {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+}
+.slideshare dd {
+        color: #000;
+        font-weight: normal;
+}
