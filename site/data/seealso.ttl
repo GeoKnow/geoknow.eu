@@ -1,4 +1,4 @@
-gk:d1-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D1.1.1_Initial_Common_Requirements_Specification.pdf>.
+gk:d1-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Confidential/D1.1.1_Initial_Common_Requirements_Specification.pdf>.
 gk:d1-3-2 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D1.3.2_Continuous_Report_on_Performance_Evaluation.pdf>.
 gk:d2-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D2.1.1_Market_and_Research_Overview.pdf>.
 gk:d2-2-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D2.2.1_Integration_of_Geospatial_Databases.pdf>.
@@ -13,3 +13,9 @@ gk:d7-1-3 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D7.1.3_First
 gk:d7-2-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D7.2.1_Exploitation_plan.pdf>.
 gk:d8-2-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D8.2.1_Intermediate_Project_Report_M1-6.pdf>.
 gk:d8-4-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D8.4.1_Online_Collaboration_Platform.pdf>.
+gk:d1-3-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Confidential/D1.3.1_Design_and_Setup_of_Benchmarking_System.pdf>.
+gk:d1-4-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Confidential/D1.4.1_Initial_Prototype_of_the_GeoKnow_Generator.pdf>.
+gk:d5-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Confidential/D5.1.1_RDF_Representation_of_Supply_Chain_Data.pdf>.
+gk:d6-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Confidential/D6.1.1_Customer_data_preparation.pdf>.
+gk:d8-3-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Confidential/D8.3.1_Periodic_Report.pdf>.
+~                                                                                                                     
