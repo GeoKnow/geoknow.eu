@@ -1,0 +1,15 @@
+gk:d1-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D1.1.1_Initial_Common_Requirements_Specification.pdf>.
+gk:d1-3-2 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D1.3.2_Continuous_Report_on_Performance_Evaluation.pdf>.
+gk:d2-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D2.1.1_Market_and_Research_Overview.pdf>.
+gk:d2-2-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D2.2.1_Integration_of_Geospatial_Databases.pdf>.
+gk:d2-3-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D2.3.1_Prototype_of_Built-in_Geospatial_Capabilities.pdf>.
+gk:d3-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D3.1.1.Development_of_First_Prototype_for_Spatially.pdf>.
+gk:d3-2-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D3.2.1_Fusing_of_geographic_features.pdf>.
+gk:d4-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D4.1.1_Initial_release_spatial_semantic_exploration_component_public.pdf>.
+gk:d6-1-2 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D6.1.2_Customer_data_preparation.pdf>.
+gk:d7-1-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D7.1.1_Project_Fact_Sheet_and_Press_Release.pdf>.
+gk:d7-1-2 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D7.1.2_Project_website.pdf>.
+gk:d7-1-3 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D7.1.3_First_dissemination_report.pdf>.
+gk:d7-2-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D7.2.1_Exploitation_plan.pdf>.
+gk:d8-2-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D8.2.1_Intermediate_Project_Report_M1-6.pdf>.
+gk:d8-4-1 rdfs:seeAlso <http://svn.aksw.org/projects/GeoKnow/Public/D8.4.1_Online_Collaboration_Platform.pdf>.
