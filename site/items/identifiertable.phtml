@@ -7,7 +7,8 @@ $oddclass    = $this->oddclass;
 $tag         = (isset($this->tag)) ? $this->tag : 'table';
 
 $identifier  = $this->literal(array(
-    'property' => 'dcterms:identifier'
+    'property' => 'http://purl.org/dc/terms/identifier',
+'plain' => 'true'
 ));
 
 if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {

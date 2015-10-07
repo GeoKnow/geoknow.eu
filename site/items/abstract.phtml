@@ -60,7 +60,7 @@ if (!Erfurt_Uri::check($resourceUri)) {
     $moreLink      = $this->link(array('uri' => $resourceUri, 'text' => 'Read more about '.$title));
     $abstract      = $this->literal(array(
         'uri'      => $resourceUri,
-        'property' => 'dcterms:abstract',
+        'property' => 'http://purl.org/dc/terms/abstract',
         'tag'      => 'p',
         'class'    => 'abstract',
         'isuffix'  => ' ' . $moreLink)
