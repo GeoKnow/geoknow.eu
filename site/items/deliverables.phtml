@@ -5,9 +5,11 @@ $resourceUri = $this->resourceUri;
 $title       = $this->title;
 $oddclass    = $this->oddclass;
 $tag         = (isset($this->tag)) ? $this->tag : 'table';
+//$identifier = $this->id;
 
 $identifier  = $this->literal(array(
-    'property' => 'dcterms:identifier'
+    'property' => 'http://purl.org/dc/terms/identifier',
+'plain' => 'true'
 ));
 
 $seeAlso  = $this->literal(array(
@@ -43,6 +45,7 @@ if (!Erfurt_Uri::check($resourceUri)) {
         'where'    => '<'.$resourceUri.'> fp:disseminationLevel ?resourceUri. ',
         'plain' => 'true'
     ));
+
 /*
     $disseminationLevelUri = $this->literal(array(
          'property' => 'fp:disseminationLevel'
