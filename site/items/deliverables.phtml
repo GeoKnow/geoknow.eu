@@ -17,6 +17,11 @@ $seeAlso  = $this->literal(array(
     'plain' => 'true'
 ));
 
+$deliveryDate = $this->literal(array(
+    'property' => 'http://purl.org/research-fp#deliveryDate', 
+    'plain' => 'true'
+));
+
 if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
     echo "<$tag>" . PHP_EOL;
 }
@@ -81,6 +86,7 @@ if (!Erfurt_Uri::check($resourceUri)) {
       <td><?php echo $link ?></td> 
       <?php if($hasVersion!="") echo '<td>'.$hasVersion.'</td>'  ?>
       <?php if($disseminationLevel!="") echo '<td><div class="listNoStyle">'.$disseminationLevel.'</div></td>'  ?>
+      <?php /*if($deliveryDate!="")*/ echo '<td>'.$deliveryDate.'</td>'  ?>
 <?php
     if (isset($this->activeSuffix)) {
         if ($resourceUri == $activeResource) {
