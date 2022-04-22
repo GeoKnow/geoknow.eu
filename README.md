@@ -1,3 +1,7 @@
+## :warning: **The editable OntoWiki-based version of geoknow.eu is not in use or maintained anymore.**
+This repository has been archived as of 2016-01-04.
+You can find a static read-only copy at <https://github.com/AKSW/docker-geoknow-static> hosted at <http://geoknow.eu/>.
+
 GeoKnow
 =======
 
